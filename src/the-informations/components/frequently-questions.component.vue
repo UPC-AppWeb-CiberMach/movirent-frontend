@@ -51,7 +51,7 @@ h1, h2, h3, h4 {
   color: black;
 }
 
-{
+.accordion-header {
   font-weight: 600;
 }
 </style>
