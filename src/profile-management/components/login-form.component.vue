@@ -1,83 +1,36 @@
 <template>
-  <h1 aria-label="Título de la página: Iniciar sesión">Iniciar sesión</h1>
-  <div class="card-container">
-    <div class="card pv-car">
-      <div class="flex flex-col md:flex-row">
-        <div class="w-full md:w-5/12 flex flex-col items-center justify-center gap-3 py-5">
 
-          <pv-floatlabel class="text" style="margin-bottom: 30px;">
-            <pv-inputtext id="celular" v-model="username" type="text" class="input-text" aria-label="Campo para ingresar el número de celular" />
-            <label for="celular">Celular</label>
-          </pv-floatlabel>
-
-          <pv-floatlabel>
-            <pv-inputtext id="password" v-model="password" type="password" class="input-text" aria-label="Campo para ingresar la contraseña" />
-            <label for="password">Contraseña</label>
-          </pv-floatlabel>
-
-          <div class="flex" style="text-align: center; margin-top: 30px">
-            <pv-button label="Login" icon="pi pi-user" class="w-full max-w-[17.35rem] mx-auto" aria-label="Botón para iniciar sesión">Iniciar Sesión</pv-button>
-          </div>
-
-          <div class="register-text">
-            <p>¿No tienes cuenta? <a href="/register" aria-label="Enlace para registrarse si no tienes cuenta">Regístrate</a></p>
-          </div>
-
-        </div>
-      </div>
+  <div class="sign-in-container">
+    <h1 class="font-bold"> Iniciar Sesión </h1>
+    <pv-inputtext class="w-15rem lg:w-25rem p-3" type="text" placeholder="Email" />
+    <pv-inputtext class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" />
+    <pv-button class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Iniciar Sesión" />
+    <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
+      <h3>¿Aún no tienes una cuenta?</h3>
+      <router-link to="/register" class="text-blue-500">Regístrate</router-link>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-const username = ref('');
-const password = ref('');
 </script>
 
 <style scoped>
-h1{
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.card-container {
+.sign-in-container{
   display: flex;
+  flex-direction: column;
+  gap:20px;
   justify-content: center;
   align-items: center;
-  height: 25vh;
+  margin-top: 300px;
 }
 
-.pv-car{
-  padding: 70px;
-  border-radius: 20px;
-  display: flex;
-}
-
-.input-text {
-  background-color: #ffffff;
-  color: #565454;
-  text-align: left;
-}
-
-
-.p-button {
+.sign-in-btn{
   background-color: #72D063;
-  color: #ffffff;
-  border: none;
 }
 
-.register-text {
-  text-align: center;
-  margin-top: 30px;
-  color: black;
-}
-
-.register-text a {
-  color: black;
-  font-weight: bolder;
-  text-decoration: none;
+.sign-in-btn:hover{
+  background-color: #5cbf4b;
 }
 
 </style>
