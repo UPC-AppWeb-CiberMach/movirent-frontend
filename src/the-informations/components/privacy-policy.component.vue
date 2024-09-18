@@ -24,6 +24,31 @@
         <li><strong>Cumplimiento legal:</strong> Cumplir con obligaciones legales, responder a solicitudes gubernamentales o proteger los derechos de los usuarios y de MoviRent.</li>
       </ul>
     </section>
+
+    <section class="mb-4">
+      <h2>3. Compartir Información</h2>
+      <p>Tu información no será vendida ni compartida con terceros, salvo en los siguientes casos:</p>
+      <ul>
+        <li><strong>Proveedores de servicios:</strong> Compartimos información con terceros que nos ayudan a operar la plataforma, como procesadores de pagos o proveedores de soporte técnico.</li>
+        <li><strong>Cumplimiento de la ley:</strong> Podemos compartir información cuando sea necesario para cumplir con leyes o regulaciones, o para proteger los derechos, propiedad o seguridad de los usuarios, empleados y la propia plataforma.</li>
+      </ul>
+    </section>
+
+    <section class="mb-4">
+      <h2>4. Seguridad de la Información</h2>
+      <p>Implementamos medidas de seguridad técnicas y organizativas para proteger tu información personal frente a accesos no autorizados, pérdida, destrucción o alteración.</p>
+    </section>
+
+    <section class="mb-4">
+      <h2>5. Derechos de los Usuarios</h2>
+      <p>Tienes derecho a:</p>
+      <ul>
+        <li><strong>Acceder a tu información:</strong> Solicitar una copia de los datos personales que tenemos sobre ti.</li>
+        <li><strong>Rectificar tus datos:</strong> Corregir información incorrecta o incompleta.</li>
+        <li><strong>Eliminar tu cuenta:</strong> Solicitar la eliminación de tu cuenta y la información asociada.</li>
+        <li><strong>Optar por no recibir comunicaciones:</strong> Puedes optar por no recibir mensajes de marketing en cualquier momento.</li>
+      </ul>
+    </section>
   </div>
 </template>
 
