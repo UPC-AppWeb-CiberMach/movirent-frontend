@@ -1,13 +1,16 @@
 <template>
 
   <div class="sign-in-container">
-    <h1 class="font-bold"> Iniciar Sesión </h1>
-    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Email" />
-    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" />
-    <pv-button @click="signIn" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Iniciar Sesión" />
+    <h1 class="font-bold"> Regístrate y se parte de esta gran comunidad </h1>
+    <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
+    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
+    <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
+    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
+    <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
+    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Registrate" />
     <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
-      <h3>¿Aún no tienes una cuenta?</h3>
-      <h3 class="font-bold"> Regístrate</h3>
+      <h3>¿Ya tienes una cuenta?</h3>
+      <h3 class="font-bold"> Inicia Sesión</h3>
     </div>
   </div>
 </template>
@@ -15,23 +18,13 @@
 <script setup>
 import {Db} from "@/profile-management/services/api-fake.services.js";
 
-let email = "";
+let completeName = "";
 let password = "";
+let phone = "";
+let email = "";
+let dni = "";
 
-async function signIn() {
-  await Db.prototype.sigIn(email, password).then((response) => {
-    if(response.data.length > 0){
-      alert("Sign In Success");
-    }
-    else {
-      alert("User Not Found");
-    }
-  }).catch(() => {
-    alert("Error");
-  });
-}
-
-/*async function signUp(){
+async function signUp(){
   let user = {
     id: 0,
     email: email,
@@ -49,7 +42,7 @@ async function signIn() {
   }).catch(() => {
     alert("Error");
   });
-}*/
+}
 </script>
 
 <style scoped>
