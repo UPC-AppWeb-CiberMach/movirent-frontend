@@ -1,6 +1,10 @@
-import axios from 'axios';
+import {BaseService} from "@/shared/base.service.js";
+
 export class Db {
-    getAll() {
-        return axios.get('https://api-fake-movirent.vercel.app/movirent/api');
+    sigIn(email,password) {
+        return BaseService.http.get("/users" + "/" + "?email=" + email + "&password=" + password);
+    }
+    signUp(user){
+        return BaseService.http.post("/users",user)
     }
 }
