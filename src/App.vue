@@ -1,6 +1,6 @@
 <script setup>
-import ThePage from "@/response-error/the-response-error.component.vue"
+import TheHeader from "@/layoults/component/the-header.component.vue"
 </script>
 <template>
-  <ThePage/>
+  <TheHeader/>
 </template>
