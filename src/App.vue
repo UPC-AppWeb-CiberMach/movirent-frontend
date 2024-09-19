@@ -1,8 +1,11 @@
 <script setup>
-import TheHeader from "@/layouts/component/the-header.component.vue"
-import TheCarScooters from "@/vehicule-management/components/the-card-scooter.component.vue"
+import MainMovirent from '@/layouts/component/movirent-main.component.vue'
 </script>
+
 <template>
-  <TheHeader/>
-  <TheCarScooters></TheCarScooters>
+  <MainMovirent>
+    <h2>Welcome to the Home Page</h2>
+    <p>This is the main content area.</p>
+  </MainMovirent>
 </template>
+<style scoped></style>

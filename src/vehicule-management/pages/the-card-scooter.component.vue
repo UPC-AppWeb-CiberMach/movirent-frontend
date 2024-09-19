@@ -1,9 +1,11 @@
 <template>
-  <div class="card-container" >
+  <div class="card-container">
     <div class="card">
       <div class="main-card">
-        <h2 class="title">Mis Scooters</h2>
-        <pv-button label="Agregar Nuevo Scooter" icon="pi pi-plus" iconPos="right" class="p-button-primary" />
+        <h2 class="title">{{ $t('movirent.titleCard') }}</h2>
+        <RouterLink to="/Create"> <!-- Usar RouterLink para la navegación -->
+          <pv-button :label="$t('movirent.nuevoScooter')" icon="pi pi-plus" iconPos="right" class="p-button-primary" />
+        </RouterLink>
       </div>
       <div>
         <h3 style="padding-top: 40px">Aun no tienes registros de tus Scooter</h3>
@@ -23,7 +25,7 @@
 .card {
   width: 100%;
   max-width: 800px;
-  min-height: 400px;
+  min-height: 500px;
   padding: 30px;
   background-color: #bfbfbf;
   border-radius: 20px;
