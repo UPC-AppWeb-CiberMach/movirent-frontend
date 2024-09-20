@@ -7,4 +7,12 @@ export class Db {
     signUp(user){
         return BaseService.http.post("/users",user)
     }
+
+    editUser(user){
+        return BaseService.http.put("/users",user)
+    }
+
+    deleteUser(){
+        return BaseService.http.delete("/users")
+    }
 }

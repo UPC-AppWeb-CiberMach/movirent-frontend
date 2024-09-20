@@ -30,26 +30,6 @@ async function signIn() {
     alert("Error");
   });
 }
-
-/*async function signUp(){
-  let user = {
-    id: 0,
-    email: email,
-    password: password,
-    name: "User",
-    lastName: "User",
-    phone: "1234567890",
-    address: "User Address",
-    user_roles_id : 1
-  }
-  await Db.prototype.signUp(user).then((response) => {
-    if(response.status === 201){
-      alert("Sign Up Success");
-    }
-  }).catch(() => {
-    alert("Error");
-  });
-}*/
 </script>
 
 <style scoped>
