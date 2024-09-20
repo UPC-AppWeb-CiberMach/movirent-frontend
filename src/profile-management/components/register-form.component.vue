@@ -1,13 +1,13 @@
 <template>
 
-  <div class="sign-in-container">
+  <div class="sign-up-container">
     <h1 class="font-bold"> Regístrate y se parte de esta gran comunidad </h1>
     <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
     <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
     <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
     <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
     <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
-    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Registrate" />
+    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Registrate" />
     <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
       <h3>¿Ya tienes una cuenta?</h3>
       <h3 class="font-bold"> Inicia Sesión</h3>
@@ -46,7 +46,7 @@ async function signUp(){
 </script>
 
 <style scoped>
-.sign-in-container{
+.sign-up-container{
   display: flex;
   flex-direction: column;
   gap:20px;
@@ -55,12 +55,21 @@ async function signUp(){
   margin-top: 300px;
 }
 
-.sign-in-btn{
+.sign-up-btn{
   background-color: #72D063;
 }
 
-.sign-in-btn:hover{
+.sign-up-btn:hover{
   background-color: #5cbf4b;
 }
 
+@media (max-width: 1024px) {
+  h1{
+    text-align: center;
+  }
+
+  .sign-up-container{
+    margin-top: 100px;
+  }
+}
 </style>
