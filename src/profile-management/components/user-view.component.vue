@@ -1,20 +1,27 @@
 <template>
 
-  <div class="sign-in-container">
-    <h1 class="font-bold"> ¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos! </h1>
-    <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3" style="width: 20vh; height: 20vh; border-radius: 100px"/>
-    <h3 class="font-bold"> Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios </h3>
-    <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
-    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
-    <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
-    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
-    <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
-    <pv-button @click="editUser" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Editar" />
-    <pv-button @click="deleteUser" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Borrar" />
-    <!--<pv-button @click="historial" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Historial" />
+  <div class="user-view-container">
+    <h1 class="font-bold center-title"> ¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos! </h1>
+    <div class="content">
+      <div class="left">
+        <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3 profile-img" />
+        <h3 class="font-bold"> Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios </h3>
+      </div>
+      <div class="right">
+        <div class="inputs">
+          <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
+          <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
+          <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
+          <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
+          <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
+        </div>
 
-    -->
+        <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" />
+        <pv-button @click="deleteUser" class="mt-5 p-4 w-12rem delete-btn" type="submit" label="Borrar" />
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script setup>
@@ -66,21 +73,101 @@ async function deleteUser(){
 </script>
 
 <style scoped>
-.sign-in-container{
+
+.edit-btn{
+  background-color: #72D063;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+.delete-btn{
+  background-color: #FD6C6C;
+  border: none;
+}
+.edit-btn:hover{
+  background-color: #5cbf4b;
+}
+
+.delete-btn:hover{
+  background-color: #FD6C6C;
+}
+
+.user-view-container {
   display: flex;
   flex-direction: column;
-  gap:20px;
-  justify-content: center;
   align-items: center;
-  margin-top: 300px;
+  text-align: center;
+  padding: 20px;
 }
 
-.sign-in-btn{
-  background-color: #72D063;
+.center-title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.sign-in-btn:hover{
-  background-color: #5cbf4b;
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-top: 20px;
+  margin-right: 10%;
+}
+
+.right .inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.left h3 {
+  margin-top: 20px;
+  margin-left: 50%;
+  text-align: center;
+  color: #333;
+  line-height: 1.5;
+}
+.profile-img {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 100px;
+  margin-left: 50%;
+}
+
+.right pv-inputtext {
+  margin-top: 20px;
+}
+
+@media (max-width: 568px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .right {
+    margin-right: 0;
+  }
+  .left h3 {
+    margin-left: 0;
+  }
+
+  .profile-img {
+    margin-left: 0;
+  }
 }
 
 </style>
