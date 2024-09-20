@@ -1,4 +1,4 @@
-import './assets/main.css'
+import "./assets/style.css"
 
 import { createApp } from 'vue'
 import i18n from '@/traslate/i18n.js'

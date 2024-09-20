@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import http from '@/shared/services/http-common.js'
+import http from '@/movirent/shared/services/http-common.js'
 import Name from './movirent-name-scooter.component.vue'
 import Brand from './movirent-brand-scooter.component.vue'
 import Model from './movirent-model-scooter.component.vue'
