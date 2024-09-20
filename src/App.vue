@@ -1,3 +1,4 @@
+
 <script setup>
 import MainMovirent from '@/layouts/component/movirent-main.component.vue'
 </script>
@@ -9,3 +10,4 @@ import MainMovirent from '@/layouts/component/movirent-main.component.vue'
   </MainMovirent>
 </template>
 <style scoped></style>
+
