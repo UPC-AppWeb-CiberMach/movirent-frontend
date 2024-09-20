@@ -1,24 +1,13 @@
-<template>
-  <div id="app">
-    <h1>Preguntas Frecuentes(FAQ)</h1>
-    <FrequentlyQuestionsComponent />
-    <PrivacyPolicy />
-  </div>
-</template>
 
-<script>
-import FrequentlyQuestionsComponent from './the-informations/components/frequently-questions.component.vue';
-import PrivacyPolicy from './the-informations/components/privacy-policy.component.vue';
-
-export default {
-  name: 'App',
-  components: {
-    FrequentlyQuestionsComponent,
-    PrivacyPolicy
-  }
-};
+<script setup>
+import MainMovirent from '@/layouts/component/movirent-main.component.vue'
 </script>
 
-<style>
+<template>
+  <MainMovirent>
+    <h2>Welcome to the Home Page</h2>
+    <p>This is the main content area.</p>
+  </MainMovirent>
+</template>
+<style scoped></style>
 
-</style>

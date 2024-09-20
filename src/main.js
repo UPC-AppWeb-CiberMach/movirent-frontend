@@ -1,10 +1,13 @@
 import './assets/main.css'
 
 import { createApp } from 'vue'
+import i18n from '@/traslate/i18n.js'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import 'primeicons/primeicons.css'
+
+import router from '@/router.js'
 
 import Toolbar from 'primevue/toolbar';
 import Button from "primevue/button";
@@ -47,4 +50,7 @@ app.component('pv-inputtext', InputText);
 app.component('pv-divider', Divider);
 app.component('pv-floatlabel', FloatLabel);
 app.component('pv-password', Password);
+
+app.use(router)
+app.use(i18n)
 app.mount('#app')
