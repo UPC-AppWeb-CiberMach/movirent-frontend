@@ -1,19 +1,22 @@
 <template>
-  <div class="sign-up-container">
-    <h1 class="font-bold"> Regístrate y se parte de esta gran comunidad </h1>
-    <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
-    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
-    <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
-    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
-    <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
-    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Registrate" />
+  <div class="sign-up-container" aria-labelledby="sign-up-heading">
+    <h1 id="sign-up-heading" class="font-bold">Regístrate y sé parte de esta gran comunidad</h1>
+    <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
+    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
+    <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
+    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
+    <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
+
+    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
+
     <div class="flex flex-row align-items-center justify-content-center">
       <h3>¿Ya tienes una cuenta?</h3>
       <div class="sign-in-redirect">
-        <router-link to="/login" class="sign-in-section">Inicia Sesión</router-link>
+        <router-link to="/login" class="sign-in-section" aria-label="Enlace para iniciar sesión">Inicia Sesión</router-link>
       </div>
     </div>
   </div>
+
 </template>
 
 <script setup>
@@ -66,6 +69,10 @@ async function signUp(){
   background-color: #5cbf4b;
 }
 
+.sign-up-container .font-bold{
+  text-align: center;
+
+}
 .flex {
   display: flex;
   flex-direction: row;
