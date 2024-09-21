@@ -26,26 +26,29 @@
 
 <script setup>
 import {Db} from "@/profile-management/services/user.services.js";
+import router from "@/routes/router.js";
 
-let completeName = "";
-let password = "";
-let phone = "";
-let email = "";
-let dni = "";
+let id = JSON.parse(sessionStorage.getItem("user"))?.id;
+let completeName = JSON.parse(sessionStorage.getItem("user"))?.completeName;
+let password = JSON.parse(sessionStorage.getItem("user"))?.password;
+let phone = JSON.parse(sessionStorage.getItem("user"))?.phone;
+let email = JSON.parse(sessionStorage.getItem("user"))?.email;
+let dni = JSON.parse(sessionStorage.getItem("user"))?.dni;
 
 async function editUser(){
   let user = {
-    id: 0,
-    email: this.email,
-    password: this.password,
-    completeName: this.complete_name,
-    phone: this.phone,
-    dni: this.dni,
+    id: id,
+    email: email,
+    password: password,
+    completeName: completeName,
+    phone: phone,
+    dni: dni,
     user_roles_id : 1
   }
-  await Db.prototype.editUser(user).then((response) => {
-    if(response.status === 201){
+  await Db.prototype.editUser(id,user).then((response) => {
+    if(response.status === 200){
       alert("Edit User Success");
+      sessionStorage.setItem("user", JSON.stringify(user));
     }
   }).catch(() => {
     alert("Error");
