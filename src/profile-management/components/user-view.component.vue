@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import {Db} from "@/profile-management/services/api-fake.services.js";
+import {Db} from "@/profile-management/services/user.services.js";
 
 let completeName = "";
 let password = "";
