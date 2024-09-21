@@ -103,17 +103,19 @@
       "start_date": "2024-09-15",
       "end_date": "2024-09-20",
       "price": 300,
-      "time": 5
+      "time": 5,
+      "rating": 5
     },
     {
       "id": "17ab",
       "reservation_id": 2,
-      "client_id": 2,
+      "client_id": 1,
       "scooter_id": 1,
       "start_date": "2024-09-17",
       "end_date": "2024-09-19",
       "price": 200,
-      "time": 2
+      "time": 2,
+      "rating": 5
     }
   ],
   "rates": [
