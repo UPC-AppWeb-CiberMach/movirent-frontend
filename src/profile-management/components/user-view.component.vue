@@ -1,26 +1,28 @@
 <template>
+  <div class="user-view-container" aria-labelledby="user-edit-heading">
+    <h1 id="user-edit-heading" class="font-bold center-title">¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!</h1>
 
-  <div class="user-view-container">
-    <h1 class="font-bold center-title"> ¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos! </h1>
     <div class="content">
       <div class="left">
-        <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3 profile-img" />
-        <h3 class="font-bold"> Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios </h3>
+        <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil"/>
+        <h3 class="font-bold">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
+
         <div class="historial-button">
-          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" />
+          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial"/>
         </div>
       </div>
+
       <div class="right">
         <div class="inputs">
-          <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
-          <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Contraseña" />
-          <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" />
-          <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
-          <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
+          <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
+          <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
+          <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
+          <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
+          <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
         </div>
 
-        <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" />
-        <pv-button @click="deleteUser" class="mt-5 p-4 w-12rem delete-btn" type="submit" label="Borrar" />
+        <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
+        <pv-button @click="deleteUser" class="mt-5 p-4 w-12rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
       </div>
     </div>
   </div>
