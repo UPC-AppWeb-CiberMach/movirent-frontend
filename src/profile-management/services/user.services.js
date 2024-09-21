@@ -8,11 +8,11 @@ export class Db {
         return BaseService.http.post("/users",user)
     }
 
-    editUser(user){
-        return BaseService.http.put("/users",user)
+    editUser(id,user){
+        return BaseService.http.put("/users/" + id,user)
     }
 
-    deleteUser(){
-        return BaseService.http.delete("/users")
+    deleteUser(id){
+        return BaseService.http.delete("/users/" + id)
     }
 }
