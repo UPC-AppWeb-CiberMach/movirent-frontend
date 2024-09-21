@@ -56,9 +56,27 @@
       "id": "f82c8489-eece-474f-bd4a-77cc12b455cd",
       "email": "m@m",
       "password": "m",
-      "completeName": "m",
+      "completeName": "mm",
       "phone": "1",
       "dni": "1",
+      "user_roles_id": 1
+    },
+    {
+      "id": "c5e59521-264d-4bf0-8050-596c9e435d38",
+      "email": "MesSobble@gmail.com",
+      "password": "Sobble08",
+      "completeName": "MesSobble",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "8420a162-5402-4a22-a5f1-00e6ba4dfa3d",
+      "email": "a@gmail.com",
+      "password": "aaaaaaaa",
+      "completeName": "aaaaaaaa",
+      "phone": "999999999",
+      "dni": "00000000",
       "user_roles_id": 1
     }
   ],
