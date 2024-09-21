@@ -1,21 +1,20 @@
 <template>
-  <div class="sign-up-container" aria-labelledby="sign-up-heading">
-    <h1 id="sign-up-heading" class="font-bold">Regístrate y sé parte de esta gran comunidad</h1>
-    <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
-    <span v-if="$v.completeName.$error" class="error-message">Nombre completo es requerido</span>
-    <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
-    <span v-if="$v.password.$error" class="error-message">Contraseña de 8 caracteres como minimo es requerida</span>
-    <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
-    <span v-if="$v.phone.$error" class="error-message">Telefono de 8 digitos es requerido</span>
-    <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
-    <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
-    <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
-    <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
-    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" class="w-15rem lg:w-25rem p-3" aria-label="Rol de Usuario"/>
-    <span v-if="$v.user_role_id.$error" class="error-message">Rol de Usuario es requerido</span>
-    <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="URL de la foto"/>
-    <span v-if="$v.photo.$error" class="error-message">URL de la foto es requerido</span>
-
+  <div class="sign-up-container" aria-label="sign-up-heading">
+    <h1 id="sign-up-heading" class="font-bold" aria-label="Título de registro">Regístrate y sé parte de esta gran comunidad</h1>
+    <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Campo de nombre completo"/>
+    <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
+    <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
+    <span v-if="$v.password.$error" class="error-message" aria-label="Mensaje de error para la contraseña">Contraseña de 8 caracteres como minimo es requerida</span>
+    <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Campo de número de celular"/>
+    <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono de 8 digitos es requerido</span>
+    <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Campo de correo electrónico"/>
+    <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
+    <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Campo de DNI"/>
+    <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
+    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" class="w-15rem lg:w-25rem p-3" aria-label="Campo de rol de usuario"/>
+    <span v-if="$v.user_role_id.$error" class="error-message" aria-label="Mensaje de error para el rol de usuario">Rol de Usuario es requerido</span>
+    <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="Campo de URL de la foto"/>
+    <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
     <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
 
     <div class="flex flex-row align-items-center justify-content-center">

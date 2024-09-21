@@ -1,31 +1,31 @@
 <template>
-  <div class="user-view-container" aria-labelledby="user-edit-heading">
-    <h1 id="user-edit-heading" class="font-bold center-title">¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!</h1>
+  <div class="user-view-container" aria-label="Contenedor de vista de usuario">
+    <h1 id="user-edit-heading" class="font-bold center-title" aria-label="Título de edición de usuario">¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!</h1>
 
-    <div class="content">
-      <div class="left">
-        <img :src="photo" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil"/>
-        <h3 class="font-bold">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
+    <div class="content" aria-label="Contenido de usuario">
+      <div class="left" aria-label="Sección izquierda de contenido de usuario">
+        <img :src="photo" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
+        <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
 
-        <div class="historial-button">
-          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial"/>
+        <div class="historial-button" aria-label="Botón de historial">
+          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
         </div>
       </div>
 
-      <div class="right">
-        <div class="inputs">
-          <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
-          <span v-if="$v.completeName.$error" class="error-message">Nombre completo es requerido</span>
-          <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
-          <span v-if="$v.password.$error" class="error-message">Contraseña es requerida</span>
-          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
-          <span v-if="$v.phone.$error" class="error-message">Telefono es requerido</span>
-          <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
-          <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
-          <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
-          <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
-          <pv-inputtext v-model="photo" :class="{ 'is-invalid': $v.photo.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="URL de la foto"/>
-          <span v-if="$v.photo.$error" class="error-message">URL de la foto es requerido</span>
+      <div class="right" aria-label="Sección derecha de contenido de usuario">
+        <div class="inputs" aria-label="Entradas de datos del usuario">
+          <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Entrada de nombre completo del usuario"/>
+          <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
+          <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Entrada de contraseña del usuario"/>
+          <span v-if="$v.password.$error" class="error-message" aria-label="Mensaje de error para la contraseña">Contraseña es requerida</span>
+          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Entrada de número de celular del usuario"/>
+          <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono es requerido</span>
+          <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Entrada de correo electrónico del usuario"/>
+          <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
+          <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Entrada de DNI del usuario"/>
+          <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
+          <pv-inputtext v-model="photo" :class="{ 'is-invalid': $v.photo.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="Entrada de URL de la foto del usuario"/>
+          <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
         </div>
 
         <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
