@@ -44,12 +44,11 @@
     },
     {
       "id": "2zZuJY6",
-      "email": "Messo@gmail.com",
+      "email": "Messo2@gmail.com",
       "password": "Sobble08",
-      "name": "User",
-      "lastName": "User",
+      "completeName": "MesSobble",
       "phone": "1234567890",
-      "address": "User Address",
+      "dni": "00000000",
       "user_roles_id": 1
     },
     {
@@ -57,6 +56,24 @@
       "email": "m@m",
       "password": "m",
       "completeName": "mm",
+      "phone": "1",
+      "dni": "1",
+      "user_roles_id": 1
+    },
+    {
+      "id": "3b6295af-2624-4913-ae6e-8486941532bd",
+      "email": "",
+      "password": "",
+      "completeName": "",
+      "phone": "",
+      "dni": "",
+      "user_roles_id": 1
+    },
+    {
+      "id": "b0d682f1-27be-46b9-9afa-02f003515d06",
+      "email": "a@",
+      "password": "aaaaaaaa",
+      "completeName": "aaaaaaaa",
       "phone": "1",
       "dni": "1",
       "user_roles_id": 1
@@ -75,6 +92,15 @@
       "email": "a@gmail.com",
       "password": "aaaaaaaa",
       "completeName": "aaaaaaaa",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "69b51759-f01e-4156-bb47-5758b15742d0",
+      "email": "am@gmail.com",
+      "password": "adrianmesso",
+      "completeName": "adrian",
       "phone": "999999999",
       "dni": "00000000",
       "user_roles_id": 1

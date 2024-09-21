@@ -14,11 +14,11 @@
 
       <div class="right">
         <div class="inputs">
-          <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
-          <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
-          <pv-inputtext v-model="phone" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
-          <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
-          <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
+          <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
+          <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
+          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
+          <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
+          <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
         </div>
 
         <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
@@ -32,32 +32,52 @@
 <script setup>
 import {Db} from "@/profile-management/services/user.services.js";
 import router from "@/routes/router.js";
+import { ref, reactive } from 'vue'
+import { useVuelidate } from '@vuelidate/core'
+import { required, minLength, email as emailValidator } from '@vuelidate/validators'
 
 let id = JSON.parse(sessionStorage.getItem("user"))?.id;
-let completeName = JSON.parse(sessionStorage.getItem("user"))?.completeName;
-let password = JSON.parse(sessionStorage.getItem("user"))?.password;
-let phone = JSON.parse(sessionStorage.getItem("user"))?.phone;
-let email = JSON.parse(sessionStorage.getItem("user"))?.email;
-let dni = JSON.parse(sessionStorage.getItem("user"))?.dni;
+let completeName = ref(JSON.parse(sessionStorage.getItem("user"))?.completeName);
+let password = ref(JSON.parse(sessionStorage.getItem("user"))?.password);
+let phone = ref(JSON.parse(sessionStorage.getItem("user"))?.phone);
+let email = ref(JSON.parse(sessionStorage.getItem("user"))?.email);
+let dni = ref(JSON.parse(sessionStorage.getItem("user"))?.dni);
+
+const rules = reactive({
+  completeName: { required },
+  password: { required, minLength: minLength(8) },
+  email: { required, emailValidator },
+  phone: { required, minLength: minLength(9), type: Number },
+  dni: { required, minLength: minLength(8) }
+})
+
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni })
 
 async function editUser(){
-  let user = {
-    id: id,
-    email: email,
-    password: password,
-    completeName: completeName,
-    phone: phone,
-    dni: dni,
-    user_roles_id : 1
+  $v.value.$touch()
+  if ($v.value.$error) {
+    console.log("Error")
   }
-  await Db.prototype.editUser(id,user).then((response) => {
-    if(response.status === 200){
-      alert("Edit User Success");
-      sessionStorage.setItem("user", JSON.stringify(user));
+  else {
+
+    let user = {
+      id: id,
+      email: email.value,
+      password: password.value,
+      completeName: completeName.value,
+      phone: phone.value,
+      dni: dni.value,
+      user_roles_id: 1
     }
-  }).catch(() => {
-    alert("Error");
-  });
+    await Db.prototype.editUser(id,user).then((response) => {
+      if(response.status === 200){
+        alert("Edit User Success");
+        sessionStorage.setItem("user", JSON.stringify(user));
+      }
+    }).catch(() => {
+      alert("Error");
+    });
+  }
 }
 
 async function deleteUser(){
@@ -78,6 +98,10 @@ function verHistorial(){
 </script>
 
 <style scoped>
+
+.is-invalid {
+  border-color: red;
+}
 
 .edit-btn{
   background-color: #72D063;
