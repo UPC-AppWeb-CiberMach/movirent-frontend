@@ -1,7 +1,9 @@
 <template>
   <div class="card">
-    <p class="text-2xl w-10 text-black-alpha-80 font-medium">History of rented scooters</p>
-    <pv-dataview :value="reservations" paginator :rows="5">
+    <pv-dataview :value="reservations" paginator :rows="5" >
+      <template #header>
+        <p class="text-2xl w-10 font-medium">History of rented scooters</p>
+      </template>
       <template #list="slotProps">
         <div class="flex flex-column">
           <div v-for="(item, index) in slotProps.items" :key="index">
@@ -25,8 +27,8 @@
                 <div class="flex flex-column md:align-items-end gap-8">
                   <span class="text-xl font-semibold">{{ item.time }} hrs</span>
                   <div class="flex flex-row-reverse md:flex-row gap-2">
-                    <pv-button label="Reservar de nuevo" outlined></pv-button>
-                    <pv-button label="Ver detalles" :disabled="item.inventoryStatus === 'OUTOFSTOCK'" class="flex-auto md:flex-initial whitespace-nowrap"></pv-button>
+                    <pv-button label="Delete" outlined></pv-button>
+                    <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap"></pv-button>
                   </div>
                 </div>
               </div>
