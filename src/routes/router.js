@@ -6,7 +6,7 @@ const routes = [
     { path: '/register', component: () => import('../profile-management/components/register-form.component.vue') },
     { path: '/login', component: () => import('../profile-management/components/login-form.component.vue') },
     { path: '/profile', component: () => import('../profile-management/components/user-view.component.vue') },
-    { path: '/historial', component: () => import('../profile-management/components/historial-test.vue') },
+    {path: '/history', component: () => import('../profile-management/components/reservation-history.component.vue')}
 ]
 
 const router = createRouter({
