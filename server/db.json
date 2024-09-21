@@ -52,30 +52,12 @@
       "user_roles_id": 1
     },
     {
-      "id": "f82c8489-eece-474f-bd4a-77cc12b455cd",
-      "email": "m@m",
-      "password": "m",
-      "completeName": "mm",
-      "phone": "1",
-      "dni": "1",
-      "user_roles_id": 1
-    },
-    {
       "id": "3b6295af-2624-4913-ae6e-8486941532bd",
       "email": "",
       "password": "",
       "completeName": "",
       "phone": "",
       "dni": "",
-      "user_roles_id": 1
-    },
-    {
-      "id": "b0d682f1-27be-46b9-9afa-02f003515d06",
-      "email": "a@",
-      "password": "aaaaaaaa",
-      "completeName": "aaaaaaaa",
-      "phone": "1",
-      "dni": "1",
       "user_roles_id": 1
     },
     {
@@ -124,13 +106,13 @@
       "user_roles_id": 1
     },
     {
-      "id": "b19b8e2d-9c2b-45af-a8f8-530062714e04",
-      "email": "Meiko@gmail.com",
-      "password": "MeikoMeiko",
-      "completeName": "Meiko",
+      "id": "9ff682b6-54a2-4289-be3e-704d89cf9d6c",
+      "email": "toge@gmail.com",
+      "password": "12345678",
+      "completeName": "Toge",
       "phone": "999999999",
-      "dni": "00000000",
-      "user_roles_id": "2"
+      "dni": "99999999",
+      "photo": "https://i.pinimg.com/736x/df/81/c9/df81c91f15e8280e24af32e316404b2e.jpg"
     }
   ],
   "user_roles": [

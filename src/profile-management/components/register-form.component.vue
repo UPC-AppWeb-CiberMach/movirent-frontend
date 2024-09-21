@@ -13,6 +13,9 @@
     <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
     <pv-inputtext v-model="user_role_id" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Rol de Usuario (1 para Client, 2 para Owner)" aria-label="Rol de Usuario"/>
     <span v-if="$v.user_role_id.$error" class="error-message">Rol de Usuario es requerido</span>
+    <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="URL de la foto"/>
+    <span v-if="$v.photo.$error" class="error-message">URL de la foto es requerido</span>
+
     <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
 
     <div class="flex flex-row align-items-center justify-content-center">
@@ -40,6 +43,7 @@ let phone = ref('')
 let email = ref('')
 let dni = ref('')
 let user_role_id = ref('')
+let photo = ref('')
 
 const rules = reactive({
   completeName: { required },
@@ -47,10 +51,11 @@ const rules = reactive({
   email: { required, emailValidator },
   phone: { required, minLength: minLength(9), type: Number },
   dni: { required, minLength: minLength(8) },
-  user_role_id: { required, minLength: minLength(1), maxLength: minLength(1), type: Number }
+  user_role_id: { required, minLength: minLength(1), maxLength: minLength(1), type: Number },
+  photo: { required }
 })
 
-const $v = useVuelidate(rules, { completeName, password, email, phone, dni, user_role_id })
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni, user_role_id, photo })
 
 async function signUp() {
   $v.value.$touch()
@@ -64,7 +69,8 @@ async function signUp() {
       completeName: completeName.value,
       phone: phone.value,
       dni: dni.value,
-      user_roles_id: user_role_id.value
+      user_roles_id: user_role_id.value,
+      photo: photo.value
     }
     await Db.prototype.signUp(user).then((response) => {
       if (response.status === 201) {

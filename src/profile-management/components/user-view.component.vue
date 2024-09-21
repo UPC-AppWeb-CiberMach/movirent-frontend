@@ -4,7 +4,7 @@
 
     <div class="content">
       <div class="left">
-        <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil"/>
+        <img :src="photo" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil"/>
         <h3 class="font-bold">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
 
         <div class="historial-button">
@@ -24,6 +24,8 @@
           <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
           <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
           <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
+          <pv-inputtext v-model="photo" :class="{ 'is-invalid': $v.photo.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="URL de la foto"/>
+          <span v-if="$v.photo.$error" class="error-message">URL de la foto es requerido</span>
         </div>
 
         <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
@@ -47,54 +49,61 @@ let password = ref(JSON.parse(sessionStorage.getItem("user"))?.password);
 let phone = ref(JSON.parse(sessionStorage.getItem("user"))?.phone);
 let email = ref(JSON.parse(sessionStorage.getItem("user"))?.email);
 let dni = ref(JSON.parse(sessionStorage.getItem("user"))?.dni);
+let photo = ref(JSON.parse(sessionStorage.getItem("user"))?.photo);
+
 
 const rules = reactive({
   completeName: { required },
   password: { required, minLength: minLength(8) },
   email: { required, emailValidator },
   phone: { required, minLength: minLength(9), type: Number },
-  dni: { required, minLength: minLength(8) }
+  dni: { required, minLength: minLength(8) },
+  photo: { required }
 })
 
-const $v = useVuelidate(rules, { completeName, password, email, phone, dni })
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni, photo})
 
 async function editUser(){
-  $v.value.$touch()
-  if ($v.value.$error) {
-    return -1;
-  }
-  else {
+  if (confirm('¿Estas segur@ de editar tu cuenta? Puedes cambiarla cuantas veces quieras')) {
+    $v.value.$touch()
+    if ($v.value.$error) {
+      return -1;
+    } else {
 
-    let user = {
-      id: id,
-      email: email.value,
-      password: password.value,
-      completeName: completeName.value,
-      phone: phone.value,
-      dni: dni.value,
-      user_roles_id: 1
-    }
-    await Db.prototype.editUser(id,user).then((response) => {
-      if(response.status === 200){
-        alert("Edit User Success");
-        sessionStorage.setItem("user", JSON.stringify(user));
+      let user = {
+        id: id,
+        email: email.value,
+        password: password.value,
+        completeName: completeName.value,
+        phone: phone.value,
+        dni: dni.value,
+        photo: photo.value
       }
-    }).catch(() => {
-      alert("Error");
-    });
+      await Db.prototype.editUser(id, user).then((response) => {
+        if (response.status === 200) {
+          alert("Edit User Success");
+          sessionStorage.setItem("user", JSON.stringify(user));
+        }
+      }).catch(() => {
+        alert("Error");
+      });
+    }
   }
 }
 
 async function deleteUser(){
-  await Db.prototype.deleteUser(id).then((response) => {
-    if(response.status === 200){
-      alert("Delete User Success");
-      sessionStorage.removeItem("user")
-      router.push("/")
-    }
-  }).catch(() => {
-    alert("Error");
-  });
+  if (confirm('¿Estas segur@ de eliminar tu cuenta? Tus datos no podrán se recuperados')) {
+    await Db.prototype.deleteUser(id).then((response) => {
+      if (response.status === 200) {
+        alert("Delete User Success");
+        sessionStorage.removeItem("user")
+        router.push("/register")
+      }
+    }).catch(() => {
+      alert("Error");
+    });
+
+  }
 }
 
 function verHistorial(){
