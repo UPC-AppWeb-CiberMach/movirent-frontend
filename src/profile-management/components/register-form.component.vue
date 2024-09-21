@@ -2,11 +2,17 @@
   <div class="sign-up-container" aria-labelledby="sign-up-heading">
     <h1 id="sign-up-heading" class="font-bold">Regístrate y sé parte de esta gran comunidad</h1>
     <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
+    <span v-if="$v.completeName.$error" class="error-message">Nombre completo es requerido</span>
     <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
+    <span v-if="$v.password.$error" class="error-message">Contraseña de 8 caracteres como minimo es requerida</span>
     <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
+    <span v-if="$v.phone.$error" class="error-message">Telefono de 8 digitos es requerido</span>
     <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
+    <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
     <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
-
+    <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
+    <pv-inputtext v-model="user_role_id" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Rol de Usuario (1 para Client, 2 para Owner)" aria-label="Rol de Usuario"/>
+    <span v-if="$v.user_role_id.$error" class="error-message">Rol de Usuario es requerido</span>
     <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
 
     <div class="flex flex-row align-items-center justify-content-center">
@@ -33,24 +39,24 @@ let password = ref('')
 let phone = ref('')
 let email = ref('')
 let dni = ref('')
+let user_role_id = ref('')
 
 const rules = reactive({
   completeName: { required },
   password: { required, minLength: minLength(8) },
   email: { required, emailValidator },
   phone: { required, minLength: minLength(9), type: Number },
-  dni: { required, minLength: minLength(8) }
+  dni: { required, minLength: minLength(8) },
+  user_role_id: { required, minLength: minLength(1), maxLength: minLength(1), type: Number }
 })
 
-const $v = useVuelidate(rules, { completeName, password, email, phone, dni })
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni, user_role_id })
 
-async function signUp(){
+async function signUp() {
   $v.value.$touch()
   if ($v.value.$error) {
-    console.log("Error")
-  }
-  else {
-
+    return -1;
+  } else {
     let user = {
       id: id,
       email: email.value,
@@ -58,7 +64,7 @@ async function signUp(){
       completeName: completeName.value,
       phone: phone.value,
       dni: dni.value,
-      user_roles_id: 1
+      user_roles_id: user_role_id.value
     }
     await Db.prototype.signUp(user).then((response) => {
       if (response.status === 201) {
@@ -76,6 +82,11 @@ async function signUp(){
 .is-invalid {
   border-color: red;
 }
+.error-message{
+  color: red;
+  font-size: small;
+}
+
 .sign-up-container{
   display: flex;
   flex-direction: column;

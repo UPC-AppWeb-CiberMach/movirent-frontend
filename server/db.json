@@ -104,6 +104,33 @@
       "phone": "999999999",
       "dni": "00000000",
       "user_roles_id": 1
+    },
+    {
+      "id": "00c8dcfe-3ab3-437b-9524-ced574cb3b83",
+      "email": "",
+      "password": "",
+      "completeName": "",
+      "phone": "",
+      "dni": "",
+      "user_roles_id": 1
+    },
+    {
+      "id": "3b2977f1-acd9-4f6a-ab77-4cbc6538c491",
+      "email": "Alexandria@gmail.com",
+      "password": "Alexandria",
+      "completeName": "Alexandria",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "b19b8e2d-9c2b-45af-a8f8-530062714e04",
+      "email": "Meiko@gmail.com",
+      "password": "MeikoMeiko",
+      "completeName": "Meiko",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": "2"
     }
   ],
   "user_roles": [

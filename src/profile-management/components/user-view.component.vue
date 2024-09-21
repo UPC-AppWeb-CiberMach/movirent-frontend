@@ -15,10 +15,15 @@
       <div class="right">
         <div class="inputs">
           <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Nombre Completo"/>
+          <span v-if="$v.completeName.$error" class="error-message">Nombre completo es requerido</span>
           <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Contraseña"/>
+          <span v-if="$v.password.$error" class="error-message">Contraseña es requerida</span>
           <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Celular" aria-label="Número de Celular"/>
+          <span v-if="$v.phone.$error" class="error-message">Telefono es requerido</span>
           <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" aria-label="Correo Electrónico"/>
+          <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
           <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
+          <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
         </div>
 
         <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
@@ -56,7 +61,7 @@ const $v = useVuelidate(rules, { completeName, password, email, phone, dni })
 async function editUser(){
   $v.value.$touch()
   if ($v.value.$error) {
-    console.log("Error")
+    return -1;
   }
   else {
 
@@ -102,7 +107,10 @@ function verHistorial(){
 .is-invalid {
   border-color: red;
 }
-
+.error-message{
+  color: red;
+  font-size: small;
+}
 .edit-btn{
   background-color: #72D063;
   margin-top: 20px;
