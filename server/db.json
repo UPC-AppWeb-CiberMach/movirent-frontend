@@ -33,7 +33,7 @@
       "user_roles_id": 1
     },
     {
-      "id": 0,
+      "id": 7667,
       "email": "asasasa",
       "password": "sasasa",
       "name": "User",
@@ -96,20 +96,24 @@
   ],
   "reservations": [
     {
+      "id": "4794",
       "reservation_id": 1,
       "client_id": 1,
       "scooter_id": 2,
       "start_date": "2024-09-15",
       "end_date": "2024-09-20",
-      "id": "4794"
+      "price": 300,
+      "time": 5
     },
     {
+      "id": "17ab",
       "reservation_id": 2,
       "client_id": 2,
       "scooter_id": 1,
       "start_date": "2024-09-17",
       "end_date": "2024-09-19",
-      "id": "17ab"
+      "price": 200,
+      "time": 2
     }
   ],
   "rates": [
