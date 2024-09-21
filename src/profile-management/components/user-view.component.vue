@@ -6,6 +6,9 @@
       <div class="left">
         <img src="https://cdn.pixabay.com/photo/2022/05/19/14/59/woman-7207561_1280.jpg" class="w-15rem lg:w-25rem p-3 profile-img" />
         <h3 class="font-bold"> Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios </h3>
+        <div class="historial-button">
+          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" />
+        </div>
       </div>
       <div class="right">
         <div class="inputs">
@@ -66,6 +69,10 @@ async function deleteUser(){
     alert("Error");
   });
 }
+
+function verHistorial(){
+  router.push("/historial")
+}
 </script>
 
 <style scoped>
@@ -113,7 +120,10 @@ async function deleteUser(){
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+}
+
+.historial-button{
+
 }
 
 .right {
@@ -165,5 +175,9 @@ async function deleteUser(){
     margin-left: 0;
   }
 }
-
+@media (width>1024px){
+  .historial-button{
+    margin-left: 420px;
+  }
+}
 </style>

@@ -5,9 +5,11 @@
     <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Email" />
     <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" />
     <pv-button @click="signIn" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Iniciar Sesión" />
-    <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
+    <div class="flex flex-row align-items-center justify-content-center">
       <h3>¿Aún no tienes una cuenta?</h3>
-      <router-link to="/register" class="sign-up-container">Regístrate</router-link>
+      <div class="register-redirect">
+        <router-link to="/register" class="sign-up-section">Regístrate</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -43,6 +45,7 @@ async function signIn() {
   justify-content: center;
   align-items: center;
   margin-top: 300px;
+  text-decoration: none;
 }
 
 .sign-in-btn{
@@ -53,4 +56,22 @@ async function signIn() {
   background-color: #5cbf4b;
 }
 
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-redirect {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.sign-up-section{
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: medium;
+  color: black;
+  margin-top: 10px;
+}
 </style>

@@ -1,5 +1,4 @@
 <template>
-
   <div class="sign-up-container">
     <h1 class="font-bold"> Regístrate y se parte de esta gran comunidad </h1>
     <pv-inputtext v-model="completeName" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Complete Name" />
@@ -8,9 +7,11 @@
     <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Correo" />
     <pv-inputtext v-model="dni" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" />
     <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Registrate" />
-    <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
+    <div class="flex flex-row align-items-center justify-content-center">
       <h3>¿Ya tienes una cuenta?</h3>
-      <router-link to="/login" class="sign-in-section">Inicia Sesión</router-link>
+      <div class="sign-in-redirect">
+        <router-link to="/login" class="sign-in-section">Inicia Sesión</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -65,13 +66,21 @@ async function signUp(){
   background-color: #5cbf4b;
 }
 
-@media (max-width: 1024px) {
-  h1{
-    text-align: center;
-  }
-
-  .sign-up-container{
-    margin-top: 100px;
-  }
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.sign-in-section {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: medium;
+  color: black;
+  margin-top: 10px;
+}
+.sign-in-redirect {
+  margin-left: 10px;
+  margin-top: 5px;
 }
 </style>

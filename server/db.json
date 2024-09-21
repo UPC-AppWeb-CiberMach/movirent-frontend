@@ -51,6 +51,15 @@
       "phone": "1234567890",
       "address": "User Address",
       "user_roles_id": 1
+    },
+    {
+      "id": "f82c8489-eece-474f-bd4a-77cc12b455cd",
+      "email": "m@m",
+      "password": "m",
+      "completeName": "m",
+      "phone": "1",
+      "dni": "1",
+      "user_roles_id": 1
     }
   ],
   "user_roles": [
