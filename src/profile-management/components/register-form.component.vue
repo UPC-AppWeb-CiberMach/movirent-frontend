@@ -10,14 +10,16 @@
     <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Registrate" />
     <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
       <h3>¿Ya tienes una cuenta?</h3>
-      <h3 class="font-bold"> Inicia Sesión</h3>
+      <router-link to="/login" class="sign-in-section">Inicia Sesión</router-link>
     </div>
   </div>
 </template>
 
 <script setup>
 import {Db} from "@/profile-management/services/user.services.js";
-
+import { v4 as uuidv4 } from 'uuid';
+import router from "@/routes/router.js";
+let id = uuidv4();
 let completeName = "";
 let password = "";
 let phone = "";
@@ -26,18 +28,18 @@ let dni = "";
 
 async function signUp(){
   let user = {
-    id: 0,
+    id: id,
     email: email,
     password: password,
-    name: "User",
-    lastName: "User",
-    phone: "1234567890",
-    address: "User Address",
+    completeName: completeName,
+    phone: phone,
+    dni : dni,
     user_roles_id : 1
   }
   await Db.prototype.signUp(user).then((response) => {
     if(response.status === 201){
       alert("Sign Up Success");
+      router.push("/login")
     }
   }).catch(() => {
     alert("Error");
