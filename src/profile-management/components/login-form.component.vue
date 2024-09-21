@@ -13,13 +13,13 @@
 </template>
 
 <script setup>
-import {Db} from "@/profile-management/services/api-fake.services.js";
+import {Db} from "@/profile-management/services/user.services.js";
 
 let email = "";
 let password = "";
 
 async function signIn() {
-  await Db.prototype.sigIn(email, password).then((response) => {
+  await Db.prototype.signIn(email, password).then((response) => {
     if(response.data.length > 0){
       alert("Sign In Success");
     }
