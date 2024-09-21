@@ -7,13 +7,14 @@
     <pv-button @click="signIn" class="mt-5 p-4 w-12rem sign-in-btn" type="submit" label="Iniciar Sesión" />
     <div class="flex flex-column lg:flex-row gap-2 mt-5 justify-content-center align-items-center">
       <h3>¿Aún no tienes una cuenta?</h3>
-      <h3 class="font-bold"> Regístrate</h3>
+      <router-link to="/register" class="sign-up-container">Regístrate</router-link>
     </div>
   </div>
 </template>
 
 <script setup>
 import {Db} from "@/profile-management/services/user.services.js";
+import router from "@/routes/router.js";
 
 let email = "";
 let password = "";
@@ -22,6 +23,8 @@ async function signIn() {
   await Db.prototype.signIn(email, password).then((response) => {
     if(response.data.length > 0){
       alert("Sign In Success");
+      sessionStorage.setItem("user", JSON.stringify(response.data[0]));
+      router.push("/profile")
     }
     else {
       alert("User Not Found");
