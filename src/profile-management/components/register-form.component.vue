@@ -11,7 +11,7 @@
     <span v-if="$v.email.$error" class="error-message">Email en formato 'email@gmail.com' es requerido</span>
     <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="DNI" aria-label="Documento de Identidad"/>
     <span v-if="$v.dni.$error" class="error-message">DNI es requerido</span>
-    <pv-inputtext v-model="user_role_id" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Rol de Usuario (1 para Client, 2 para Owner)" aria-label="Rol de Usuario"/>
+    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" class="w-15rem lg:w-25rem p-3" aria-label="Rol de Usuario"/>
     <span v-if="$v.user_role_id.$error" class="error-message">Rol de Usuario es requerido</span>
     <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="URL de la foto"/>
     <span v-if="$v.photo.$error" class="error-message">URL de la foto es requerido</span>
@@ -35,6 +35,7 @@ import router from "@/routes/router.js";
 import { ref, reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'
 import { required, minLength, email as emailValidator } from '@vuelidate/validators'
+import Dropdown from 'primevue/dropdown';
 
 let id = uuidv4();
 let completeName = ref('')
@@ -44,6 +45,10 @@ let email = ref('')
 let dni = ref('')
 let user_role_id = ref('')
 let photo = ref('')
+let roles = [
+  {name: 'Owner', id: 1},
+  {name: 'Client', id: 2}
+]
 
 const rules = reactive({
   completeName: { required },
@@ -51,7 +56,7 @@ const rules = reactive({
   email: { required, emailValidator },
   phone: { required, minLength: minLength(9), type: Number },
   dni: { required, minLength: minLength(8) },
-  user_role_id: { required, minLength: minLength(1), maxLength: minLength(1), type: Number },
+  user_role_id: { required },
   photo: { required }
 })
 
@@ -131,4 +136,5 @@ async function signUp() {
   margin-left: 10px;
   margin-top: 5px;
 }
+
 </style>

@@ -23,6 +23,7 @@ import Divider from 'primevue/divider';
 import FloatLabel from 'primevue/floatlabel';
 import Password from 'primevue/password';
 import router from "@/routes/router.js";
+import Dropdown from "primevue/dropdown";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -48,4 +49,5 @@ app.component('pv-inputtext', InputText);
 app.component('pv-divider', Divider);
 app.component('pv-floatlabel', FloatLabel);
 app.component('pv-password', Password);
+app.component('pv-dropdown', Dropdown);
 app.mount('#app')
