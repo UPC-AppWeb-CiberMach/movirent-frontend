@@ -56,18 +56,11 @@ async function editUser(){
 }
 
 async function deleteUser(){
-  let user = {
-    id: 0,
-    email: this.email,
-    password: this.password,
-    completeName: this.completeName,
-    phone: this.phone,
-    dni: this.dni,
-    user_roles_id : 1
-  }
-  await Db.prototype.deleteUser(user).then((response) => {
-    if(response.status === 201){
+  await Db.prototype.deleteUser(id).then((response) => {
+    if(response.status === 200){
       alert("Delete User Success");
+      sessionStorage.removeItem("user")
+      router.push("/")
     }
   }).catch(() => {
     alert("Error");
