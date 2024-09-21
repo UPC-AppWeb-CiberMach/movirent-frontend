@@ -1,23 +1,41 @@
-
 <template>
-  <div class="card flex justify-center">
-    <pv-floatlabel>
-      <pv-inputtext class="pv-input" id="username" v-model="value" />
-      <label for="username"> {{ $t('movirent.nameScooter') }} </label>
-    </pv-floatlabel>
+  <div class="p-field">
+    <label for="title" class="form-label">Nombre </label>
+    <pv-input-text id="title" :value="modelValue" @input="updateValue" class="form-input pv-text" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+const props = defineProps({
+  modelValue: {
+    type: String,
+    required: true
+  }
+})
 
-const value = ref(null);
+const emit = defineEmits(['update:modelValue'])
+
+const updateValue = (event) => {
+  emit('update:modelValue', event.target.value)
+}
 </script>
 
 <style scoped>
-.pv-input{
+.p-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+}
+.pv-text{
   background-color: white;
-  border: 1px solid #82cc79;
-  color: #3e3b3b;
+  color: black;
 }
 </style>

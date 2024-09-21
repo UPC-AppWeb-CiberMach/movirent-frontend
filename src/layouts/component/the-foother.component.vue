@@ -15,18 +15,20 @@
         <RouterLink to="/Privacy">
           <pv-button label="Políticas y privacidad" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
-        <br />
-        <RouterLink to="/Question">
-          <pv-button label="Ayuda" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
-        </RouterLink>
       </nav>
     </div>
 
     <div class="p-col pv-col">
       <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">Nuestras redes sociales</h3> <br/>
-      <pv-button label="Instagram" icon="pi pi-instagram" size="small" class="pv-btn" style="margin-top: 15px" /> <br/>
-      <pv-button label="Facebook" icon="pi pi-facebook" size="small" class="pv-btn" style="margin-top: 15px" /> <br/>
-      <pv-button label="Twitter" icon="pi pi-twitter" size="small" class="pv-btn" style="margin-top: 15px" />
+      <a href="https://www.instagram.com" target="_blank">
+        <pv-button label="Instagram" icon="pi pi-instagram" size="small" class="pv-btn" style="margin-top: 15px" />
+      </a> <br/>
+      <a href="https://www.facebook.com" target="_blank">
+        <pv-button label="Facebook" icon="pi pi-facebook" size="small" class="pv-btn" style="margin-top: 15px" />
+      </a> <br/>
+      <a href="https://www.twitter.com" target="_blank">
+        <pv-button label="Twitter" icon="pi pi-twitter" size="small" class="pv-btn" style="margin-top: 15px" />
+      </a>
     </div>
 
     <div class="p-col pv-col">

@@ -1,22 +1,61 @@
 <template>
-  <div class="card flex justify-center">
-    <pv-floatlabel>
-      <pv-inputtext class="pv-input" id="username" v-model="value" />
-      <label for="username"> {{ $t('movirent.ModelScooter') }} </label>
-    </pv-floatlabel>
+  <div class="p-field">
+    <label for="modelo" class="form-label">Selecciona un Modelo</label>
+    <pv-select
+        id="modelo"
+        :model-value="modelValue"
+        :options="scooterModels"
+        optionLabel="label"
+        optionValue="value"
+        class="form-input pv-text"
+        placeholder="Selecciona un Modelo"
+        @update:model-value="updateValue"
+    />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
-const value = ref(null);
+const props = defineProps({
+  modelValue: {
+    type: [String, null],
+    required: true
+  }
+});
+
+const emit = defineEmits(['update:model-value']);
+
+// Define los modelos de scooters
+const scooterModels = [
+  { label: 'Modelo A', value: 'Modelo A' },
+  { label: 'Modelo B', value: 'Modelo B' },
+  { label: 'Modelo C', value: 'Modelo C' },
+  { label: 'Modelo D', value: 'Modelo D' },
+  { label: 'Modelo E', value: 'Modelo E' }
+];
+
+// Emitir el nuevo valor cuando cambie la selección
+const updateValue = (value) => {
+  emit('update:model-value', value); // Actualiza el modelo en el padre
+};
 </script>
 
 <style scoped>
-.pv-input{
-  background-color: white;
-  border: 1px solid #82cc79;
-  color: #3e3b3b;
+.p-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+}
+.pv-text {
+  background-color: #8cd58c; /* Color de fondo personalizado */
 }
 </style>

@@ -1,44 +1,31 @@
 import { createI18n } from 'vue-i18n'
 
 const messages = {
-    es: {
-        movirent: {
-            nameScooter: 'Nombre del Scooter',
-            brandScooter: 'Marca del Scooter',
-            ModelScooter: 'Modelo',
-            priceScooter: 'Precio x Hora S/',
-            addressScooter: 'Dirección',
-            contac: 'Contacto',
-            list: 'Listas de Scooter',
-            nuevoScooter: 'Agregar nuevo Scooter',
-            titleCard: 'Mis Scooters'
-        }
-    },
     en: {
-        movirent: {
-            nameScooter: 'Nombre',
-            brandScooter: 'Marca',
-            ModelScooter: 'Modelo',
-            priceScooter: 'Precio x Hora S/',
-            addressScooter: 'Dirección',
-            contac: 'Contacto'
+        learning: {
+            title: 'Tutorial Title',
+            category: 'Category',
+            date: 'Darrrr',
+            Operation: 'Operations Listtt'
         }
     },
-    ar: {
-        movirent: {
-            nameScooter: 'Nombre',
-            brandScooter: 'Marca',
-            ModelScooter: 'Modelo',
-            priceScooter: 'Precio x Hora S/',
-            addressScooter: 'Dirección',
-            contac: 'Contacto'
+    fr: {
+        learning: {
+            title: 'Titre du didacticiel',
+            category: 'Catégorie'
+        }
+    },
+    ja: {
+        learning: {
+            title: 'チュートリアルのタイトル',
+            category: 'カテゴリ'
         }
     }
 }
 
 const i18n = createI18n({
-    locale: 'es', // Default locale
-    fallbackLocale: 'es', // Fallback locale
+    locale: 'en', // Default locale
+    fallbackLocale: 'en', // Fallback locale
     messages // Short syntax for messages
 })
 

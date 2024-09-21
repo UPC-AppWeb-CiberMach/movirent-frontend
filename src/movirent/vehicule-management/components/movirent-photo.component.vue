@@ -1,10 +1,13 @@
 <template>
   <div class="p-field">
-    <label for="precio" class="form-label">{{ $t('learning.price') }} </label>
-    <pv-input-number id="precio" :model-value="modelValue" @update:model-value="updateValue" class="form-input pv-text"
-                     mode="decimal"
-                     :min="0"
-                     placeholder="Ingrese el precio" />
+    <label for="foto" class="form-label">{{ $t('learning.imageUrl') }} </label>
+    <pv-input-text
+        id="foto"
+        :model-value="modelValue"
+        @update:model-value="updateValue"
+        class="form-input pv-text"
+        placeholder="Ingrese la URL de la imagen"
+    />
   </div>
 </template>
 
@@ -13,7 +16,7 @@ import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   modelValue: {
-    type: Number, // Cambiado a Number para manejar precios
+    type: String,
     required: true
   }
 });

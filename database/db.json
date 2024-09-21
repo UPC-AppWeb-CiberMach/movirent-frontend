@@ -1,0 +1,24 @@
+{
+  "operations": [
+    {
+      "title": "teresita",
+      "type": "Scooter A",
+      "model": "Modelo A",
+      "price": 23,
+      "address": "nose",
+      "phone": "998766789",
+      "imageUrl": "https://www.shutterstock.com/image-vector/scissor-cut-address-bar-link-600nw-2497979243.jpg",
+      "id": "2206"
+    },
+    {
+      "id": "ed9d",
+      "title": "Teresita Olivera",
+      "type": "Scooter A",
+      "model": "Modelo B",
+      "price": 1234,
+      "address": "Los Olivos",
+      "phone": "926335925",
+      "imageUrl": "https://www.shutterstock.com/image-vector/scissor-cut-address-bar-link-600nw-2497979243.jpg"
+    }
+  ]
+}
