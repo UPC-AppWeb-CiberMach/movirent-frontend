@@ -31,6 +31,7 @@ app.use(PrimeVue, {
     }
 });
 
+app.use(router)
 app.component('pv-toolbar', Toolbar);
 app.component('pv-button', Button);
 app.component('pv-avatar', Avatar);
@@ -48,4 +49,3 @@ app.component('pv-divider', Divider);
 app.component('pv-floatlabel', FloatLabel);
 app.component('pv-password', Password);
 app.mount('#app')
-app.use(router)
