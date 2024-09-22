@@ -1,11 +1,17 @@
 import {BaseService} from "@/shared/base.service.js";
 
 export class HistoryServices{
-    getHistoryByClientId(clientId){
+    getReserveByClientId(clientId){
         return BaseService.http.get(`/reservations?client_id=${clientId}`);
     }
-    getScooterByScooterId(scooterId){
+    getReserveById(reserveId){
+        return BaseService.http.get(`/reservations/${reserveId}`);
+    }
+    getScooterById(scooterId){
         return BaseService.http.get(`/scooters/${scooterId}`);
+    }
+    getOwnerById(ownerId){
+        return BaseService.http.get(`/users/${ownerId}`);
     }
     async deleteReservationById(reservationId){
         try{
