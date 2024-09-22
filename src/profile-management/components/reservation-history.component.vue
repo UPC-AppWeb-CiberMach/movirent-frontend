@@ -1,6 +1,13 @@
 <template>
+  <pv-dialog header="Confirm Deletion" v-model:visible="showConfirmDialog" :modal="true" :closable="false">
+    <p>Are you sure you want to delete this reservation?</p>
+    <template #footer>
+      <pv-button label="No" @click="showConfirmDialog = false"></pv-button>
+      <pv-button label="Yes" @click="deleteReservation"></pv-button>
+    </template>
+  </pv-dialog>
   <div class="card">
-    <pv-dataview :value="reservations" paginator :rows="5" >
+    <pv-dataview :value="reservations" paginator :rows="2" >
       <template #header>
         <p class="text-2xl w-10 font-medium">History of rented scooters</p>
       </template>
@@ -27,7 +34,7 @@
                 <div class="flex flex-column md:align-items-end gap-8">
                   <span class="text-xl font-semibold">{{ item.time }} hrs</span>
                   <div class="flex flex-row-reverse md:flex-row gap-2">
-                    <pv-button label="Delete" outlined></pv-button>
+                    <pv-button label="Delete" @click="confirmDelete(item.id)"></pv-button>
                     <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap"></pv-button>
                   </div>
                 </div>
@@ -37,6 +44,7 @@
         </div>
       </template>
     </pv-dataview>
+
   </div>
 </template>
 
@@ -46,6 +54,9 @@ import { HistoryServices } from "@/profile-management/services/history-services.
 
 const reservations = ref([]);
 const clientId = 1;
+const showConfirmDialog = ref(false);
+const reservationToDelete = ref(null);
+
 
 onMounted(async () => {
   try {
@@ -62,4 +73,19 @@ onMounted(async () => {
     console.error("Error fetching reservations:", error);
   }
 });
+const confirmDelete = (id) => {
+  reservationToDelete.value = id;
+  showConfirmDialog.value = true;
+};
+
+const deleteReservation = async () => {
+  try {
+    await new HistoryServices().deleteReservationById(reservationToDelete.value);
+    reservations.value = reservations.value.filter(reservation => reservation.id !== reservationToDelete.value);
+    showConfirmDialog.value = false;
+  } catch (error) {
+    console.error("Error deleting reservation:", error);
+  }
+};
+
 </script>
