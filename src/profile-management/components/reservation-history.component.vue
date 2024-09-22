@@ -7,7 +7,7 @@
     </template>
   </pv-dialog>
   <div class="card">
-    <pv-dataview :value="reservations" paginator :rows="2" >
+    <pv-dataview :value="reservations" paginator :rows="5" >
       <template #header>
         <p class="text-2xl w-10 font-medium">History of rented scooters</p>
       </template>
@@ -15,8 +15,8 @@
         <div class="flex flex-column">
           <div v-for="(item, index) in slotProps.items" :key="index">
             <div class="flex flex-column sm:flex-row sm:align-items-center p-6 gap-4" :class="{ 'border-top-1 border-300': index !== 0 }">
-              <div class="md:w-4 relative">
-                <img class="block xl:block mx-auto border-round w-full" :src="item.scooter.image" :alt="item.scooter.model" />
+              <div class="relative w-full md:w-4">
+                <img class="block xl:block mx-auto border-round-md w-3 h-auto" :src="item.scooter.image" :alt="item.scooter.model" />
               </div>
               <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-6">
                 <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
@@ -35,8 +35,7 @@
                   <span class="text-xl font-semibold">{{ item.time }} hrs</span>
                   <div class="flex flex-row-reverse md:flex-row gap-2">
                     <pv-button label="Delete" @click="confirmDelete(item.id)"></pv-button>
-                    <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap"></pv-button>
-                  </div>
+                    <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap" @click="viewDetails(item.id)"></pv-button>                  </div>
                 </div>
               </div>
             </div>
@@ -51,28 +50,33 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { HistoryServices } from "@/profile-management/services/history-services.js";
+import { useRouter } from "vue-router";
 
 const reservations = ref([]);
 const clientId = 1;
 const showConfirmDialog = ref(false);
 const reservationToDelete = ref(null);
-
+const router = useRouter();
 
 onMounted(async () => {
   try {
-    const response = await new HistoryServices().getHistoryByClientId(clientId);
+    const response = await new HistoryServices().getReserveByClientId(clientId);
     const reservationsData = response.data;
-    for (const reservation of reservationsData){
-      const scooterResponse = await new HistoryServices().getScooterByScooterId(reservation.scooter_id);
-      reservation.scooter = scooterResponse.data;
-    }
 
-    console.log("Reservations data:", reservationsData);
-    reservations.value = reservationsData;
+    // Use Promise.all to handle multiple asynchronous calls
+    const reservationsWithScooters = await Promise.all(reservationsData.map(async (reservation) => {
+      const scooterResponse = await new HistoryServices().getScooterById(reservation.scooter_id);
+      reservation.scooter = scooterResponse.data;
+      return reservation;
+    }));
+
+    console.log("Reservations data:", reservationsWithScooters);
+    reservations.value = reservationsWithScooters;
   } catch (error) {
     console.error("Error fetching reservations:", error);
   }
 });
+
 const confirmDelete = (id) => {
   reservationToDelete.value = id;
   showConfirmDialog.value = true;
@@ -88,4 +92,7 @@ const deleteReservation = async () => {
   }
 };
 
+const viewDetails = (id) => {
+  router.push({ path: `/reservation/${id}` });
+};
 </script>
