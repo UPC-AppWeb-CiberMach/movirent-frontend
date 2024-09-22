@@ -24,7 +24,7 @@ const props = defineProps({
   }
 });
 
-const emit = defineEmits(['update:model-value']); // Cambiado a 'update:model-value'
+const emit = defineEmits(['update:model-value']);
 
 // Define las marcas de scooters
 const scooterBrands = [
@@ -37,7 +37,7 @@ const scooterBrands = [
 
 // Emitir el nuevo valor cuando cambie la selección
 const updateValue = (value) => {
-  emit('update:model-value', value); // Actualiza el modelo en el padre
+  emit('update:model-value', value);
 };
 </script>
 

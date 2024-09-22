@@ -1,30 +1,13 @@
-<template>
-  <div id="app" style="border: 1px solid red; background-color: rgba(255,255,255,0.81); border-radius: 12px">
-    <h1>Ming Company Operations Management</h1>
-    <OperationsManager />
-  </div>
-</template>
 
-<script>
-import OperationsManager from './movirent/vehicule-management/components/movirent-view.component.vue'; // Asegúrate de importar correctamente
+<script setup>
+import MainMovirent from '@/layouts/component/movirent-main.component.vue'
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 
-export default {
-  components: {
-    OperationsManager
-  }
-};
+const route = useRoute()
 </script>
 
-<style>
-/* Estilos opcionales para mejorar la presentación */
-#app {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-}
+<template>
+  <MainMovirent />
+</template>
 
-h1 {
-  text-align: center;
-}
-</style>

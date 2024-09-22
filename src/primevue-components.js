@@ -13,6 +13,8 @@ import Rating from 'primevue/rating'
 import Button from 'primevue/button'
 import CascadeSelect from 'primevue/cascadeselect'
 import Select from "primevue/select";
+import Toolbar from "primevue/toolbar";
+import Chip from "primevue/chip";
 
 export default (app) => {
     app.use(PrimeVue, {
@@ -33,4 +35,6 @@ export default (app) => {
     app.component('pv-button', Button)
     app.component('pv-cascade-select', CascadeSelect)
     app.component('pv-select', Select)
+    app.component('pv-toolbar', Toolbar)
+    app.component('pv-chip', Chip)
 }

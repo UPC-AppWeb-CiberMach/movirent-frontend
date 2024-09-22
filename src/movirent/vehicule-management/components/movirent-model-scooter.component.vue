@@ -35,9 +35,9 @@ const scooterModels = [
   { label: 'Modelo E', value: 'Modelo E' }
 ];
 
-// Emitir el nuevo valor cuando cambie la selección
+
 const updateValue = (value) => {
-  emit('update:model-value', value); // Actualiza el modelo en el padre
+  emit('update:model-value', value);
 };
 </script>
 

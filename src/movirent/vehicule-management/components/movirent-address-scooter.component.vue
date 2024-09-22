@@ -18,7 +18,7 @@ const props = defineProps({
 const emit = defineEmits(['update:model-value']);
 
 const updateValue = (value) => {
-  emit('update:model-value', value); // Actualiza el modelo en el padre
+  emit('update:model-value', value);
 };
 </script>
 

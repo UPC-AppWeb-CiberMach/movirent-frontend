@@ -19,8 +19,7 @@ const props = defineProps({
     type: String,
     required: true,
     validator: (value) => {
-      // Validar que el número tenga exactamente 9 dígitos
-      return /^\d{0,9}$/.test(value); // Permite solo números y hasta 9 dígitos
+      return /^\d{0,9}$/.test(value);
     }
   }
 });
@@ -28,7 +27,7 @@ const props = defineProps({
 const emit = defineEmits(['update:model-value']);
 
 const updateValue = (value) => {
-  if (value.length <= 9) { // Asegurarse de que no exceda los 9 dígitos
+  if (value.length <= 9) {
     emit('update:model-value', value);
   }
 };

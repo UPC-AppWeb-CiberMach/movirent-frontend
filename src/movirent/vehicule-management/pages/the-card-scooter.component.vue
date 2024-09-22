@@ -3,7 +3,7 @@
     <div class="card">
       <div class="main-card">
         <h2 class="title">{{ $t('movirent.titleCard') }}</h2>
-        <RouterLink to="/Create"> <!-- Usar RouterLink para la navegación -->
+        <RouterLink to="/CreateScooter"> <!-- Usar RouterLink para la navegación -->
           <pv-button :label="$t('movirent.nuevoScooter')" icon="pi pi-plus" iconPos="right" class="p-button-primary" />
         </RouterLink>
       </div>

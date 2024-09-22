@@ -1,16 +1,17 @@
 <template>
   <div class="layout">
-    <TheHeader /> <!-- Header en la parte superior -->
+    <TheHeader />
     <main class="content">
-      <router-view></router-view> <!-- Contenido dinámico en el medio -->
+      <router-view></router-view>
     </main>
-    <TheFooter /> <!-- Footer en la parte inferior -->
+    <TheFooter />
   </div>
 </template>
 
 <script setup>
 import TheHeader from './the-header.component.vue';
 import TheFooter from './the-foother.component.vue';
+
 </script>
 
 <style scoped>
