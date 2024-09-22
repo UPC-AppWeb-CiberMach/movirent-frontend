@@ -7,4 +7,13 @@ export class HistoryServices{
     getScooterByScooterId(scooterId){
         return BaseService.http.get(`/scooters/${scooterId}`);
     }
+    async deleteReservationById(reservationId){
+        try{
+            const response = await BaseService.http.delete(`/reservations/${reservationId}`);
+            return response.data;
+        }catch(error){
+            console.error("Error deleting reservation:", error);
+            throw error;
+        }
+    }
 }
