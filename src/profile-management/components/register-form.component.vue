@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-up-container" aria-label="sign-up-heading">
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-up-container" aria-label="sign-up-heading">
     <h1 id="sign-up-heading" class="font-bold" aria-label="Título de registro">Regístrate y sé parte de esta gran comunidad</h1>
     <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Campo de nombre completo"/>
     <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
@@ -15,16 +15,15 @@
     <span v-if="$v.user_role_id.$error" class="error-message" aria-label="Mensaje de error para el rol de usuario">Rol de Usuario es requerido</span>
     <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3" type="text" placeholder="URL de tu foto" aria-label="Campo de URL de la foto"/>
     <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
-    <pv-button @click="signUp" class="mt-5 p-4 w-12rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
+    <pv-button @click="signUp" class="mt-5 p-4 w-10rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
 
-    <div class="flex flex-row align-items-center justify-content-center">
-      <h3>¿Ya tienes una cuenta?</h3>
+    <div class="d-flex align-items-center justify-content-center" aria-label="Sección de redirección">
+      <h3 class="mb-0">¿Ya tienes una cuenta?</h3>
       <div class="sign-in-redirect">
-        <router-link to="/login" class="sign-in-section" aria-label="Enlace para iniciar sesión">Inicia Sesión</router-link>
+        <router-link to="/login" class="sign-in-section ml-2 mt-2" aria-label="Enlace para iniciar sesión">Inicia Sesión</router-link>
       </div>
     </div>
   </div>
-
 </template>
 
 <script setup>
@@ -108,6 +107,9 @@ async function signUp() {
 
 .sign-up-btn{
   background-color: #72D063;
+  border: none;
+  height: 3rem;
+  width: 7rem;
 }
 
 .sign-up-btn:hover{
@@ -118,12 +120,7 @@ async function signUp() {
   text-align: center;
 
 }
-.flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
+
 .sign-in-section {
   text-decoration: none;
   font-weight: bolder;
@@ -132,8 +129,18 @@ async function signUp() {
   margin-top: 10px;
 }
 .sign-in-redirect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 10px;
-  margin-top: 5px;
+  white-space: nowrap;
+}
+.d-flex {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
+.mb-0{
+  margin-top: 10px;
+}
 </style>

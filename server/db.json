@@ -122,6 +122,16 @@
       "phone": "999999999",
       "dni": "00000000",
       "photo": "https://xcdn.nadula.com/media/wysiwyg/nadula_2022/blog/wolf_cuts.jpg"
+    },
+    {
+      "id": "6cf9dee0-3007-4c9c-9860-099963eb8078",
+      "email": "mari@yahoo.com",
+      "password": "MarianaIza",
+      "completeName": "Mariana Iza",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 2,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsEtGlhqOj_vLFlwVGQ6CHf34p2q5xShQaKQ&s"
     }
   ],
   "user_roles": [

@@ -1,19 +1,19 @@
 <template>
-  <div class="user-view-container" aria-label="Contenedor de vista de usuario">
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center user-view-container" aria-label="Contenedor de vista de usuario">
     <h1 id="user-edit-heading" class="font-bold center-title" aria-label="Título de edición de usuario">¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!</h1>
 
-    <div class="content" aria-label="Contenido de usuario">
-      <div class="left" aria-label="Sección izquierda de contenido de usuario">
-        <img :src="photo" class="w-15rem lg:w-25rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
+    <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
+      <div class="p-d-flex p-flex-column p-ai-center p-jc-center left" aria-label="Sección izquierda de contenido de usuario">
+        <img :src="photo" class="w-20rem lg:w-20rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
         <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
 
         <div class="historial-button" aria-label="Botón de historial">
-          <pv-button @click="verHistorial" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
+          <pv-button @click="verHistorial" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
         </div>
       </div>
 
-      <div class="right" aria-label="Sección derecha de contenido de usuario">
-        <div class="inputs" aria-label="Entradas de datos del usuario">
+      <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de usuario">
+        <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del usuario">
           <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3" type="text" placeholder="Nombre Completo" aria-label="Entrada de nombre completo del usuario"/>
           <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
           <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3" type="password" placeholder="Contraseña" aria-label="Entrada de contraseña del usuario"/>
@@ -28,8 +28,8 @@
           <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
         </div>
 
-        <pv-button @click="editUser" class="mt-5 p-4 w-12rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
-        <pv-button @click="deleteUser" class="mt-5 p-4 w-12rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
+        <pv-button @click="editUser" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
+        <pv-button @click="deleteUser" class="mt-5 p-4 w-10rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
       </div>
     </div>
   </div>
@@ -125,11 +125,15 @@ function verHistorial(){
   margin-top: 20px;
   margin-bottom: 20px;
   border: none;
+  width: 7rem;
+  height: 2rem;
 }
 
 .delete-btn{
   background-color: #FD6C6C;
   border: none;
+  width: 5rem;
+  height: 2rem;
 }
 .edit-btn:hover{
   background-color: #5cbf4b;
@@ -165,10 +169,6 @@ function verHistorial(){
   justify-content: center;
 }
 
-.historial-button{
-
-}
-
 .right {
   display: flex;
   flex-direction: column;
@@ -192,9 +192,7 @@ function verHistorial(){
   line-height: 1.5;
 }
 .profile-img {
-  width: 20vh;
-  height: 20vh;
-  border-radius: 100px;
+  border-radius: 100%;
   margin-left: 50%;
 }
 
