@@ -2,13 +2,13 @@
   <div class="container">
     <div class="formulario">
       <form @submit.prevent="isEditing ? updateOperation() : createOperation()">
-        <Title v-model="operation.title" /> <br>
-        <Type v-model="operation.type" /> <br>
-        <Modelo v-model="operation.model" /> <br>
-        <Precio v-model="operation.price" /> <br>
-        <Direccion v-model="operation.address" /> <br>
-        <Contacto v-model="operation.phone" /> <br>
-        <Foto v-model="operation.imageUrl" /> <br>
+        <Name v-model="operation.name" /> <br>
+        <Marca v-model="operation.type" /> <br>
+        <Model v-model="operation.model" /> <br>
+        <Price v-model="operation.price" /> <br>
+        <Address v-model="operation.address" /> <br>
+        <Contact v-model="operation.phone" /> <br>
+        <Photo v-model="operation.imageUrl" /> <br>
         <pv-button type="submit">{{ isEditing ? 'Update' : 'Create' }}</pv-button>
       </form>
 
@@ -18,17 +18,17 @@
     </div>
 
     <div class="resultados">
-      <h2 style="text-align: center">{{ $t('learning.tituloResultado') }}</h2> <br>
+      <h2 style="text-align: center">{{ $t('movirent.tituloResultado') }}</h2> <br>
       <ul>
         <li v-for="op in operations" :key="op.id" class="operation-item card-resultado">
-          <img :src="op.imageUrl" alt="Imagen de Scooter" width="100" class="operation-image" /> <!-- Mostrar la imagen -->
-          <div>Título: {{ op.title }}</div>
-          <div>Tipo: {{ op.type }}</div>
-          <div>Modelo: {{ op.model }}</div>
-          <div>Precio: ${{ op.price }}</div>
-          <div>Dirección: {{ op.address }}</div>
-          <div>Teléfono: {{ op.phone }}</div>
-          <pv-button @click="editOperation(op)">Edit</pv-button> <!-- Botón de editar -->
+          <img :src="op.imageUrl" alt="Imagen de Scooter" width="100" class="operation-image" />
+          <div>{{ $t('movirent.name') }}: {{ op.name }}</div>
+          <div>{{ $t('movirent.marca') }}: {{ op.type }}</div>
+          <div>{{ $t('movirent.model') }}: {{ op.model }}</div>
+          <div>{{ $t('movirent.price') }}: ${{ op.price }}</div>
+          <div>{{ $t('movirent.address') }}: {{ op.address }}</div>
+          <div>{{ $t('movirent.phone') }}: {{ op.phone }}</div>
+          <pv-button @click="editOperation(op)">Edit</pv-button>
           <pv-button @click="deleteOperation(op.id)">Delete</pv-button>
         </li>
       </ul>

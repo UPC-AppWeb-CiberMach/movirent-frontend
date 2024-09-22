@@ -5,6 +5,9 @@ import i18n from '@/traslate/i18n.js'
 import router from '@/router.js'
 import setupPrimeVue from './primevue-components.js'
 
+import 'primeicons/primeicons.css'
+
+
 const app = createApp(App)
 
 setupPrimeVue(app)

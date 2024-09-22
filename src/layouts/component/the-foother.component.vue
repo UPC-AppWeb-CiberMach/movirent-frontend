@@ -8,11 +8,11 @@
           <pv-button label="Quienes Somos" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
-        <RouterLink to="/Question">
+        <RouterLink to="/question">
           <pv-button label="Preguntas frecuentes" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
-        <RouterLink to="/Privacy">
+        <RouterLink to="/privacy">
           <pv-button label="Políticas y privacidad" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
       </nav>

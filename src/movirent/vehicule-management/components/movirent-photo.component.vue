@@ -1,6 +1,6 @@
 <template>
   <div class="p-field">
-    <label for="foto" class="form-label">{{ $t('learning.imageUrl') }} </label>
+    <label for="foto" class="form-label">{{ $t('movirent.imgUrl') }} </label>
     <pv-input-text
         id="foto"
         :model-value="modelValue"

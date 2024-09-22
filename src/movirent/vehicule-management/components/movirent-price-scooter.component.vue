@@ -1,6 +1,6 @@
 <template>
   <div class="p-field">
-    <label for="precio" class="form-label">{{ $t('learning.price') }} </label>
+    <label for="precio" class="form-label">{{ $t('movirent.price') }} </label>
     <pv-input-number
         id="precio"
         :model-value="modelValue"

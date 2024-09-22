@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Crear nuevo Scooter</h1>
+    <h1>{{ $t('movirent.titleGeneral') }}</h1>
     <OperationsManager />
   </div>
 </template>

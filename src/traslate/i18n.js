@@ -2,23 +2,16 @@ import { createI18n } from 'vue-i18n'
 
 const messages = {
     en: {
-        learning: {
-            title: 'Tutorial Title',
-            category: 'Category',
-            date: 'Darrrr',
-            tituloResultado: 'Sus Scooter registrados'
-        }
-    },
-    fr: {
-        learning: {
-            title: 'Titre du didacticiel',
-            category: 'Catégorie'
-        }
-    },
-    ja: {
-        learning: {
-            title: 'チュートリアルのタイトル',
-            category: 'カテゴリ'
+        movirent: {
+            name: 'Nombre del equipo',
+            address: 'Dirección',
+            marca: 'Marca de Scooter',
+            phone: 'Teléfono',
+            model: 'Modelo de Scooter',
+            imgUrl: 'URL de la imagen',
+            price: 'Costo de alquiler',
+            tituloResultado: 'Sus Scooter registrados',
+            titleGeneral: 'Registro de Scooter',
         }
     }
 }

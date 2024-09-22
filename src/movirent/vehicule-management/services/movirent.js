@@ -1,19 +1,19 @@
 // Importaciones y lógica del componente
 import http from '@/movirent/shared/services/http-common.js'
-import Title from '@/movirent/vehicule-management/components/movirent-name-scooter.component.vue'
-import Type from '@/movirent/vehicule-management/components/movirent-brand-scooter.component.vue'
-import Modelo from '@/movirent/vehicule-management/components/movirent-model-scooter.component.vue'
-import Precio from '@/movirent/vehicule-management/components/movirent-price-scooter.component.vue'
-import Direccion from '@/movirent/vehicule-management/components/movirent-address-scooter.component.vue'
-import Contacto from '@/movirent/vehicule-management/components/movirent-contact.component.vue'
-import Foto from '@/movirent/vehicule-management/components/movirent-photo.component.vue'
+import Name from '@/movirent/vehicule-management/components/movirent-name-scooter.component.vue'
+import Marca from '@/movirent/vehicule-management/components/movirent-brand-scooter.component.vue'
+import Model from '@/movirent/vehicule-management/components/movirent-model-scooter.component.vue'
+import Price from '@/movirent/vehicule-management/components/movirent-price-scooter.component.vue'
+import Address from '@/movirent/vehicule-management/components/movirent-address-scooter.component.vue'
+import Contact from '@/movirent/vehicule-management/components/movirent-contact.component.vue'
+import Photo from '@/movirent/vehicule-management/components/movirent-photo.component.vue'
 
 export default {
-    components: { Title, Type, Modelo, Precio, Direccion, Contacto, Foto },
+    components: { Name, Marca, Model, Price, Address, Contact, Photo },
     data() {
         return {
             operation: {
-                title: '',
+                name: '',
                 type: '',
                 model: '',
                 price: null,
@@ -41,7 +41,7 @@ export default {
         },
 
         async createOperation() {
-            if (!this.operation.title || !this.operation.type || !this.operation.model || this.operation.price === null || !this.operation.address || !this.operation.phone || !this.operation.imageUrl) {
+            if (!this.operation.name || !this.operation.type || !this.operation.model || this.operation.price === null || !this.operation.address || !this.operation.phone || !this.operation.imageUrl) {
                 this.message = 'All fields are required';
                 this.isError = true;
                 console.error('All fields are required');
@@ -50,7 +50,7 @@ export default {
 
             try {
                 const response = await http.post('/operations', {
-                    title: this.operation.title,
+                    name: this.operation.name,
                     type: this.operation.type,
                     model: this.operation.model,
                     price: this.operation.price,
@@ -62,7 +62,7 @@ export default {
                 console.log('Operation created:', response.data);
                 this.message = 'Operation created successfully!';
                 this.isError = false;
-                this.fetchOperations();
+                await this.fetchOperations();
                 this.resetForm();
             } catch (error) {
                 console.error('Error creating operation:', error);
@@ -72,7 +72,8 @@ export default {
         },
 
         async editOperation(op) {
-            this.operation.title = op.title;
+            // Actualiza las propiedades de operación con los nuevos nombres
+            this.operation.name = op.name; // Cambiado de title a name
             this.operation.type = op.type;
             this.operation.model = op.model;
             this.operation.price = op.price;
@@ -85,14 +86,14 @@ export default {
         },
 
         async updateOperation() {
-            if (!this.operation.title || !this.operation.type || !this.operation.model || this.operation.price === null || !this.operation.address || !this.operation.phone || !this.operation.imageUrl) {
+            if (!this.operation.name || !this.operation.type || !this.operation.model || this.operation.price === null || !this.operation.address || !this.operation.phone || !this.operation.imageUrl) {
                 console.error('All fields are required');
                 return;
             }
 
             try {
                 const response = await http.put(`/operations/${this.editingId}`, {
-                    title: this.operation.title,
+                    name: this.operation.name, // Cambiado de title a name
                     type: this.operation.type,
                     model: this.operation.model,
                     price: this.operation.price,
@@ -132,12 +133,16 @@ export default {
         },
 
         resetForm() {
+            // Reiniciar todos los campos del formulario
             Object.keys(this.operation).forEach(key => {
                 if (key === 'price') {
-                    return;
+                    return; // Reiniciar price a null
                 }
+                // Reiniciar otros campos a vacío
                 this.operation[key] = '';
             });
+
+            // Resetear modo edición al limpiar el formulario
             if (this.isEditing) {
                 this.isEditing = false;
                 this.editingId = null;
@@ -145,6 +150,7 @@ export default {
         }
     },
     mounted() {
+        // Carga las operaciones al montar el componente
         this.fetchOperations();
     }
 }

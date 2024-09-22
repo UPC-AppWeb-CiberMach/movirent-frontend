@@ -1,6 +1,6 @@
 <template>
   <div class="p-field">
-    <label for="marca" class="form-label">Selecciona una Marca</label>
+    <label for="marca" class="form-label">{{ $t('movirent.marca') }}</label>
     <pv-select
         id="marca"
         :model-value="modelValue"
@@ -29,11 +29,11 @@ const emit = defineEmits(['update:model-value']);
 
 // Define las marcas de scooters
 const scooterBrands = [
-  { label: 'Scooter A', value: 'Scooter A' },
-  { label: 'Scooter B', value: 'Scooter B' },
-  { label: 'Scooter C', value: 'Scooter C' },
-  { label: 'Scooter D', value: 'Scooter D' },
-  { label: 'Scooter E', value: 'Scooter E' }
+  { label: 'Dualtron', value: 'Dualtron' },
+  { label: 'Kingsong', value: 'Kingsong' },
+  { label: 'Ninebot', value: 'Ninebot' },
+  { label: 'Xiaomi', value: 'Xiaomi' },
+  { label: 'Vsett', value: 'Vsett' }
 ];
 
 const updateValue = (value) => {

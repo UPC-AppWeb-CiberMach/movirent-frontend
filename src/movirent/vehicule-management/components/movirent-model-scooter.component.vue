@@ -1,6 +1,6 @@
 <template>
   <div class="p-field">
-    <label for="modelo" class="form-label">Selecciona un Modelo</label>
+    <label for="modelo" class="form-label">{{ $t('movirent.model') }}</label>
     <pv-select
         id="modelo"
         :model-value="modelValue"
@@ -29,11 +29,9 @@ const emit = defineEmits(['update:model-value']);
 
 // Define los modelos de scooters
 const scooterModels = [
-  { label: 'Modelo A', value: 'Modelo A' },
-  { label: 'Modelo B', value: 'Modelo B' },
-  { label: 'Modelo C', value: 'Modelo C' },
-  { label: 'Modelo D', value: 'Modelo D' },
-  { label: 'Modelo E', value: 'Modelo E' }
+  { label: 'Honda Elite Fi', value: 'Honda Elite Fi' },
+  { label: 'Yamaha NMAX', value: 'Yamaha NMAX' },
+  { label: 'Xiaome FA', value: 'Xiaome FA' }
 ];
 
 
