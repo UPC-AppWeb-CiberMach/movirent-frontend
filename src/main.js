@@ -24,6 +24,7 @@ import Divider from 'primevue/divider';
 import FloatLabel from 'primevue/floatlabel';
 import Password from 'primevue/password';
 import router from "@/routes/router.js";
+import Dialog from "primevue/dialog";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -49,4 +50,6 @@ app.component('pv-inputtext', InputText);
 app.component('pv-divider', Divider);
 app.component('pv-floatlabel', FloatLabel);
 app.component('pv-password', Password);
+app.component('pv-dialog', Dialog);
+
 app.mount('#app')
