@@ -52,11 +52,11 @@ async function signIn() {
 }
 
 .font-bold {
-  text-align: center; /* Center the title */
+  text-align: center;
 }
 
 .component-margin {
-  margin-bottom: 20px; /* Add margin to the bottom of each component */
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 .grid-container {

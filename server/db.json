@@ -106,24 +106,6 @@
       "user_roles_id": 1
     },
     {
-      "id": "9ff682b6-54a2-4289-be3e-704d89cf9d6c",
-      "email": "toge@gmail.com",
-      "password": "12345678",
-      "completeName": "Toge",
-      "phone": "999999999",
-      "dni": "99999999",
-      "photo": "https://i.pinimg.com/736x/df/81/c9/df81c91f15e8280e24af32e316404b2e.jpg"
-    },
-    {
-      "id": "6fa9b340-6abe-49dc-9c0e-0e6518a174eb",
-      "email": "caro@yahoo.com",
-      "password": "12345678",
-      "completeName": "Carolina Martines",
-      "phone": "999999999",
-      "dni": "00000000",
-      "photo": "https://xcdn.nadula.com/media/wysiwyg/nadula_2022/blog/wolf_cuts.jpg"
-    },
-    {
       "id": "6cf9dee0-3007-4c9c-9860-099963eb8078",
       "email": "mari@yahoo.com",
       "password": "MarianaIza",

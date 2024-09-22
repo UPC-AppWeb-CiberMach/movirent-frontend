@@ -28,8 +28,26 @@
           <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
         </div>
 
-        <pv-button @click="editUser" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
-        <pv-button @click="deleteUser" class="mt-5 p-4 w-10rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
+        <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu cuenta?" :modal="true" :closable="false">
+          <p class="center-title">Puedes cambiarla cuantas veces quieras</p>
+
+          <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
+            <pv-button class="p-button-edit green-button p-mr-2" label="Editar" @click="confirmEditUser" />
+            <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="showEditDialog = false" />
+          </div>
+        </pv-dialog>
+
+        <pv-dialog v-model:visible="showDeleteDialog" header="¿Estas segur@ de eliminar tu cuenta? " :modal="true" :closable="false">
+          <p class="center-title">Tus datos no podrán se recuperados</p>
+
+          <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
+            <pv-button class="p-button-delete green-button p-mr-2" label="Eliminar" @click="confirmDeleteUser" />
+            <pv-button class="p-button-cancel-delete pink-button" label="Cancelar" @click="showDeleteDialog = false" />
+          </div>
+        </pv-dialog>
+
+        <pv-button @click="showEditDialog = true" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
+        <pv-button @click="showDeleteDialog = true" class="mt-5 p-4 w-10rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
       </div>
     </div>
   </div>
@@ -50,7 +68,8 @@ let phone = ref(JSON.parse(sessionStorage.getItem("user"))?.phone);
 let email = ref(JSON.parse(sessionStorage.getItem("user"))?.email);
 let dni = ref(JSON.parse(sessionStorage.getItem("user"))?.dni);
 let photo = ref(JSON.parse(sessionStorage.getItem("user"))?.photo);
-
+let showEditDialog = ref(false)
+let showDeleteDialog = ref(false)
 
 const rules = reactive({
   completeName: { required },
@@ -63,47 +82,43 @@ const rules = reactive({
 
 const $v = useVuelidate(rules, { completeName, password, email, phone, dni, photo})
 
-async function editUser(){
-  if (confirm('¿Estas segur@ de editar tu cuenta? Puedes cambiarla cuantas veces quieras')) {
-    $v.value.$touch()
-    if ($v.value.$error) {
-      return -1;
-    } else {
-
-      let user = {
-        id: id,
-        email: email.value,
-        password: password.value,
-        completeName: completeName.value,
-        phone: phone.value,
-        dni: dni.value,
-        photo: photo.value
-      }
-      await Db.prototype.editUser(id, user).then((response) => {
-        if (response.status === 200) {
-          alert("Edit User Success");
-          sessionStorage.setItem("user", JSON.stringify(user));
-        }
-      }).catch(() => {
-        alert("Error");
-      });
+async function confirmEditUser() {
+  showEditDialog.value = false
+  $v.value.$touch()
+  if ($v.value.$error) {
+    return -1;
+  } else {
+    let user = {
+      id: id,
+      email: email.value,
+      password: password.value,
+      completeName: completeName.value,
+      phone: phone.value,
+      dni: dni.value,
+      photo: photo.value
     }
-  }
-}
-
-async function deleteUser(){
-  if (confirm('¿Estas segur@ de eliminar tu cuenta? Tus datos no podrán se recuperados')) {
-    await Db.prototype.deleteUser(id).then((response) => {
+    await Db.prototype.editUser(id, user).then((response) => {
       if (response.status === 200) {
-        alert("Delete User Success");
-        sessionStorage.removeItem("user")
-        router.push("/register")
+        alert("Edit User Success");
+        sessionStorage.setItem("user", JSON.stringify(user));
       }
     }).catch(() => {
       alert("Error");
     });
-
   }
+}
+
+async function confirmDeleteUser() {
+  showDeleteDialog.value = false
+  await Db.prototype.deleteUser(id).then((response) => {
+    if (response.status === 200) {
+      alert("Delete User Success");
+      sessionStorage.removeItem("user")
+      router.push("/register")
+    }
+  }).catch(() => {
+    alert("Error");
+  });
 }
 
 function verHistorial(){
@@ -200,6 +215,22 @@ function verHistorial(){
   margin-top: 20px;
 }
 
+.green-button {
+  background-color: #72D063;
+  border: none;
+  margin-right: 20px;
+}
+.pink-button {
+  background-color: #FD6C6C;
+  border: none;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
 @media (max-width: 568px) {
   .content {
     flex-direction: column;
