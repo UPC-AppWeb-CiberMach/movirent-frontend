@@ -7,8 +7,9 @@
         :options="scooterBrands"
         optionLabel="label"
         optionValue="value"
-        class="form-input"
+        class="form-input pv-text"
         placeholder="Selecciona una Marca"
+        :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
         @update:model-value="updateValue"
     />
   </div>
@@ -35,7 +36,6 @@ const scooterBrands = [
   { label: 'Scooter E', value: 'Scooter E' }
 ];
 
-// Emitir el nuevo valor cuando cambie la selección
 const updateValue = (value) => {
   emit('update:model-value', value);
 };
@@ -52,7 +52,4 @@ const updateValue = (value) => {
   font-weight: bold;
 }
 
-.form-input {
-  width: 100%;
-}
 </style>

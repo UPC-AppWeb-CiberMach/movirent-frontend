@@ -1,15 +1,14 @@
 <template>
   <div class="container">
     <div class="formulario">
-      <h2>Create Operation</h2>
       <form @submit.prevent="isEditing ? updateOperation() : createOperation()">
-        <Title v-model="operation.title" />
-        <Type v-model="operation.type" />
-        <Modelo v-model="operation.model" />
-        <Precio v-model="operation.price" />
-        <Direccion v-model="operation.address" />
-        <Contacto v-model="operation.phone" />
-        <Foto v-model="operation.imageUrl" />
+        <Title v-model="operation.title" /> <br>
+        <Type v-model="operation.type" /> <br>
+        <Modelo v-model="operation.model" /> <br>
+        <Precio v-model="operation.price" /> <br>
+        <Direccion v-model="operation.address" /> <br>
+        <Contacto v-model="operation.phone" /> <br>
+        <Foto v-model="operation.imageUrl" /> <br>
         <pv-button type="submit">{{ isEditing ? 'Update' : 'Create' }}</pv-button>
       </form>
 
@@ -19,9 +18,9 @@
     </div>
 
     <div class="resultados">
-      <h2>{{ $t('learning.Operation') }}</h2>
+      <h2 style="text-align: center">{{ $t('learning.tituloResultado') }}</h2> <br>
       <ul>
-        <li v-for="op in operations" :key="op.id" class="operation-item card">
+        <li v-for="op in operations" :key="op.id" class="operation-item card-resultado">
           <img :src="op.imageUrl" alt="Imagen de Scooter" width="100" class="operation-image" /> <!-- Mostrar la imagen -->
           <div>Título: {{ op.title }}</div>
           <div>Tipo: {{ op.type }}</div>
@@ -38,7 +37,7 @@
 </template>
 
 <script>
-
+import '@/assets/create-sccoter.css'
 import Logica from '@/movirent/vehicule-management/services/movirent.js';
 
 export default {
@@ -48,16 +47,16 @@ export default {
 
 <style scoped>
 .container {
-  display: flex; /* Usar flexbox para dividir el espacio */
+  display: flex;
 }
 
 .formulario {
-  flex-basis: 50%; /* Ocupa el 50% de la pantalla */
-  padding-right: 20px; /* Espacio entre formulario y resultados */
+  flex-basis: 50%;
+  padding-right: 20px;
 }
 
 .resultados {
-  flex-basis: 50%; /* Ocupa el otro 50% de la pantalla */
+  flex-basis: 50%;
 }
 
 h2 {
@@ -79,31 +78,30 @@ button {
 
 .message {
   margin-top: 10px;
-  color: green; /* Color verde para mensajes de éxito */
+  color: green;
 }
 
 .error-message {
-  color: red; /* Color rojo para mensajes de error */
+  color: red;
 }
 
 .operation-item {
-  margin-bottom: 20px; /* Espaciado entre operaciones */
+  margin-bottom: 20px;
 }
 
 .operation-image {
-  display: block; /* Asegurarse de que la imagen esté en su propia línea */
-  margin-bottom: 5px; /* Espacio debajo de la imagen */
+  display: block;
+  margin-bottom: 5px;
 }
 
-/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    flex-direction: column;
   }
 
   .formulario, .resultados {
-    flex-basis: auto; /* Permitir que ocupen todo el ancho disponible */
-    padding-right: 0; /* Eliminar espaciado en pantallas pequeñas */
+    flex-basis: auto;
+    padding-right: 0;
   }
 }
 </style>

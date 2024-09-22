@@ -43,10 +43,6 @@ const updateValue = (value) => {
   margin-bottom: 4px;
   font-weight: bold;
 }
-
-.form-input {
-  width: 100%;
-}
 .pv-text {
   background-color: white;
   color: black;

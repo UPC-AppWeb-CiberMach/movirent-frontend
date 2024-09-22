@@ -24,7 +24,7 @@ const props = defineProps({
 const emit = defineEmits(['update:model-value']);
 
 const updateValue = (value) => {
-  emit('update:model-value', value); // Actualiza el modelo en el padre
+  emit('update:model-value', value);
 };
 </script>
 
@@ -39,9 +39,6 @@ const updateValue = (value) => {
   font-weight: bold;
 }
 
-.form-input {
-  width: 100%;
-}
 .pv-text {
   background-color: white;
   color: black;

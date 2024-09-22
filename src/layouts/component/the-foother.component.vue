@@ -51,6 +51,7 @@
 .footer {
   background-color: #72D063;
   color: #2c3e50;
+  margin: 0px !important;
 }
 
 .p-grid {
@@ -62,7 +63,7 @@
 
 .p-col {
   flex: 1 0 33.33%;
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 

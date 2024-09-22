@@ -1,7 +1,13 @@
 <template>
   <div class="p-field">
     <label for="title" class="form-label">Nombre </label>
-    <pv-input-text id="title" :value="modelValue" @input="updateValue" class="form-input pv-text" />
+    <pv-input-text
+        id="title"
+        :value="modelValue"
+        @input="updateValue"
+        class="form-input pv-text"
+        placeholder="Nombre del equipo"
+    />
   </div>
 </template>
 
@@ -31,9 +37,6 @@ const updateValue = (event) => {
   font-weight: bold;
 }
 
-.form-input {
-  width: 100%;
-}
 .pv-text{
   background-color: white;
   color: black;

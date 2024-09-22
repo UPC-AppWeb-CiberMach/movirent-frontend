@@ -1,10 +1,16 @@
 <template>
   <div class="p-field">
     <label for="precio" class="form-label">{{ $t('learning.price') }} </label>
-    <pv-input-number id="precio" :model-value="modelValue" @update:model-value="updateValue" class="form-input pv-text"
-                     mode="decimal"
-                     :min="0"
-                     placeholder="Ingrese el precio" />
+    <pv-input-number
+        id="precio"
+        :model-value="modelValue"
+        @update:model-value="updateValue"
+        class="form-input pv-text"
+        mode="decimal"
+        :min="0"
+        placeholder="Ingrese el precio"
+        :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
+    />
   </div>
 </template>
 
@@ -13,7 +19,7 @@ import { defineProps, defineEmits } from 'vue';
 
 const props = defineProps({
   modelValue: {
-    type: Number, // Cambiado a Number para manejar precios
+    type: Number,
     required: true
   }
 });
@@ -21,7 +27,7 @@ const props = defineProps({
 const emit = defineEmits(['update:model-value']);
 
 const updateValue = (value) => {
-  emit('update:model-value', value); // Actualiza el modelo en el padre
+  emit('update:model-value', value);
 };
 </script>
 
@@ -36,11 +42,4 @@ const updateValue = (value) => {
   font-weight: bold;
 }
 
-.form-input {
-  width: 100%;
-}
-.pv-text {
-  background-color: white;
-  color: black;
-}
 </style>

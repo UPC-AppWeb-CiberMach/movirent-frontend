@@ -1,7 +1,13 @@
 <template>
   <div class="p-field">
     <label for="direccion" class="form-label">{{ $t('learning.address') }} </label>
-    <pv-input-text id="direccion" :model-value="modelValue" @update:model-value="updateValue" class="form-input pv-text" />
+    <pv-input-text
+        id="direccion"
+        :model-value="modelValue"
+        @update:model-value="updateValue"
+        placeholder="Ingrese su dirección"
+        class="form-input pv-text"
+    />
   </div>
 </template>
 
@@ -31,10 +37,7 @@ const updateValue = (value) => {
 .form-label {
   margin-bottom: 4px;
   font-weight: bold;
-}
-
-.form-input {
-  width: 100%;
+  color: #6a4eb0;
 }
 .pv-text {
   background-color: white;

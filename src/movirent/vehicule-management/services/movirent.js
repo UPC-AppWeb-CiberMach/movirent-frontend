@@ -132,17 +132,12 @@ export default {
         },
 
         resetForm() {
-            // Reiniciar todos los campos del formulario
             Object.keys(this.operation).forEach(key => {
                 if (key === 'price') {
-                    // Reiniciar price a null
                     return;
                 }
-                // Reiniciar otros campos a vacío
                 this.operation[key] = '';
             });
-
-            // Resetear modo edición al limpiar el formulario
             if (this.isEditing) {
                 this.isEditing = false;
                 this.editingId = null;
@@ -150,7 +145,6 @@ export default {
         }
     },
     mounted() {
-        // Carga las operaciones al montar el componente
         this.fetchOperations();
     }
 }

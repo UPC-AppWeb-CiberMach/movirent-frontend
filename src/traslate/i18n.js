@@ -6,7 +6,7 @@ const messages = {
             title: 'Tutorial Title',
             category: 'Category',
             date: 'Darrrr',
-            Operation: 'Operations Listtt'
+            tituloResultado: 'Sus Scooter registrados'
         }
     },
     fr: {

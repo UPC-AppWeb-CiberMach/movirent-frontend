@@ -9,6 +9,7 @@
         optionValue="value"
         class="form-input pv-text"
         placeholder="Selecciona un Modelo"
+        :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
         @update:model-value="updateValue"
     />
   </div>
@@ -50,12 +51,5 @@ const updateValue = (value) => {
 .form-label {
   margin-bottom: 4px;
   font-weight: bold;
-}
-
-.form-input {
-  width: 100%;
-}
-.pv-text {
-  background-color: #8cd58c; /* Color de fondo personalizado */
 }
 </style>

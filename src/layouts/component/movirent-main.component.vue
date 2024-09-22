@@ -17,12 +17,13 @@ import TheFooter from './the-foother.component.vue';
 <style scoped>
 .layout {
   display: flex;
-  flex-direction: column; /* Coloca los elementos en columna */
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0px !important;
 }
 
 .content {
-  flex: 1; /* Permite que el contenido ocupe el espacio restante */
-  padding: 20px; /* Espaciado interno */
+  flex: 1;
+  padding: 10px;
 }
 </style>
