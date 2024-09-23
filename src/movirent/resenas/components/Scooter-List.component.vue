@@ -1,6 +1,5 @@
 <template>
   <div class="scooter-list">
-    <Header />
     <div class="main-content">
       <div class="filter-section">
         <DistrictFilter v-model="selectedDistrict" @filter="applyFilter" />
@@ -16,27 +15,20 @@
       </div>
     </div>
     <div class="my-scooters-btn">
-      <Button label="Ver mis Scooters" class="p-button-success" />
+      <pv-button label="Ver mis Scooters" class="p-button-success" />
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "@/ui/layout/Header.vue";
-import Footer from "@/ui/layout/Footer.vue";
-import DistrictFilter from "@/ui/components/District-Filter.component.vue";
-import ScooterCard from "@/ui/components/Scooter-Card.component.vue";
-import ScooterService from "@/application/services/Scooter-Service";
-import Button from "primevue/button";
+import DistrictFilter from "@/movirent/resenas/components/District-Filter.component.vue";
+import ScooterCard from "@/movirent/resenas/components/Scooter-Card.component.vue";
+import ScooterService from "@/movirent/resenas/services/Scooter-Service.js";
 
 export default {
   components: {
-    Header,
-    Footer,
     DistrictFilter,
-    ScooterCard,
-    Button,
+    ScooterCard
   },
   data() {
     return {

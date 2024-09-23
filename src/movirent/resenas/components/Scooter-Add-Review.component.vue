@@ -1,6 +1,5 @@
 <template>
   <div class="scooter-add-review">
-    <Header />
     <div class="main-content">
       <h2>Agregar Reseña</h2>
       <div class="scooter-info">
@@ -18,26 +17,17 @@
         </div>
       </div>
       <div class="actions">
-        <Button label="Enviar" class="p-button-success" @click="submitReview" />
-        <Button label="Cancelar" class="p-button-danger" @click="goBack" />
+        <pv-button label="Enviar" class="p-button-success" @click="submitReview" />
+        <pv-button label="Cancelar" class="p-button-danger" @click="goBack" />
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "@/ui/layout/Header.vue";
-import Footer from "@/ui/layout/Footer.vue";
-import Button from "primevue/button";
-import ScooterService from "@/application/services/Scooter-Service.js";
+import ScooterService from "@/movirent/resenas/services/Scooter-Service.js";
 
 export default {
-  components: {
-    Header,
-    Footer,
-    Button,
-  },
   data() {
     return {
       scooter: {},

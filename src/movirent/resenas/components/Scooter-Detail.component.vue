@@ -1,6 +1,5 @@
 <template>
   <div class="scooter-detail">
-    <Header />
     <div class="main-content">
       <h2>Detalle del scooter</h2>
       <div class="scooter-info">
@@ -28,22 +27,13 @@
         <Button label="Regresar" class="p-button-danger" @click="goBack" />
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
-import Header from "@/ui/layout/Header.vue";
-import Footer from "@/ui/layout/Footer.vue";
-import Button from "primevue/button";
-import ScooterService from "@/application/services/Scooter-Service.js";
+import ScooterService from "@/movirent/resenas/services/Scooter-Service.js";
 
 export default {
-  components: {
-    Header,
-    Footer,
-    Button,
-  },
   data() {
     return {
       scooter: {},

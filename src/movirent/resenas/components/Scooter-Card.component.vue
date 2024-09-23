@@ -3,13 +3,11 @@
     <img :src="scooter.image" alt="Scooter" />
     <h3>{{ scooter.name }}</h3>
     <p>{{ scooter.district }}</p>
-    <Button label="Ver detalle" class="p-button-success" @click="viewDetail" />
+    <pv-button label="Ver detalle" class="p-button-success" @click="viewDetail" />
   </div>
 </template>
 
 <script>
-import Button from 'primevue/button';
-
 export default {
   props: {
     scooter: Object,

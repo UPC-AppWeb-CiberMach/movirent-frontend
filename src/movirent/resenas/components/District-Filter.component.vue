@@ -1,14 +1,10 @@
 <template>
-  <Dropdown :options="districts" v-model="selectedDistrict" placeholder="Distrito" @change="$emit('filter')" />
+  <pv-dropdown :options="districts" v-model="selectedDistrict" placeholder="Distrito" @change="$emit('filter')" />
 </template>
 
 <script>
-import Dropdown from 'primevue/dropdown';
 
 export default {
-  components: {
-    Dropdown
-  },
   data() {
     return {
       selectedDistrict: null,
