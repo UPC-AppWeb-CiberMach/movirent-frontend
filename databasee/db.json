@@ -1,0 +1,27 @@
+{
+  "scooters": [
+    {
+      "id": 1,
+      "name": "Scooter 1",
+      "district": "Distrito 1",
+      "image": "https://via.placeholder.com/150",
+      "price_per_hour": 1,
+      "address": "Los Olivos 123",
+      "contact": "999-999-999",
+      "reviews": [
+        { "user": "Random1", "rating": 4, "comment": "Muy buen servicio, el dueño fue muy amable y puntual. El precio fue un poco elevado." },
+        { "user": "Random2", "rating": 3, "comment": "Scooter un poco antiguo para el precio que tiene." }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Scooter 2",
+      "district": "Distrito 2",
+      "image": "https://via.placeholder.com/150",
+      "price_per_hour": 1,
+      "address": "Los Olivos 123",
+      "contact": "999-999-999",
+      "reviews": []
+    }
+  ]
+}

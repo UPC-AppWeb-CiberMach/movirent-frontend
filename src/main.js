@@ -64,4 +64,3 @@ app.component('pv-inputnumber', InputNumber);
 app.use(router)
 app.use(i18n)
 app.mount('#app')
-
