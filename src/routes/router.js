@@ -4,6 +4,9 @@ import RegisterForm from "../movirent/profile-management/components/register-for
 import LoginForm from "../movirent/profile-management/components/login-form.component.vue";
 import UserView from "../movirent/profile-management/components/user-view.component.vue";
 import Historial from "../movirent/profile-management/components/historial-test.vue";
+  
+import ReservationHistory from "../profile-management/components/reservation-history.component.vue";
+import ReservationDetailsDialog from "../profile-management/components/reservation-details-dialog.component.vue";
 
 import NewCard from "@/movirent/vehicule-management/pages/the-movirent-view-card.component.vue"
 import NotFound from "@/movirent/shared/pages/the-response-error.component.vue"
@@ -16,11 +19,15 @@ const routes = [
     { path: '/login', component: LoginForm },
     { path: '/profile', component: UserView },
     { path: '/historial', component: Historial },
+      
+    {path: '/ReservationHistory', component: ReservationHistory },
+    { path: '/reservation/:id', component: ReservationDetailsDialog }
 
     { path: '/newCard', component: NewCard},
     { path: '/question', component: QuestionFrecuently},
     { path: '/privacy', component: PrivacyPolicy},
     { path: '/:pathMatch(.*)*', name:'NotFound', component: NotFound}
+
 ]
 
 const router = createRouter({
