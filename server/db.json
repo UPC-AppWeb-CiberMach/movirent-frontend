@@ -1,0 +1,218 @@
+{
+  "users": [
+    {
+      "id": "c5e59521-264d-4bf0-8050-596c9e435d38",
+      "email": "MesSobble@gmail.com",
+      "password": "Sobble08",
+      "completeName": "MesSobble",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "8420a162-5402-4a22-a5f1-00e6ba4dfa3d",
+      "email": "a@gmail.com",
+      "password": "aaaaaaaa",
+      "completeName": "aaaaaaaa",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "69b51759-f01e-4156-bb47-5758b15742d0",
+      "email": "am@gmail.com",
+      "password": "adrianmesso",
+      "completeName": "adrian",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "00c8dcfe-3ab3-437b-9524-ced574cb3b83",
+      "email": "",
+      "password": "",
+      "completeName": "",
+      "phone": "",
+      "dni": "",
+      "user_roles_id": 1
+    },
+    {
+      "id": "3b2977f1-acd9-4f6a-ab77-4cbc6538c491",
+      "email": "Alexandria@gmail.com",
+      "password": "Alexandria",
+      "completeName": "Alexandria",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 1
+    },
+    {
+      "id": "6cf9dee0-3007-4c9c-9860-099963eb8078",
+      "email": "mari@yahoo.com",
+      "password": "MarianaIza",
+      "completeName": "Mariana Iza",
+      "phone": "999999999",
+      "dni": "00000000",
+      "user_roles_id": 2,
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsEtGlhqOj_vLFlwVGQ6CHf34p2q5xShQaKQ&s"
+    }
+  ],
+  "user_roles": [
+    {
+      "id": "1",
+      "role": "Owner"
+    },
+    {
+      "id": "2",
+      "role": "User"
+    }
+  ],
+  "scooters": [
+    {
+      "id": "1",
+      "brand": "Xiaomi",
+      "model": "M365",
+      "price": 500,
+      "image": "https://github.com/VelardeSoft/json/issues/1#issue-2526712226",
+      "price_per_hour": "number",
+      "status": "string",
+      "owner_id": "string"
+    },
+    {
+      "id": "2",
+      "brand": "Segway",
+      "model": "Ninebot",
+      "price": 600,
+      "image": "https://github.com/VelardeSoft/json/issues/1#issue-2526712226",
+      "price_per_hour": "number",
+      "status": "string",
+      "owner_id": "string"
+    }
+  ],
+  "reservations": [
+    {
+      "reservation_id": 1,
+      "client_id": 1,
+      "scooter_id": 2,
+      "start_date": "2024-09-15",
+      "end_date": "2024-09-20",
+      "id": "4794"
+    },
+    {
+      "reservation_id": 2,
+      "client_id": 2,
+      "scooter_id": 1,
+      "start_date": "2024-09-17",
+      "end_date": "2024-09-19",
+      "id": "17ab"
+    }
+  ],
+  "rates": [
+    {
+      "id": "1",
+      "comment": "Excelente scooter, muy cómodo.",
+      "star_numb": 5,
+      "client_id": 1,
+      "scooter_id": 1
+    },
+    {
+      "id": "2",
+      "comment": "Buen servicio, pero el scooter era algo lento.",
+      "star_numb": 3,
+      "client_id": 2,
+      "scooter_id": 2
+    },
+    {
+      "id": "3",
+      "comment": "Muy buen scooter, me gustó mucho.",
+      "star_numb": 5,
+      "client_id": 1,
+      "scooter_id": 1
+    },
+    {
+      "id": "4",
+      "comment": "Prueba api 123123",
+      "star_numb": 5,
+      "client_id": 1,
+      "scooter_id": 1
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "number": 123456789012,
+      "date": "2024-09-15",
+      "three_back_num": 123,
+      "user_id": 1
+    },
+    {
+      "id": "2",
+      "number": 987654321012,
+      "date": "2024-09-16",
+      "three_back_num": 456,
+      "user_id": 2
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "1",
+      "price": 39,
+      "subscription_types_id": 1,
+      "user_id": 1,
+      "created_date": "2024-09-01"
+    },
+    {
+      "id": "2",
+      "price": 99,
+      "subscription_types_id": 2,
+      "user_id": 2,
+      "created_date": "2024-09-02"
+    },
+    {
+      "id": "3",
+      "price": 199,
+      "subscription_types_id": 3,
+      "user_id": 3,
+      "created_date": "2024-09-03"
+    }
+  ],
+  "subscription_types": [
+    {
+      "id": "1",
+      "types": "Mensual"
+    },
+    {
+      "id": "2",
+      "types": "Trimestral"
+    },
+    {
+      "id": "3",
+      "types": "Anual"
+    }
+  ],
+  "history": [
+    {
+      "id": "1",
+      "reservation_id": 1,
+      "date": "2024-09-20"
+    },
+    {
+      "id": "2",
+      "reservation_id": 2,
+      "date": "2024-09-19"
+    }
+  ],
+  "auth": [
+    {
+      "id": "1",
+      "email": "juan.perez@example.com",
+      "password": "$2a$10$7VhOHGx1plMD3M5z/dUke.mRpuOf2OpA5pu6Z94yEjkfrH9V8Dm/W",
+      "user_id": 1
+    },
+    {
+      "id": "2",
+      "email": "maria.gonzalez@example.com",
+      "password": "$2a$10$zB/gKuwRfOqlItiiyEJYGOWv4Q6ps0DpxxgY/jDOIjcIqA5qxjOAi",
+      "user_id": 2
+    }
+  ]
+}
