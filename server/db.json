@@ -1,66 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "complete_name": "Juan Perez",
-      "dni": "12345678",
-      "age": 30,
-      "phone": "987654321",
-      "email": "juan.perez@example.com",
-      "password": "$2a$10$7VhOHGx1plMD3M5z/dUke.mRpuOf2OpA5pu6Z94yEjkfrH9V8Dm/W",
-      "address": "Av. Lima 123",
-      "user_roles_id": 1
-    },
-    {
-      "id": "2",
-      "complete_name": "María Gonzalez",
-      "dni": "87654321",
-      "age": 25,
-      "phone": "912345678",
-      "email": "maria.gonzalez@example.com",
-      "password": "$2a$10$zB/gKuwRfOqlItiiyEJYGOWv4Q6ps0DpxxgY/jDOIjcIqA5qxjOAi",
-      "address": "Calle Sol 456",
-      "user_roles_id": 2
-    },
-    {
-      "id": 0,
-      "email": "asasasa@gmail.com",
-      "password": "asasa",
-      "name": "User",
-      "lastName": "User",
-      "phone": "1234567890",
-      "address": "User Address",
-      "user_roles_id": 1
-    },
-    {
-      "id": 0,
-      "email": "asasasa",
-      "password": "sasasa",
-      "name": "User",
-      "lastName": "User",
-      "phone": "1234567890",
-      "address": "User Address",
-      "user_roles_id": 1
-    },
-    {
-      "id": "2zZuJY6",
-      "email": "Messo2@gmail.com",
-      "password": "Sobble08",
-      "completeName": "MesSobble",
-      "phone": "1234567890",
-      "dni": "00000000",
-      "user_roles_id": 1
-    },
-    {
-      "id": "3b6295af-2624-4913-ae6e-8486941532bd",
-      "email": "",
-      "password": "",
-      "completeName": "",
-      "phone": "",
-      "dni": "",
-      "user_roles_id": 1
-    },
-    {
       "id": "c5e59521-264d-4bf0-8050-596c9e435d38",
       "email": "MesSobble@gmail.com",
       "password": "Sobble08",

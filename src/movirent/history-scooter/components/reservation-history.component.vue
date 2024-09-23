@@ -49,7 +49,7 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-import { HistoryServices } from "@/profile-management/services/history-services.js";
+import { HistoryServices } from "@/movirent/history-scooter/services/history-services.js";
 import { useRouter } from "vue-router";
 
 const reservations = ref([]);
@@ -63,7 +63,6 @@ onMounted(async () => {
     const response = await new HistoryServices().getReserveByClientId(clientId);
     const reservationsData = response.data;
 
-    // Use Promise.all to handle multiple asynchronous calls
     const reservationsWithScooters = await Promise.all(reservationsData.map(async (reservation) => {
       const scooterResponse = await new HistoryServices().getScooterById(reservation.scooter_id);
       reservation.scooter = scooterResponse.data;
