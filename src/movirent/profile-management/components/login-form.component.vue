@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import {Db} from "@/profile-management/services/user.services.js";
+import {Db} from "@/movirent/profile-management/services/user.services.js";
 import router from "@/routes/router.js";
 
 let email = "";
@@ -49,6 +49,7 @@ async function signIn() {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
+  border: 1px solid red;
 }
 
 .font-bold {

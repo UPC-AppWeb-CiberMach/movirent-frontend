@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import {Db} from "@/profile-management/services/user.services.js";
+import {Db} from "@/movirent/profile-management/services/user.services.js";
 import router from "@/routes/router.js";
 import { ref, reactive } from 'vue'
 import { useVuelidate } from '@vuelidate/core'

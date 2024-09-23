@@ -1,7 +1,7 @@
 <template>
   <div class="p-field">
     <label for="direccion" class="form-label">{{ $t('movirent.address') }} </label>
-    <pv-input-text
+    <pv-inputtext
         id="direccion"
         :model-value="modelValue"
         @update:model-value="updateValue"

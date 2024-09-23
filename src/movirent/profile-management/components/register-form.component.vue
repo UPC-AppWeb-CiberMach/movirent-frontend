@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import {Db} from "@/profile-management/services/user.services.js";
+import {Db} from "@/movirent/profile-management/services/user.services.js";
 import { v4 as uuidv4 } from 'uuid';
 import router from "@/routes/router.js";
 import { ref, reactive } from 'vue'

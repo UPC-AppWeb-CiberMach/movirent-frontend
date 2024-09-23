@@ -1,7 +1,7 @@
 <template>
   <div class="p-field">
     <label for="foto" class="form-label">{{ $t('movirent.imgUrl') }} </label>
-    <pv-input-text
+    <pv-inputtext
         id="foto"
         :model-value="modelValue"
         @update:model-value="updateValue"
