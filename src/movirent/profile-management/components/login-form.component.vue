@@ -1,13 +1,13 @@
 <template>
-  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container" style="margin-top: 300px; width: 100%; max-width: 25rem; margin-left: auto; margin-right: auto;" aria-label="Contenedor de inicio de sesión">
-    <h1 id="sign-in-heading" class="font-bold" aria-label="Título de inicio de sesión">Iniciar Sesión</h1>
-    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3 component-margin" type="text" placeholder="Email" aria-label="Campo de correo electrónico"/>
-    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3 component-margin" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container" style="margin-top: 10%; width: 100%; max-width: 25rem; margin-left: auto; margin-right: auto;" aria-label="Contenedor de inicio de sesión">
+    <h1 id="sign-in-heading" class="font-bold pv-txt" aria-label="Título de inicio de sesión">Iniciar Sesión</h1>
+    <pv-inputtext v-model="email" class="w-15rem lg:w-25rem p-3 component-margin pv-text" type="text" placeholder="Email" aria-label="Campo de correo electrónico"/>
+    <pv-inputtext v-model="password" class="w-15rem lg:w-25rem p-3 component-margin pv-text" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
     <div class="button-container">
       <pv-button @click="signIn" class="mt-5 p-2 sign-in-btn component-margin" type="submit" label="Iniciar Sesión" aria-label="Botón para iniciar sesión"/>
     </div>
     <div class="grid-container component-margin" aria-label="Sección de registro">
-      <h3 aria-label="Pregunta de registro">¿Aún no tienes una cuenta?</h3>
+      <h3 aria-label="Pregunta de registro" class="pv-txt">¿Aún no tienes una cuenta?</h3>
       <div class="register-redirect" aria-label="Redirección de registro">
         <router-link to="/register" class="sign-up-section" aria-label="Enlace para registrarse">Regístrate</router-link>
       </div>
@@ -39,6 +39,13 @@ async function signIn() {
 </script>
 
 <style scoped>
+.pv-text{
+  background-color: #ffffff;
+  color: #353535;
+}
+.pv-txt{
+  color: #6d6d70;
+}
 .sign-in-container{
   display: flex;
   flex-direction: column;
@@ -49,7 +56,6 @@ async function signIn() {
   max-width: 25rem;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid red;
 }
 
 .font-bold {
@@ -69,7 +75,7 @@ async function signIn() {
 .button-container {
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 50%;
 }
 
 .sign-in-btn{

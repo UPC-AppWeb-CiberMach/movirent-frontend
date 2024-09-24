@@ -14,7 +14,7 @@ import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.com
 import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue"
 
 const routes = [
-    { path:"/", component: RegisterForm },  // RegisterForm
+    { path:"/", component: UserView },  // RegisterForm
     { path: '/register', component: RegisterForm },
     { path: '/login', component: LoginForm },
     { path: '/profile', component: UserView },
