@@ -8,7 +8,7 @@
       </template>
       <template #center>
         <div class="flex gap-3">
-          <router-link to="/viewCard" class="pv-btn">
+          <router-link to="/newCard" class="pv-btn">
             <pv-button label="Perfil" icon="pi pi-user" />
           </router-link>
           <router-link to="/question" class="pv-btn">

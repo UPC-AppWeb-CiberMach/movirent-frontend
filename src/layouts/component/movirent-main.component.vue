@@ -2,7 +2,7 @@
   <div class="layout">
     <TheHeader />
     <main class="content">
-      <router-view></router-view>
+      <router-view>Bienvenido a Movirent</router-view>
     </main>
     <TheFooter />
   </div>
@@ -11,7 +11,6 @@
 <script setup>
 import TheHeader from './the-header.component.vue';
 import TheFooter from './the-foother.component.vue';
-
 </script>
 
 <style scoped>
