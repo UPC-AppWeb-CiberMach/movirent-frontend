@@ -19,7 +19,7 @@
     </div>
 
     <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">Nuestras redes sociales</h3> <br/>
+      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.redesSociales') }}</h3> <br/>
       <a href="https://www.instagram.com" target="_blank">
         <pv-button label="Instagram" icon="pi pi-instagram" size="small" class="pv-btn" style="margin-top: 15px" />
       </a> <br/>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">Soporte</h3> <br/>
+      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.soporte') }}</h3> <br/>
       <p>
         <a href="https://wa.me/926335924" target="_blank" class="p-link pv-ws">
           <i class="pi pi-whatsapp pv-logo" style="font-size: 40px"></i> WhatsApp

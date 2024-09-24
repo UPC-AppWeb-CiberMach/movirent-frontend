@@ -1,6 +1,6 @@
 <template>
   <div class="p-d-flex p-flex-column p-ai-center p-jc-center user-view-container" aria-label="Contenedor de vista de usuario">
-    <h1 id="user-edit-heading" class="font-bold center-title pv-txt" aria-label="Título de edición de usuario">¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!</h1>
+    <h1 id="user-edit-heading" class="font-bold center-title pv-txt" aria-label="Título de edición de usuario">{{ $t('titles.title') }}</h1>
 
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">

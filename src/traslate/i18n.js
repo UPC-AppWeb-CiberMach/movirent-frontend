@@ -1,7 +1,7 @@
-import { createI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n';
 
 const messages = {
-    en: {
+    es: {
         movirent: {
             name: 'Nombre del equipo',
             address: 'Dirección',
@@ -14,14 +14,55 @@ const messages = {
             titleGeneral: 'Registro de Scooter',
             nuevoScooter: 'Registrar nuevo Scooter',
             titleCard: 'Mis Scooter',
+            redesSociales: 'Nuestras redes sociales',
+            soporte: 'Soporte',
+        },
+        buttons: {
+            profile: 'Perfil',
+            subscription: 'Mi Suscripción',
+            reviews: 'Reseñas',
+            reservations: 'Reservas',
+            scooter: 'Scooter',
+            history: 'Historial'
+        },
+        titles: {
+            title: '¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!'
+        }
+    },
+    en: { // Agregar traducciones en inglés
+        movirent: {
+            name: 'Team Name',
+            address: 'Address',
+            marca: 'Scooter Brand',
+            phone: 'Phone',
+            model: 'Scooter Model',
+            imgUrl: 'Image URL',
+            price: 'Rental Cost',
+            tituloResultado: 'Your Registered Scooters',
+            titleGeneral: 'Scooter Registration',
+            nuevoScooter: 'Register New Scooter',
+            titleCard: 'My Scooters',
+            redesSociales: 'Our Social Networks',
+            soporte: 'Support'
+        },
+        buttons: {
+            profile: 'Profile',
+            subscription: 'My Subscription',
+            reviews: 'Reviews',
+            reservations: 'Reservations',
+            scooter: 'Scooter',
+            history: 'History'
+        },
+        titles: {
+            title: 'Is your information incorrect or do you want to update it? Edit them!'
         }
     }
-}
+};
 
 const i18n = createI18n({
-    locale: 'en', // Default locale
-    fallbackLocale: 'en', // Fallback locale
-    messages // Short syntax for messages
-})
+    locale: 'es', // Idioma por defecto
+    fallbackLocale: 'es', // Idioma de respaldo
+    messages // Sintaxis corta para los mensajes
+});
 
-export default i18n
+export default i18n;
