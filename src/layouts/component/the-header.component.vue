@@ -8,7 +8,7 @@
       </template>
       <template #center>
         <div class="flex gap-3">
-          <router-link to="/newCard" class="pv-btn">
+          <router-link to="/profile" class="pv-btn">
             <pv-button label="Perfil" icon="pi pi-user" />
           </router-link>
           <router-link to="/question" class="pv-btn">
@@ -17,13 +17,13 @@
           <router-link to="/reseñas" class="pv-btn">
             <pv-button label="Reseñas" icon="pi pi-credit-card" />
           </router-link>
-          <router-link to="/reservas" class="pv-btn">
+          <router-link to="/ReservationHistory" class="pv-btn">
             <pv-button label="Reservas" icon="pi pi-credit-card" />
           </router-link>
-          <router-link to="/scooter" class="pv-btn">
+          <router-link to="/newCard" class="pv-btn">
             <pv-button label="Scooter" icon="pi pi-shop" />
           </router-link>
-          <router-link to="/historial" class="pv-btn">
+          <router-link to="/ReservationHistory" class="pv-btn">
             <pv-button label="Historial" icon="pi pi-credit-card" />
           </router-link>
         </div>

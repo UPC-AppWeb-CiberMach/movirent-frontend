@@ -4,6 +4,7 @@ import RegisterForm from "../movirent/profile-management/components/register-for
 import LoginForm from "../movirent/profile-management/components/login-form.component.vue";
 import UserView from "../movirent/profile-management/components/user-view.component.vue";
 import Historial from "../movirent/profile-management/components/historial-test.vue";
+
 import ReservationHistory from "../movirent/history-scooter/components/reservation-history.component.vue";
 import ReservationDetailsDialog from "../movirent/history-scooter/components/reservation-details-dialog.component.vue";
 

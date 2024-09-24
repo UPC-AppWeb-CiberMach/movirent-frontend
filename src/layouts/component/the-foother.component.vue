@@ -4,7 +4,7 @@
       <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">Quiénes somos</h3>
       <br />
       <nav>
-        <RouterLink to="/Question">
+        <RouterLink to="/main">
           <pv-button label="Quienes Somos" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
