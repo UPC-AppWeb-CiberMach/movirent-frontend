@@ -1,4 +1,4 @@
-import ApiClient from '@/interfrastructure/api/Api-Client.js';
+import ApiClient from '@/movirent/resenas/services/Api-Client.js';
 
 export default {
     fetchScooters() {

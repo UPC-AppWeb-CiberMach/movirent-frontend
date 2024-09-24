@@ -1,6 +1,6 @@
 export default {
     getScooters() {
-        return fetch('http://localhost:3000/scooters')
+        return fetch('http://localhost:3000/scooter')
             .then(response => response.json())
             .catch(error => {
                 console.error("Error fetching scooters:", error);
@@ -9,7 +9,7 @@ export default {
     },
 
     getScooterById(id) {
-        return fetch(`http://localhost:3000/scooters/${id}`)
+        return fetch(`http://localhost:3000/scooter/${id}`)
             .then(response => response.json())
             .catch(error => {
                 console.error("Error fetching scooter details:", error);
@@ -18,7 +18,7 @@ export default {
     },
 
     postReview(scooterId, review) {
-        return fetch(`http://localhost:3000/scooters/${scooterId}/reviews`, {
+        return fetch(`http://localhost:3000/scooter/${scooterId}/reviews`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

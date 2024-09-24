@@ -1,4 +1,59 @@
 {
+  "scooter": [
+    {
+      "id": "1",
+      "name": "Scooter 1",
+      "district": "Distrito 1",
+      "image": "https://via.placeholder.com/150",
+      "price_per_hour": 1,
+      "address": "Los Olivos 123",
+      "contact": "999-999-999",
+      "reviews": [
+        {
+          "user": "Random1",
+          "rating": 4,
+          "comment": "Muy buen servicio, el dueño fue muy amable y puntual. El precio fue un poco elevado."
+        },
+        {
+          "user": "Random2",
+          "rating": 3,
+          "comment": "Scooter un poco antiguo para el precio que tiene."
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Scooter 2",
+      "district": "Distrito 2",
+      "image": "https://via.placeholder.com/150",
+      "price_per_hour": 1,
+      "address": "Los Olivos 123",
+      "contact": "999-999-999",
+      "reviews": []
+    }
+  ],
+  "operations": [
+    {
+      "id": "2038",
+      "name": "Name",
+      "type": "Dualtron",
+      "model": "Honda Elite Fi",
+      "price": 12342,
+      "address": "los olivos s",
+      "phone": "926335924",
+      "imageUrl": "data:image/png;base64,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"
+    },
+    {
+      "id": "0940",
+      "name": "teresita",
+      "type": "Dualtron",
+      "model": "Xiaome FA",
+      "price": 123,
+      "address": "San Martin de Porrez",
+      "phone": "026335025",
+      "imageUrl": "https://www.shutterstock.com/es/image-photo/playful-businessman-riding-electric-scooter-amidst-2471943211"
+    }
+  ],
   "users": [
     {
       "id": "c5e59521-264d-4bf0-8050-596c9e435d38",

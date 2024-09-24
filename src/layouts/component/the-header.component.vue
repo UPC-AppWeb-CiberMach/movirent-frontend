@@ -17,7 +17,7 @@
           <router-link to="/reseñas" class="pv-btn">
             <pv-button label="Reseñas" icon="pi pi-credit-card" />
           </router-link>
-          <router-link to="/ReservationHistory" class="pv-btn">
+          <router-link to="/list" class="pv-btn">
             <pv-button label="Reservas" icon="pi pi-credit-card" />
           </router-link>
           <router-link to="/newCard" class="pv-btn">

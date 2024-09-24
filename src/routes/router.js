@@ -14,6 +14,11 @@ import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.com
 import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue";
 import ViewCard from "@/movirent/vehicule-management/pages/the-card-scooter.component.vue";
 
+import ScooterList from '@/movirent/resenas/components/Scooter-List.component.vue';
+import ScooterDetail from '@/movirent/resenas/components/Scooter-Detail.component.vue';
+import ScooterReviews from '@/movirent/resenas/components/Scooter-Reviews.component.vue';
+import ScooterAddReview from '@/movirent/resenas/components/Scooter-Add-Review.component.vue';
+
 import Main from "@/layouts/component/movirent-main.component.vue";
 
 // Definir las rutas
@@ -33,6 +38,12 @@ const routes = [
             { path: '/question', component: QuestionFrecuently },
             { path: '/privacy', component: PrivacyPolicy },
             { path: '/viewCard', component: ViewCard },
+
+            { path: '/list', component: ScooterList }, // Pantalla de scooters
+            { path: '/scooter/:id', component: ScooterDetail }, // Pantalla de detalle del scooter
+            { path: '/scooter/:id/reviews', component: ScooterReviews }, //  Pantalla de reseña del scooter
+            { path: '/scooter/:id/add-review', component: ScooterAddReview } // Pantalla de dejar reseña al scooter
+
         ]
     },
     { path: '/:pathMatch(.*)*', name:'NotFound', component: NotFound } // Página no encontrada
