@@ -8,13 +8,15 @@ import Historial from "../movirent/profile-management/components/historial-test.
 import ReservationHistory from "../movirent/history-scooter/components/reservation-history.component.vue";
 import ReservationDetailsDialog from "../movirent/history-scooter/components/reservation-details-dialog.component.vue";
 
-import NewCard from "@/movirent/vehicule-management/pages/the-movirent-view-card.component.vue"
+import CreateScooter from "@/movirent/vehicule-management/pages/the-movirent-view-card.component.vue"
 import NotFound from "@/movirent/shared/pages/the-response-error.component.vue"
 import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.component.vue"
 import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue"
+import MainComponente from "@/layouts/component/movirent-main.component.vue"
+import ViewCard from "@/movirent/vehicule-management/pages/the-card-scooter.component.vue"
 
 const routes = [
-    { path:"/", component: UserView },  // RegisterForm
+    { path:"/", component: RegisterForm },  // RegisterForm
     { path: '/register', component: RegisterForm },
     { path: '/login', component: LoginForm },
     { path: '/profile', component: UserView },
@@ -23,9 +25,11 @@ const routes = [
     {path: '/ReservationHistory', component: ReservationHistory },
     { path: '/reservation/:id', component: ReservationDetailsDialog },
 
-    { path: '/newCard', component: NewCard},
+    { path: '/newCard', component: CreateScooter},
     { path: '/question', component: QuestionFrecuently},
     { path: '/privacy', component: PrivacyPolicy},
+    { path: '/main', component: MainComponente},
+    { path: '/viewCard', component: ViewCard},
     { path: '/:pathMatch(.*)*', name:'NotFound', component: NotFound}
 ]
 

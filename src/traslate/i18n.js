@@ -12,6 +12,8 @@ const messages = {
             price: 'Costo de alquiler',
             tituloResultado: 'Sus Scooter registrados',
             titleGeneral: 'Registro de Scooter',
+            nuevoScooter: 'Registrar nuevo Scooter',
+            titleCard: 'Mis Scooter',
         }
     }
 }

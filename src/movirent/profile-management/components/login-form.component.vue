@@ -27,7 +27,7 @@ async function signIn() {
     if(response.data.length > 0){
       alert("Sign In Success");
       sessionStorage.setItem("user", JSON.stringify(response.data[0]));
-      router.push("/profile")
+      router.push("/main")
     }
     else {
       alert("User Not Found");

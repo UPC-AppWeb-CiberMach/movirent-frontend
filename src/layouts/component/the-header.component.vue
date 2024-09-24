@@ -7,13 +7,25 @@
         </div>
       </template>
       <template #center>
-        <div class="flex gap-3 ">
-          <pv-button class="pv-btn" label="Perfil" icon="pi pi-user" />
-          <pv-button class="pv-btn" label="Mi suscripción" icon="pi pi-credit-card" />
-          <pv-button class="pv-btn" label="Reseñas" icon="pi pi-credit-card" />
-          <pv-button class="pv-btn" label="Reservas" icon="pi pi-credit-card" />
-          <pv-button class="pv-btn" label="Scooter" icon="pi pi-shop" />
-          <pv-button class="pv-btn" label="Historial" icon="pi pi-credit-card" />
+        <div class="flex gap-3">
+          <router-link to="/viewCard" class="pv-btn">
+            <pv-button label="Perfil" icon="pi pi-user" />
+          </router-link>
+          <router-link to="/question" class="pv-btn">
+            <pv-button label="Mi suscripción" icon="pi pi-credit-card" />
+          </router-link>
+          <router-link to="/reseñas" class="pv-btn">
+            <pv-button label="Reseñas" icon="pi pi-credit-card" />
+          </router-link>
+          <router-link to="/reservas" class="pv-btn">
+            <pv-button label="Reservas" icon="pi pi-credit-card" />
+          </router-link>
+          <router-link to="/scooter" class="pv-btn">
+            <pv-button label="Scooter" icon="pi pi-shop" />
+          </router-link>
+          <router-link to="/historial" class="pv-btn">
+            <pv-button label="Historial" icon="pi pi-credit-card" />
+          </router-link>
         </div>
       </template>
 
@@ -39,5 +51,5 @@
   font-weight: bold;
 }
 </style>
-<script setup lang="ts">
+<script setup>
 </script>
