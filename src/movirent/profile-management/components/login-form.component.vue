@@ -27,7 +27,7 @@ async function signIn() {
     if(response.data.length > 0){
       alert("Sign In Success");
       sessionStorage.setItem("user", JSON.stringify(response.data[0]));
-      router.push("/main")
+      router.push("/profile")
     }
     else {
       alert("User Not Found");
@@ -41,10 +41,10 @@ async function signIn() {
 <style scoped>
 .pv-text{
   background-color: #ffffff;
-  color: #353535;
+  color: black;
 }
 .pv-txt{
-  color: #6d6d70;
+  color: black;
 }
 .sign-in-container{
   display: flex;

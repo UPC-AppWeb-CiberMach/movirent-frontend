@@ -30,7 +30,7 @@
   background-color: #bfbfbf;
   border-radius: 20px;
   text-align: center;
-  color: #513c86;
+  color: black;
 }
 
 .main-card {
@@ -43,7 +43,7 @@
 .title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #513c86;
+  color: black;
 }
 </style>
 <script setup>

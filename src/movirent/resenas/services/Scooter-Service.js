@@ -10,7 +10,7 @@ export default {
     },
 
     addReview(scooterId, review) {
-        // Simulamos la adición de la reseña al scooter con ID scooterId
+
         return ApiClient.postReview(scooterId, review);
     }
 };

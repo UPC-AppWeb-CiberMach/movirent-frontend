@@ -1,5 +1,5 @@
 <template>
-  <pv-card style="width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;"> <!-- Fondo blanco y texto negro -->
+  <pv-card style=" align-items: center; margin-left: 40%; width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;">
     <template #header>
       <img :src="reservation.scooter.image" :alt="reservation.scooter.model" />
     </template>
@@ -14,8 +14,8 @@
       <p class="m-0"><strong>Owner phone:</strong> {{ reservation.user.phone }}</p>
     </template>
     <template #footer>
-      <div class="flex gap-4 mt-1">
-        <pv-button label="Close" @click="$router.go(-1)" class="w-full" />
+      <div class="flex gap-4 mt-1 ">
+        <pv-button label="Close" @click="$router.go(-1)" class="w-full pink-button" />
       </div>
     </template>
   </pv-card>
@@ -58,4 +58,9 @@ onMounted(async () => {
   margin: 0;
 }
 
+.pink-button{
+  background-color: #FD6C6C;
+  color: #ffffff;
+  border: none;
+}
 </style>

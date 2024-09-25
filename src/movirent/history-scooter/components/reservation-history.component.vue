@@ -7,24 +7,24 @@
     </template>
   </pv-dialog>
 
-  <div class="card bg-white text-black"> <!-- Fondo blanco y texto negro -->
+  <div class="card bg-white text-black">
     <pv-dataview :value="reservations" paginator :rows="5">
       <template #list="slotProps">
         <div class="flex flex-column">
           <div v-for="(item, index) in slotProps.items" :key="index">
-            <div class="flex flex-column sm:flex-row sm:align-items-center p-6 gap-4 bg-white text-black border-top-1 border-300"> <!-- Fondo blanco y texto negro -->
+            <div class="flex flex-column sm:flex-row sm:align-items-center p-6 gap-4 bg-white text-black border-top-1 border-300">
               <div class="relative w-full md:w-4">
                 <img class="block xl:block mx-auto border-round-md w-3 h-auto" :src="item.scooter.image" :alt="item.scooter.model" />
               </div>
               <div class="flex flex-column md:flex-row justify-content-between md:align-items-center flex-1 gap-6">
-                <div class="flex flex-row md:flex-column justify-content-between align-items-start gap-2">
+                <div class="flex flex-row md:flex-column justify-content-between align-items-left gap-2">
                   <div>
-                    <span class="font-medium text-black text-sm">Fecha: {{ item.start_date }}</span> <!-- Texto negro -->
+                    <span class="font-medium text-black text-sm">Fecha: {{ item.start_date }}</span>
                     <div class="text-lg font-medium mt-2">Modelo: {{ item.scooter.model }}</div>
                   </div>
-                  <div class="bg-gray-200 p-1 border-round"> <!-- Fondo gris claro -->
+                  <div class="bg-gray-200 p-1 border-round">
                     <div class="bg-white flex align-items-center gap-2 justify-content-center py-1 px-2 border-round">
-                      <span class="text-black font-medium text-sm">Calificación: {{ item.rating }}</span> <!-- Texto negro -->
+                      <span class="text-black font-medium text-sm">Calificación: {{ item.rating }}</span>
                       <i class="pi pi-star-fill text-yellow-500"></i>
                     </div>
                   </div>
@@ -32,8 +32,8 @@
                 <div class="flex flex-column md:align-items-end gap-8">
                   <span class="text-xl font-semibold">{{ item.time }} hrs</span>
                   <div class="flex flex-row-reverse md:flex-row gap-2">
-                    <pv-button label="Delete" @click="confirmDelete(item.id)"></pv-button>
-                    <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap" @click="viewDetails(item.id)"></pv-button>
+                    <pv-button class="pink-button" label="Delete" @click="confirmDelete(item.id)"></pv-button>
+                    <pv-button label="View details" class="flex-auto md:flex-initial whitespace-nowrap green-button" @click="viewDetails(item.id)"></pv-button>
                   </div>
                 </div>
               </div>
@@ -97,15 +97,29 @@ const viewDetails = (id) => {
 
 <style scoped>
 .card {
-  background-color: #ffffff; /* Fondo blanco */
-  color: #262626; /* Texto negro */
+  background-color: #ffffff;
+  color: #262626;
 }
 
 .text-black {
-  color: #262626; /* Asegurarse de que el texto sea negro */
+  color: #262626;
 }
 
 .bg-white {
-  background-color: #ffffff; /* Asegurarse de que el fondo sea blanco */
+  background-color: #ffffff;
+}
+.bg-gray-200 {
+  margin-left: 1px;
+  width: 75%;
+}
+
+.green-button {
+  background-color: #72D063;
+  border: none;
+  margin-right: 20px;
+}
+.pink-button {
+  background-color: #FD6C6C;
+  border: none;
 }
 </style>

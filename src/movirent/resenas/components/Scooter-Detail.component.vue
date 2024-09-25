@@ -6,7 +6,7 @@
         <div class="left-column">
           <img :src="scooter.image" alt="Scooter" />
           <p>Recuerda siempre llevar tu dni para identificarte con el dueño antes de recoger el scooter</p>
-          <!-- Botón de Reseñas -->
+
           <Button label="Reseñas" class="p-button-danger" @click="goToReviews" />
         </div>
         <div class="details">
@@ -55,7 +55,7 @@ export default {
     },
     goToReviews() {
       this.$router.push(`/scooter/${this.$route.params.id}/reviews`);
-      // Aquí puedes redirigir a una sección de reseñas o abrir un modal
+
     }
   },
 };

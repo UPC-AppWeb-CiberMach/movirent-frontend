@@ -44,7 +44,7 @@
 }
 .pv-user{
   background-color: transparent;
-  color: #513c86;
+  color: black;
   font-weight: bold;
 }
 </style>

@@ -3,7 +3,6 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import RegisterForm from "../movirent/profile-management/components/register-form.component.vue";
 import LoginForm from "../movirent/profile-management/components/login-form.component.vue";
 import UserView from "../movirent/profile-management/components/user-view.component.vue";
-import Historial from "../movirent/profile-management/components/historial-test.vue";
 
 import ReservationHistory from "../movirent/history-scooter/components/reservation-history.component.vue";
 import ReservationDetailsDialog from "../movirent/history-scooter/components/reservation-details-dialog.component.vue";
@@ -21,7 +20,6 @@ import ScooterAddReview from '@/movirent/resenas/components/Scooter-Add-Review.c
 
 import Main from "@/layouts/component/movirent-main.component.vue";
 
-// Definir las rutas
 const routes = [
     { path: "/", component: RegisterForm },
     { path: '/register', component: RegisterForm },
@@ -31,7 +29,6 @@ const routes = [
 
         children: [
             { path: '/profile', component: UserView },
-            { path: '/historial', component: Historial },
             { path: '/ReservationHistory', component: ReservationHistory },
             { path: '/reservation/:id', component: ReservationDetailsDialog },
             { path: '/newCard', component: CreateScooter },
@@ -39,14 +36,14 @@ const routes = [
             { path: '/privacy', component: PrivacyPolicy },
             { path: '/viewCard', component: ViewCard },
 
-            { path: '/list', component: ScooterList }, // Pantalla de scooters
-            { path: '/scooter/:id', component: ScooterDetail }, // Pantalla de detalle del scooter
-            { path: '/scooter/:id/reviews', component: ScooterReviews }, //  Pantalla de reseña del scooter
-            { path: '/scooter/:id/add-review', component: ScooterAddReview } // Pantalla de dejar reseña al scooter
+            { path: '/list', component: ScooterList },
+            { path: '/scooter/:id', component: ScooterDetail },
+            { path: '/scooter/:id/reviews', component: ScooterReviews },
+            { path: '/scooter/:id/add-review', component: ScooterAddReview }
 
         ]
     },
-    { path: '/:pathMatch(.*)*', name:'NotFound', component: NotFound } // Página no encontrada
+    { path: '/:pathMatch(.*)*', name:'NotFound', component: NotFound }
 ];
 
 const router = createRouter({

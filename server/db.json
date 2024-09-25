@@ -9,6 +9,16 @@
       "phone": "926335924",
       "imageUrl": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
       "id": "236e"
+    },
+    {
+      "id": "98b8",
+      "name": "xiaomi",
+      "type": "Xiaomi",
+      "model": "Xiaome FA",
+      "price": 3,
+      "address": "calle 1",
+      "phone": "999999999",
+      "imageUrl": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549"
     }
   ],
   "users": [
@@ -20,6 +30,15 @@
       "phone": "926335924",
       "dni": "76456342",
       "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png"
+    },
+    {
+      "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
+      "email": "mari@yahoo.com",
+      "password": "12345678",
+      "completeName": "Mariana Iza",
+      "phone": "990990604",
+      "dni": "000000000",
+      "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg"
     }
   ],
   "user_roles": [
@@ -38,7 +57,7 @@
       "brand": "Xiaomi",
       "model": "M365",
       "price": 500,
-      "image": "https://github.com/VelardeSoft/json/issues/1#issue-2526712226",
+      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
       "price_per_hour": "number",
       "status": "string",
       "owner_id": "string"
@@ -48,9 +67,10 @@
       "brand": "Segway",
       "model": "Ninebot",
       "price": 600,
-      "image": "https://github.com/VelardeSoft/json/issues/1#issue-2526712226",
+      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
       "price_per_hour": "number",
       "status": "string",
+      "time": "2",
       "owner_id": "string"
     }
   ],

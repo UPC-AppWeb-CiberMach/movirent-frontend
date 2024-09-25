@@ -4,7 +4,7 @@
 
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">
-        <img :src="photo" class="w-20rem lg:w-20rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
+        <img :src="photo" class="w-20 lg:w-20rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
         <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
 
         <div class="historial-button" aria-label="Botón de historial">
@@ -121,7 +121,7 @@ async function confirmDeleteUser() {
 }
 
 function verHistorial(){
-  router.push("/historial")
+  router.push("/ReservationHistory")
 }
 </script>
 
@@ -134,10 +134,10 @@ function verHistorial(){
 }
 .pv-text{
   background-color: #ffffff;
-  color: #353535;
+  color: black;
 }
 .pv-txt{
-  color: #6d6d70;
+  color: black;
 }
 .is-invalid {
   border-color: red;

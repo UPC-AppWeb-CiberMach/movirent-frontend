@@ -2,8 +2,8 @@
   <div class="layout">
     <TheHeader />
     <main class="content">
-      <Welcome v-if="isMainRoute" /> <!-- Mostrar el mensaje de bienvenida solo en /main -->
-      <router-view></router-view> <!-- Renderiza las rutas hijas -->
+      <Welcome v-if="isMainRoute" />
+      <router-view></router-view>
     </main>
     <TheFooter />
   </div>
@@ -11,16 +11,16 @@
 
 <script setup>
 import { computed } from 'vue';
-import { useRoute } from 'vue-router'; // Importa useRoute para acceder a la ruta actual
+import { useRoute } from 'vue-router';
 import TheHeader from './the-header.component.vue';
 import TheFooter from './the-foother.component.vue';
-import Welcome from './welcome-movirent.vue'; // Asegúrate de que este componente esté correctamente importado
+import Welcome from './welcome-movirent.vue';
 
-const route = useRoute(); // Obtiene la ruta actual
+const route = useRoute();
 
-// Computed property para verificar si estamos en la ruta /main
+
 const isMainRoute = computed(() => {
-  return route.path === '/main'; // Cambia esto según la ruta que desees verificar
+  return route.path === '/main';
 });
 </script>
 

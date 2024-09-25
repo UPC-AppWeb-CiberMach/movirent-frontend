@@ -47,7 +47,7 @@ export default {
   methods: {
     addReview() {
       this.$router.push(`/scooter/${this.$route.params.id}/add-review`);
-      // Aquí puedes implementar la lógica para permitir agregar una reseña
+
     },
     goBack() {
       this.$router.push(`/scooter/${this.$route.params.id}`);

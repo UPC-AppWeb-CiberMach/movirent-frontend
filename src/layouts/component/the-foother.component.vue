@@ -82,15 +82,15 @@
 }
 
 .pv-ws {
-  color: #6a4eb0;
+  color: black;
   font-size: 30px;
   text-decoration: none;
 }
 .pv-logo{
-  color: #6a4eb0;
+  color: black;
 }
 .pv-ws:hover {
-  color: #275ab4;
+  color: black;
   text-decoration: underline;
 }
 .pv-logo:hover{

@@ -45,7 +45,7 @@ export default {
     submitReview() {
       if (this.rating > 0 && this.comment.trim()) {
         const newReview = {
-          user: "Usuario actual", // Aquí puedes colocar el nombre del usuario
+          user: "Usuario actual",
           rating: this.rating,
           comment: this.comment,
         };

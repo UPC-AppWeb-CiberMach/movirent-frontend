@@ -11,7 +11,7 @@
     <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
     <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="DNI" aria-label="Campo de DNI"/>
     <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
-    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }" class="w-15rem lg:w-25rem p-3 pv-text" aria-label="Campo de rol de usuario"/>
+    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" :inputStyle="{ backgroundColor: '#ffffff', color: 'black' }" class="w-15rem lg:w-25rem p-3 pv-text" aria-label="Campo de rol de usuario"/>
     <span v-if="$v.user_role_id.$error" class="error-message" aria-label="Mensaje de error para el rol de usuario">Rol de Usuario es requerido</span>
     <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Campo de URL de la foto"/>
     <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
@@ -90,7 +90,7 @@ async function signUp() {
 <style scoped>
 .pv-text{
   background-color: #ffffff;
-  color: #353535;
+  color: black;
 }
 .is-invalid {
   border-color: red;
@@ -100,7 +100,7 @@ async function signUp() {
   font-size: small;
 }
 .pv-txt{
-  color: #6d6d70;
+  color: black;
 }
 .sign-up-container{
   display: flex;

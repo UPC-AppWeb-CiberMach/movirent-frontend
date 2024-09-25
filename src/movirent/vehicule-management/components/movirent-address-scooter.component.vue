@@ -37,7 +37,7 @@ const updateValue = (value) => {
 .form-label {
   margin-bottom: 4px;
   font-weight: bold;
-  color: #6a4eb0;
+  color: black;
 }
 .pv-text {
   background-color: white;
