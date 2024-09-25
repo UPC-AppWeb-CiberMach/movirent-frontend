@@ -1,6 +1,6 @@
 <template>
   <div class="welcome-message">
-    <h1>¡Bienvenido a MoviRent!</h1> <br><br>
+    <h1>{{ $t('movirent.welcome') }}</h1> <br><br>
     <img src="https://i.ibb.co/ssQXys9/immges.jpg" alt="Bienvenido" class="welcome-image" height="300px" />
   </div>
 </template>

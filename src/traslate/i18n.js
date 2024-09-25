@@ -19,7 +19,9 @@ const messages = {
             names: 'Quienes Somos',
             question: 'Preguntas Frecuentes',
             policy: 'Políticas de Privacidad',
-            description: '© 2024 -Todos los derechos reservados - MoviRent'
+            description: '© 2024 -Todos los derechos reservados - MoviRent',
+            titleQuienesSomos: '¿Quiénes somos?',
+            welcome: '¡Bienvenido a MoviRent!'
         },
         buttons: {
             profile: 'Perfil',
