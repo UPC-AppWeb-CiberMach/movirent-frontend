@@ -1,0 +1,22 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "Plan Mensual",
+      "description": "Plan con acceso a 7 días de la semana 100% garantizado los scooters.",
+      "price": 39
+    },
+    {
+      "id": 2,
+      "name": "Plan Trimestral",
+      "description": "Plan con acceso a 30 días cuenta con beneficio de rentar scooter deportivos.",
+      "price": 99
+    },
+    {
+      "id": 3,
+      "name": "Plan Anual",
+      "description": "Plan con acceso con todos los beneficios durante 1 año.",
+      "price": 199
+    }
+  ]
+}

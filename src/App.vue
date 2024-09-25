@@ -18,7 +18,7 @@
         <li>Scooters</li>
       </ul>
     </nav>
-
+    /* Cuadros de subscription */
     <section class="subscription-section">
       <h2>Suscripción</h2>
       <p>En MoviRent contamos con tres planes de suscripción que te brindarán beneficios únicos.</p>
@@ -56,6 +56,8 @@
         <p>{{ selectedPlan.description }}</p>
         <p><strong>Precio:</strong> S/. {{ selectedPlan.price }}</p>
 
+
+        /* Botones de acción */
         <div class="actions">
           <button class="btn btn-green" @click="changePlan">Cambiar</button>
           <button class="btn btn-red" @click="showCancelModal = true">Cancelar</button>
@@ -102,8 +104,8 @@
 </template>
 
 <script>
-
-import axios from 'axios';  // Importamos axios
+/* fake API */
+import axios from 'axios';
 export default {
   data() {
     return {
@@ -138,13 +140,15 @@ export default {
     closeModal() {
       this.showCancelModal = false;
     },
+
+    /* Eliminar algún plan de subcription */
     async cancelSubscription() {
       try {
         // Hacemos la solicitud DELETE a la fake API usando el id del plan seleccionado
         await axios.delete(`http://localhost:3000/plans/${this.selectedPlan.id}`);
         alert(`Tu suscripción al ${this.selectedPlan.name} ha sido cancelada.`);
 
-        // Ocultamos el modal y regresamos al estado inicial
+        // Vista de error por si no podemos eliminar algun plan
         this.showCancelModal = false;
         this.planSelected = false;
       } catch (error) {
@@ -160,7 +164,7 @@ export default {
 </script>
 
 <style>
-/* Estilos globales para asegurar que la aplicación ocupe toda la ventana */
+/* Estilos para la que verá el cliente */
 html, body, #app {
   width: 100vw;
   height: 100vh;
@@ -171,7 +175,7 @@ html, body, #app {
 }
 
 
-/* Eliminar cualquier espacio extra alrededor del contenido */
+
 * {
   margin: 0;
   padding: 0;
@@ -194,7 +198,7 @@ header {
   padding: 20px;
   background-color: #fff;
   border-bottom: 1px solid #fff;
-  align-items: center; /* Centra verticalmente */
+  align-items: center;
 }
 
 .logo-container {
@@ -225,7 +229,7 @@ nav ul {
   background-color: #fff;
   list-style: none;
   margin: 0;
-  gap: 30px; /* Añadir espacio entre los elementos */
+  gap: 30px;
 }
 
 nav ul li {
@@ -239,14 +243,14 @@ nav ul li {
   padding: 40px;
   text-align: center;
   background-color: #f0f0ff;
-  flex-grow: 1; /* Hace que esta sección crezca para llenar el espacio entre el header y el footer */
+  flex-grow: 1;
 }
 
 .plans-container {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
-  gap: 30px; /* Ajustar el espacio entre las cartas */
+  gap: 30px;
 }
 
 .plan-card {
@@ -293,7 +297,7 @@ nav ul li {
   border-radius: 10px;
   width: 300px;
   text-align: center;
-  margin: 0 auto; /* Centra la tarjeta de suscripción */
+  margin: 0 auto;
 }
 
 .actions {
