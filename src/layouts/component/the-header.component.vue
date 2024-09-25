@@ -12,6 +12,7 @@
       </template>
       <template #end>
         <div class="flex gap-3 align-right">
+          <pv-button label="Logout" @click="logout" style="background-color: #ffffff; color: #222222; border: none" aria-label="Cerrar sesión"/>
           <router-link to="/profile" class="pv-btn" aria-label="Perfil">
             <pv-button :label="$t('buttons.profile')" icon="pi pi-user" style="background-color: white; color: black; border: none"/>
           </router-link>
@@ -40,8 +41,14 @@
 <script setup>
 import { useI18n } from "vue-i18n";
 
+import router from "@/routes/router.js";
+
 const { locale } = useI18n();
 function changeLanguage(event) {
   locale.value = event.target.value;
+}
+const logout =()=>{
+  sessionStorage.removeItem('user');
+  router.push('/login');
 }
 </script>
