@@ -5,29 +5,23 @@
         <div class="flex items-center gap-2">
           <img src="https://i.ibb.co/fYLGJVK/Logo-Movi.jpg" alt="Logo del MoviRent" style="height: 80px" />
         </div>
-        <select @change="changeLanguage($event)" class="language-selector" style="margin-left: 50px; background-color: lightgreen; color: #222222; padding: 5px; border-radius: 5px">
+        <select @change="changeLanguage($event)" class="language-selector" style="margin-left: 50px; background-color: white; color: #222222; padding: 5px; border-radius: 5px" aria-label="Selector de idioma">
           <option value="es">Español</option>
           <option value="en">English</option>
         </select>
       </template>
-      <template #center>
-        <div class="flex gap-3">
-          <router-link to="/profile" class="pv-btn">
-            <pv-button :label="$t('buttons.profile')" icon="pi pi-user" />
+      <template #end>
+        <div class="flex gap-3 align-right">
+          <router-link to="/profile" class="pv-btn" aria-label="Perfil">
+            <pv-button :label="$t('buttons.profile')" icon="pi pi-user" style="background-color: white; color: black; border: none"/>
           </router-link>
-          <router-link to="/question" class="pv-btn">
-            <pv-button :label="$t('buttons.subscription')" icon="pi pi-credit-card" />
+          <router-link to="/question" class="pv-btn" aria-label="Suscripción">
+            <pv-button :label="$t('buttons.subscription')" icon="pi pi-credit-card" style="background-color: white; color: black; border: none"/>
           </router-link>
-          <router-link to="/newCard" class="pv-btn">
-            <pv-button :label="$t('buttons.scooter')" icon="pi pi-shop" />
-          </router-link>
-          <router-link to="/ReservationHistory" class="pv-btn">
-            <pv-button :label="$t('buttons.history')" icon="pi pi-credit-card" />
+          <router-link to="/newCard" class="pv-btn" aria-label="Scooter">
+            <pv-button :label="$t('buttons.scooter')" icon="pi pi-shop" style="background-color: white; color: black; border: none"/>
           </router-link>
         </div>
-      </template>
-      <template #end>
-        <pv-chip label="Barbara Espinoza" class="pv-user" image="https://i.ibb.co/BgVwFqk/Logo-Movi-Tech.png" />
       </template>
     </pv-toolbar>
   </div>
@@ -37,16 +31,11 @@
 .pv-btn {
   margin-left: 12px;
   margin-right: 12px;
-  color: #513c86;
   font-weight: bold;
   background-color: transparent;
   border: none;
 }
-.pv-user{
-  background-color: transparent;
-  color: black;
-  font-weight: bold;
-}
+
 </style>
 <script setup>
 import { useI18n } from "vue-i18n";

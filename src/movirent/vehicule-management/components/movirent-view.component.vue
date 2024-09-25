@@ -1,35 +1,35 @@
 <template>
-  <div class="container">
-    <div class="formulario">
-      <form @submit.prevent="isEditing ? updateOperation() : createOperation()">
-        <Name v-model="operation.name" /> <br>
-        <Marca v-model="operation.type" /> <br>
-        <Model v-model="operation.model" /> <br>
-        <Price v-model="operation.price" /> <br>
-        <Address v-model="operation.address" /> <br>
-        <Contact v-model="operation.phone" /> <br>
-        <Photo v-model="operation.imageUrl" /> <br>
-        <pv-button type="submit">{{ isEditing ? 'Update' : 'Create' }}</pv-button>
+  <div class="container" aria-label="Contenedor principal">
+    <div class="formulario" aria-label="Formulario de operaciones">
+      <form @submit.prevent="isEditing ? updateOperation() : createOperation()" aria-label="Formulario de creación y actualización de operaciones">
+        <Name v-model="operation.name" aria-label="Nombre de la operación" /> <br>
+        <Marca v-model="operation.type" aria-label="Marca de la operación" /> <br>
+        <Model v-model="operation.model" aria-label="Modelo de la operación" /> <br>
+        <Price v-model="operation.price" aria-label="Precio de la operación" /> <br>
+        <Address v-model="operation.address" aria-label="Dirección de la operación" /> <br>
+        <Contact v-model="operation.phone" aria-label="Contacto de la operación" /> <br>
+        <Photo v-model="operation.imageUrl" aria-label="Foto de la operación" /> <br>
+        <pv-button type="submit" aria-label="{{ isEditing ? 'Actualizar operación' : 'Crear operación' }}">{{ isEditing ? 'Update' : 'Create' }}</pv-button>
       </form>
 
-      <div v-if="message" :class="{'message': true, 'error-message': isError}">
+      <div v-if="message" :class="{'message': true, 'error-message': isError}" aria-label="Mensaje de estado del formulario">
         {{ message }}
       </div>
     </div>
 
-    <div class="resultados">
-      <h2 style="text-align: center">{{ $t('movirent.tituloResultado') }}</h2> <br>
-      <ul>
-        <li v-for="op in operations" :key="op.id" class="operation-item card-resultado">
-          <img :src="op.imageUrl" alt="Imagen de Scooter" width="100" class="operation-image" />
-          <div>{{ $t('movirent.name') }}: {{ op.name }}</div>
-          <div>{{ $t('movirent.marca') }}: {{ op.type }}</div>
-          <div>{{ $t('movirent.model') }}: {{ op.model }}</div>
-          <div>{{ $t('movirent.price') }}: ${{ op.price }}</div>
-          <div>{{ $t('movirent.address') }}: {{ op.address }}</div>
-          <div>{{ $t('movirent.phone') }}: {{ op.phone }}</div>
-          <pv-button @click="editOperation(op)">Edit</pv-button>
-          <pv-button @click="deleteOperation(op.id)">Delete</pv-button>
+    <div class="resultados" aria-label="Resultados de las operaciones">
+      <h2 style="text-align: center" aria-label="Título de los resultados">{{ $t('movirent.tituloResultado') }}</h2> <br>
+      <ul aria-label="Lista de operaciones">
+        <li v-for="op in operations" :key="op.id" class="operation-item card-resultado" aria-label="Operación">
+          <img :src="op.imageUrl" alt="Imagen de Scooter" width="100" class="operation-image" aria-label="Imagen de la operación" />
+          <div aria-label="Nombre de la operación">{{ $t('movirent.name') }}: {{ op.name }}</div>
+          <div aria-label="Marca de la operación">{{ $t('movirent.marca') }}: {{ op.type }}</div>
+          <div aria-label="Modelo de la operación">{{ $t('movirent.model') }}: {{ op.model }}</div>
+          <div aria-label="Precio de la operación">{{ $t('movirent.price') }}: ${{ op.price }}</div>
+          <div aria-label="Dirección de la operación">{{ $t('movirent.address') }}: {{ op.address }}</div>
+          <div aria-label="Contacto de la operación">{{ $t('movirent.phone') }}: {{ op.phone }}</div>
+          <pv-button @click="editOperation(op)" aria-label="Editar operación">Edit</pv-button>
+          <pv-button @click="deleteOperation(op.id)" aria-label="Eliminar operación">Delete</pv-button>
         </li>
       </ul>
     </div>

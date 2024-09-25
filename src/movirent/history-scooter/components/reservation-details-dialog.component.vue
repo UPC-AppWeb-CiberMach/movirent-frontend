@@ -1,21 +1,21 @@
 <template>
-  <pv-card style=" align-items: center; margin-left: 40%; width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;">
+  <pv-card style=" align-items: center; margin-left: 40%; width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;" aria-label="Detalles de la reserva">
     <template #header>
-      <img :src="reservation.scooter.image" :alt="reservation.scooter.model" />
+      <img :src="reservation.scooter.image" :alt="reservation.scooter.model" aria-label="Imagen del scooter" />
     </template>
-    <template #title>Reservation Details</template>
-    <template #subtitle>{{ reservation.scooter.brand }} - {{ reservation.scooter.model }}</template>
+    <template #title><span aria-label="Título de la reserva">Reservation Details</span></template>
+    <template #subtitle><span aria-label="Marca y modelo del scooter">{{ reservation.scooter.brand }} - {{ reservation.scooter.model }}</span></template>
     <template #content>
-      <p class="m-0"><strong>Start Date:</strong> {{ reservation.start_date }}</p>
-      <p class="m-0"><strong>End Date:</strong> {{ reservation.end_date }}</p>
-      <p class="m-0"><strong>Time:</strong> {{ reservation.time }} hrs</p>
-      <p class="m-0"><strong>Rating:</strong> {{ reservation.rating }}</p>
-      <p class="m-0"><strong>Owner name:</strong> {{ reservation.user.name }}</p>
-      <p class="m-0"><strong>Owner phone:</strong> {{ reservation.user.phone }}</p>
+      <p class="m-0" aria-label="Fecha de inicio: {{ reservation.start_date }}"><strong>Start Date:</strong> {{ reservation.start_date }}</p>
+      <p class="m-0" aria-label="Fecha de fin: {{ reservation.end_date }}"><strong>End Date:</strong> {{ reservation.end_date }}</p>
+      <p class="m-0" aria-label="Tiempo: {{ reservation.time }} horas"><strong>Time:</strong> {{ reservation.time }} hrs</p>
+      <p class="m-0" aria-label="Calificación: {{ reservation.rating }}"><strong>Rating:</strong> {{ reservation.rating }}</p>
+      <p class="m-0" aria-label="Nombre del propietario: {{ reservation.user.name }}"><strong>Owner name:</strong> {{ reservation.user.name }}</p>
+      <p class="m-0" aria-label="Teléfono del propietario: {{ reservation.user.phone }}"><strong>Owner phone:</strong> {{ reservation.user.phone }}</p>
     </template>
     <template #footer>
       <div class="flex gap-4 mt-1 ">
-        <pv-button label="Close" @click="$router.go(-1)" class="w-full pink-button" />
+        <pv-button label="Close" @click="$router.go(-1)" class="w-full pink-button" aria-label="Cerrar" />
       </div>
     </template>
   </pv-card>

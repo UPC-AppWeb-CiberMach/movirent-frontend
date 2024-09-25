@@ -1,16 +1,17 @@
 <template>
-  <div class="scooter-reviews">
+  <div class="scooter-reviews" aria-label="Reseñas de Scooter">
     <div class="main-content">
       <h2>Reseñas</h2>
       <div class="scooter-info">
-        <img :src="scooter.image" alt="Scooter" />
+        <img :src="scooter.image" alt="Scooter" aria-label="Imagen del Scooter" />
         <p>Recuerda siempre ser respetuoso con los comentarios y opiniones</p>
       </div>
-      <div class="reviews">
+      <div class="reviews" aria-label="Lista de Reseñas">
         <div
             class="review"
             v-for="(review, index) in reviews"
             :key="index"
+            aria-label="Reseña de Usuario"
         >
           <div class="field"><strong>Usuario:</strong> {{ review.user }}</div>
           <div class="field"><strong>Puntuación:</strong> {{ review.rating }}</div>
@@ -18,8 +19,8 @@
         </div>
       </div>
       <div class="actions">
-        <pv-button label="Comentar" class="p-button-success" @click="addReview" />
-        <pv-button label="Regresar" class="p-button-danger" @click="goBack" />
+        <pv-button label="Comentar" class="p-button-success" @click="addReview" aria-label="Comentar" />
+        <pv-button label="Regresar" class="p-button-danger" @click="goBack" aria-label="Regresar" />
       </div>
     </div>
   </div>

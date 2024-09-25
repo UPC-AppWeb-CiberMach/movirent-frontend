@@ -1,21 +1,22 @@
 <template>
-  <div class="scooter-list">
+  <div class="scooter-list" aria-label="Lista de Scooters">
     <div class="main-content">
       <div class="filter-section">
-        <DistrictFilter v-model="selectedDistrict" @filter="applyFilter" />
+        <DistrictFilter v-model="selectedDistrict" @filter="applyFilter" aria-label="Filtro de Distrito" />
       </div>
       <h2>Scooters disponibles</h2>
-      <div class="scooter-cards">
+      <div class="scooter-cards" aria-label="Tarjetas de Scooters">
         <ScooterCard
             v-for="scooter in filteredScooters"
             :key="scooter.id"
             :scooter="scooter"
             @view-detail="onViewDetail"
+            aria-label="Tarjeta de Scooter"
         />
       </div>
     </div>
     <div class="my-scooters-btn">
-      <pv-button label="Ver mis Scooters" class="p-button-success" />
+      <pv-button label="Ver mis Scooters" class="p-button-success" aria-label="Ver mis Scooters" />
     </div>
   </div>
 </template>

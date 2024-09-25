@@ -1,5 +1,5 @@
 <template>
-  <div class="p-field">
+  <div class="p-field" aria-label="Campo de Precio">
     <label for="precio" class="form-label">{{ $t('movirent.price') }} </label>
     <pv-inputnumber
         id="precio"
@@ -10,6 +10,7 @@
         :min="0"
         placeholder="Ingrese el precio"
         :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
+        aria-label="Ingrese el precio"
     />
   </div>
 </template>

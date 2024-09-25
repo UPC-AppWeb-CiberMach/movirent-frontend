@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <h1>{{ $t('movirent.titleGeneral') }}</h1>
-    <OperationsManager />
+  <div id="app" aria-label="Aplicación principal">
+    <h1 aria-label="Título principal">{{ $t('movirent.titleGeneral') }}</h1>
+    <OperationsManager aria-label="Gestor de operaciones" />
   </div>
 </template>
 

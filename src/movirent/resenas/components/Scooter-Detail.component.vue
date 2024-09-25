@@ -1,13 +1,13 @@
 <template>
-  <div class="scooter-detail">
+  <div class="scooter-detail" aria-label="Detalle del scooter">
     <div class="main-content">
       <h2>Detalle del scooter</h2>
       <div class="scooter-info">
         <div class="left-column">
-          <img :src="scooter.image" alt="Scooter" />
+          <img :src="scooter.image" alt="Scooter" aria-label="Imagen del Scooter" />
           <p>Recuerda siempre llevar tu dni para identificarte con el dueño antes de recoger el scooter</p>
 
-          <Button label="Reseñas" class="p-button-danger" @click="goToReviews" />
+          <Button label="Reseñas" class="p-button-danger" @click="goToReviews" aria-label="Ver Reseñas" />
         </div>
         <div class="details">
           <div class="field"><strong>Nombre:</strong> {{ scooter.name }}</div>
@@ -18,13 +18,13 @@
           <div class="field"><strong>Contacto:</strong> {{ scooter.contact }}</div>
           <div class="field">
             <strong>Horas a alquilar:</strong>
-            <input v-model="rentalHours" type="number" min="1" />
+            <input v-model="rentalHours" type="number" min="1" aria-label="Horas a alquilar" />
           </div>
         </div>
       </div>
       <div class="actions">
-        <Button label="Alquilar" class="p-button-success" @click="rentScooter" />
-        <Button label="Regresar" class="p-button-danger" @click="goBack" />
+        <Button label="Alquilar" class="p-button-success" @click="rentScooter" aria-label="Alquilar Scooter" />
+        <Button label="Regresar" class="p-button-danger" @click="goBack" aria-label="Regresar" />
       </div>
     </div>
   </div>

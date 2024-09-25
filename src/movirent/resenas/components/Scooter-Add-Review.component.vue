@@ -1,24 +1,24 @@
 <template>
-  <div class="scooter-add-review">
+  <div class="scooter-add-review" aria-label="Agregar Reseña">
     <div class="main-content">
       <h2>Agregar Reseña</h2>
       <div class="scooter-info">
-        <img :src="scooter.image" alt="Scooter" />
+        <img :src="scooter.image" alt="Scooter" aria-label="Imagen del Scooter" />
         <p>Recuerda siempre ser respetuoso con los comentarios y opiniones</p>
       </div>
       <div class="form">
         <div class="field">
           <label for="rating">Puntuación:</label>
-          <input v-model="rating" type="number" min="1" max="5" id="rating" />
+          <input v-model="rating" type="number" min="1" max="5" id="rating" aria-label="Puntuación" />
         </div>
         <div class="field">
           <label for="comment">Comentario:</label>
-          <textarea v-model="comment" id="comment"></textarea>
+          <textarea v-model="comment" id="comment" aria-label="Comentario"></textarea>
         </div>
       </div>
       <div class="actions">
-        <pv-button label="Enviar" class="p-button-success" @click="submitReview" />
-        <pv-button label="Cancelar" class="p-button-danger" @click="goBack" />
+        <pv-button label="Enviar" class="p-button-success" @click="submitReview" aria-label="Enviar" />
+        <pv-button label="Cancelar" class="p-button-danger" @click="goBack" aria-label="Cancelar" />
       </div>
     </div>
   </div>

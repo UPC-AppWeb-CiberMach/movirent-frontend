@@ -1,5 +1,5 @@
 <template>
-  <div class="p-field">
+  <div class="p-field" aria-label="Campo de Foto">
     <label for="foto" class="form-label">{{ $t('movirent.imgUrl') }} </label>
     <pv-inputtext
         id="foto"
@@ -7,6 +7,7 @@
         @update:model-value="updateValue"
         class="form-input pv-text"
         placeholder="Ingrese la URL de la imagen"
+        aria-label="Ingrese la URL de la imagen"
     />
   </div>
 </template>

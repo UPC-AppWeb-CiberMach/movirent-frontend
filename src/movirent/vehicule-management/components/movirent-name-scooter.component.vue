@@ -1,5 +1,5 @@
 <template>
-  <div class="p-field">
+  <div class="p-field" aria-label="Campo de Nombre">
     <label for="title" class="form-label">{{ $t('movirent.name') }} </label>
     <pv-inputtext
         id="title"
@@ -7,6 +7,7 @@
         @input="updateValue"
         class="form-input pv-text"
         placeholder="Nombre del equipo"
+        aria-label="Nombre del equipo"
     />
   </div>
 </template>

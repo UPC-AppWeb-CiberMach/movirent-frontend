@@ -1,5 +1,5 @@
 <template>
-  <div class="p-field">
+  <div class="p-field" aria-label="Campo de Teléfono">
     <label for="telefono" class="form-label">{{ $t('movirent.phone') }} </label>
     <pv-inputtext
         id="telefono"
@@ -7,6 +7,7 @@
         @update:model-value="updateValue"
         class="form-input pv-text"
         placeholder="Ingrese el número de teléfono"
+        aria-label="Ingrese el número de teléfono"
     />
   </div>
 </template>

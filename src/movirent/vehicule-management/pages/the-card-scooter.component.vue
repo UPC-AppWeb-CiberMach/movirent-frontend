@@ -1,14 +1,14 @@
 <template>
-  <div class="card-container">
-    <div class="card">
-      <div class="main-card">
-        <h2 class="title">{{ $t('movirent.titleCard') }}</h2>
-        <RouterLink to="/newCard">
-          <pv-button :label="$t('movirent.nuevoScooter')" icon="pi pi-plus" iconPos="right" class="p-button-primary" />
+  <div class="card-container" aria-label="Contenedor de la tarjeta">
+    <div class="card" aria-label="Tarjeta">
+      <div class="main-card" aria-label="Tarjeta principal">
+        <h2 class="title" aria-label="Título de la tarjeta">{{ $t('movirent.titleCard') }}</h2>
+        <RouterLink to="/newCard" aria-label="Enlace para crear una nueva tarjeta">
+          <pv-button :label="$t('movirent.nuevoScooter')" icon="pi pi-plus" iconPos="right" class="p-button-primary" aria-label="Botón para crear un nuevo Scooter" />
         </RouterLink>
       </div>
-      <div>
-        <h3 style="padding-top: 40px">Aun no tienes registros de tus Scooter</h3>
+      <div aria-label="Mensaje de no tener registros">
+        <h3 style="padding-top: 40px" aria-label="Mensaje de no tener registros de Scooter">Aun no tienes registros de tus Scooter</h3>
       </div>
     </div>
   </div>

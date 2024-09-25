@@ -1,9 +1,9 @@
 <template>
-  <div class="scooter-card">
-    <img :src="scooter.image" alt="Scooter" />
-    <h3>{{ scooter.name }}</h3>
-    <p>{{ scooter.district }}</p>
-    <pv-button label="Ver detalle" class="p-button-success" @click="viewDetail" />
+  <div class="scooter-card" aria-label="Tarjeta de Scooter">
+    <img :src="scooter.image" alt="Scooter" aria-label="Imagen del Scooter" />
+    <h3 aria-label="Nombre del Scooter">{{ scooter.name }}</h3>
+    <p aria-label="Distrito del Scooter">{{ scooter.district }}</p>
+    <pv-button label="Ver detalle" class="p-button-success" @click="viewDetail" aria-label="Ver detalle del Scooter" />
   </div>
 </template>
 

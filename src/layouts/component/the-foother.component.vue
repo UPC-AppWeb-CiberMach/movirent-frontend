@@ -1,46 +1,46 @@
 <template>
   <footer class="p-grid footer">
-    <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.titleQuienesSomos') }}</h3>
+    <div class="p-col pv-col" style="margin-bottom: 10px">
+      <h3 style="font-weight: bold; color: black; font-size: 1.2rem;" aria-label="Quienes Somos">{{ $t('movirent.titleQuienesSomos') }}</h3>
       <br />
       <nav>
-        <RouterLink to="/main">
-          <pv-button :label="$t('movirent.names')"  style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+        <RouterLink to="/main" aria-label="Nombres">
+          <pv-button :label="$t('movirent.names')"  style="font-weight: bold; color: black; text-decoration: none; font-size: 1rem; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
-        <RouterLink to="/question">
-          <pv-button :label="$t('movirent.question')"  style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+        <RouterLink to="/question" aria-label="Pregunta">
+          <pv-button :label="$t('movirent.question')"  style="font-weight: bold; color: black; text-decoration: none; font-size: 1rem;  background-color: transparent; border: none;" />
         </RouterLink>
         <br />
-        <RouterLink to="/privacy">
-          <pv-button :label="$t('movirent.policy')"  style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+        <RouterLink to="/privacy" aria-label="Política">
+          <pv-button :label="$t('movirent.policy')"  style="font-weight: bold; color: black; font-size: 1rem; text-decoration: none; background-color: transparent; border: none;" />
         </RouterLink>
       </nav>
     </div>
 
-    <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.redesSociales') }}</h3> <br/>
-      <a href="https://www.instagram.com" target="_blank">
-        <pv-button label="Instagram" icon="pi pi-instagram" size="small" class="pv-btn" style="margin-top: 15px" />
+    <div class="p-col pv-col" style="margin-top: 10px">
+      <h3 style="font-weight: bold; color: black; font-size: 1.2rem;" aria-label="Redes Sociales">{{ $t('movirent.redesSociales') }}</h3> <br/>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+        <pv-button label="Instagram" icon="pi pi-instagram" size="small" class="pv-btn" style="margin-top: 15px; background-color: #72D063; border: none; color: black" />
       </a> <br/>
-      <a href="https://www.facebook.com" target="_blank">
-        <pv-button label="Facebook" icon="pi pi-facebook" size="small" class="pv-btn" style="margin-top: 15px" />
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+        <pv-button label="Facebook" icon="pi pi-facebook" size="small" class="pv-btn" style="margin-top: 15px; background-color: #72D063; border: none; color: black" />
       </a> <br/>
-      <a href="https://www.twitter.com" target="_blank">
-        <pv-button label="Twitter" icon="pi pi-twitter" size="small" class="pv-btn" style="margin-top: 15px" />
+      <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+        <pv-button label="Twitter" icon="pi pi-twitter" size="small" class="pv-btn" style="margin-top: 15px; background-color: #72D063; border: none; color: black" />
       </a>
     </div>
 
-    <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.soporte') }}</h3> <br/>
+    <div class="p-col pv-col" style="margin-bottom: 100px">
+      <h3 style="font-weight: bold; color: black; font-size: 1.2rem;" aria-label="Soporte">{{ $t('movirent.soporte') }}</h3> <br/>
       <p>
-        <a href="https://wa.me/926335924" target="_blank" class="p-link pv-ws">
-          <i class="pi pi-whatsapp pv-logo" style="font-size: 40px"></i> WhatsApp
+        <a href="https://wa.me/926335924" target="_blank" class="p-link pv-ws" style="font-size: 1rem" aria-label="WhatsApp">
+          <i class="pi pi-whatsapp pv-logo" style="font-size: 20px"></i> WhatsApp
         </a>
       </p>
     </div>
     <div style="padding: 20px;">
-      <p style="color: #513c86; font-size: 1.2rem;">{{ $t('movirent.description') }}</p>
+      <p style="color: black; font-size: 1.2rem;" aria-label="Descripción">{{ $t('movirent.description') }}</p>
     </div>
 
   </footer>
@@ -93,6 +93,6 @@
   text-decoration: underline;
 }
 .pv-logo:hover{
-  color: #275ab4;
+  color: black;
 }
 </style>

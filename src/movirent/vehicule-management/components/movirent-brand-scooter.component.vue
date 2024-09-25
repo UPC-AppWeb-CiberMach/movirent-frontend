@@ -1,5 +1,5 @@
 <template>
-  <div class="p-field">
+  <div class="p-field" aria-label="Campo de Marca">
     <label for="marca" class="form-label">{{ $t('movirent.marca') }}</label>
     <pv-select
         id="marca"
@@ -11,6 +11,7 @@
         placeholder="Selecciona una Marca"
         :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
         @update:model-value="updateValue"
+        aria-label="Selecciona una Marca"
     />
   </div>
 </template>
