@@ -29,7 +29,9 @@
       "completeName": "Nestor Velarde",
       "phone": "926335924",
       "dni": "76456342",
-      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png"
+      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
+      "user_roles_id": 1,
+      "address": "Av. Lima 123"
     },
     {
       "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
@@ -38,7 +40,9 @@
       "completeName": "Mariana Iza",
       "phone": "990990604",
       "dni": "000000000",
-      "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg"
+      "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg",
+      "user_roles_id": 2,
+      "address": "Calle Sol 456"
     }
   ],
   "user_roles": [
@@ -53,43 +57,46 @@
   ],
   "scooters": [
     {
-      "id": "1",
+      "id": 1,
       "brand": "Xiaomi",
       "model": "M365",
       "price": 500,
       "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
       "price_per_hour": "number",
       "status": "string",
-      "owner_id": "string"
+      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
     },
     {
-      "id": "2",
+      "id": 2,
       "brand": "Segway",
       "model": "Ninebot",
       "price": 600,
       "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
       "price_per_hour": "number",
       "status": "string",
-      "time": "2",
-      "owner_id": "string"
+      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
     }
   ],
   "reservations": [
     {
-      "reservation_id": 1,
-      "client_id": 1,
+      "id": 1,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 2,
       "start_date": "2024-09-15",
       "end_date": "2024-09-20",
-      "id": "4794"
+      "price": 300,
+      "time": 5,
+      "rating": 5
     },
     {
-      "reservation_id": 2,
-      "client_id": 2,
+      "id": 2,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 1,
       "start_date": "2024-09-17",
       "end_date": "2024-09-19",
-      "id": "17ab"
+      "price": 200,
+      "time": 2,
+      "rating": 5
     }
   ],
   "rates": [
@@ -97,28 +104,28 @@
       "id": "1",
       "comment": "Excelente scooter, muy cómodo.",
       "star_numb": 5,
-      "client_id": 1,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 1
     },
     {
       "id": "2",
       "comment": "Buen servicio, pero el scooter era algo lento.",
       "star_numb": 3,
-      "client_id": 2,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 2
     },
     {
       "id": "3",
       "comment": "Muy buen scooter, me gustó mucho.",
       "star_numb": 5,
-      "client_id": 1,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 1
     },
     {
       "id": "4",
       "comment": "Prueba api 123123",
       "star_numb": 5,
-      "client_id": 1,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 1
     }
   ],
@@ -128,14 +135,14 @@
       "number": 123456789012,
       "date": "2024-09-15",
       "three_back_num": 123,
-      "user_id": 1
+      "user_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8"
     },
     {
       "id": "2",
       "number": 987654321012,
       "date": "2024-09-16",
       "three_back_num": 456,
-      "user_id": 2
+      "user_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8"
     }
   ]
 }
