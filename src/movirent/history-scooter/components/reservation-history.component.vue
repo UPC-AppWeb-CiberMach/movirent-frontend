@@ -52,7 +52,10 @@ import { HistoryServices } from "@/movirent/history-scooter/services/history-ser
 import { useRouter } from "vue-router";
 
 const reservations = ref([]);
-const clientId = 1;
+const currentUser = JSON.parse(sessionStorage.getItem("user"));
+const clientId = currentUser?.id;
+console.log("user id:", clientId);
+
 const showConfirmDialog = ref(false);
 const reservationToDelete = ref(null);
 const router = useRouter();

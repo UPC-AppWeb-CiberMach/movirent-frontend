@@ -10,7 +10,7 @@
       <p class="m-0" aria-label="Fecha de fin: {{ reservation.end_date }}"><strong>End Date:</strong> {{ reservation.end_date }}</p>
       <p class="m-0" aria-label="Tiempo: {{ reservation.time }} horas"><strong>Time:</strong> {{ reservation.time }} hrs</p>
       <p class="m-0" aria-label="Calificación: {{ reservation.rating }}"><strong>Rating:</strong> {{ reservation.rating }}</p>
-      <p class="m-0" aria-label="Nombre del propietario: {{ reservation.user.name }}"><strong>Owner name:</strong> {{ reservation.user.name }}</p>
+      <p class="m-0" aria-label="Nombre del propietario: {{ reservation.user.name }}"><strong>Owner name:</strong> {{ reservation.user.completeName }}</p>
       <p class="m-0" aria-label="Teléfono del propietario: {{ reservation.user.phone }}"><strong>Owner phone:</strong> {{ reservation.user.phone }}</p>
     </template>
     <template #footer>
