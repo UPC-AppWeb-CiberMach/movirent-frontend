@@ -103,4 +103,62 @@
 
 <script>
 
+import axios from 'axios';  // Importamos axios
+export default {
+  data() {
+    return {
+      planSelected: false,
+      selectedPlan: null,
+      showCancelModal: false,
+      monthlyPlan: {
+        id: 1,
+        name: 'Plan Mensual',
+        description: 'Plan con acceso a 7 días de la semana 100% garantizado los scooters.',
+        price: 39,
+      },
+      quarterlyPlan: {
+        id: 2,
+        name: 'Plan Trimestral',
+        description: 'Plan con acceso a 30 días cuenta con beneficio de rentar scooter deportivos.',
+        price: 99,
+      },
+      annualPlan: {
+        id: 3,
+        name: 'Plan Anual',
+        description: 'Plan con acceso con todos los beneficios durante 1 año.',
+        price: 199,
+      },
+    };
+  },
+  methods: {
+    selectPlan(plan) {
+      this.planSelected = true;
+      this.selectedPlan = plan;
+    },
+    closeModal() {
+      this.showCancelModal = false;
+    },
+    async cancelSubscription() {
+      try {
+        // Hacemos la solicitud DELETE a la fake API usando el id del plan seleccionado
+        await axios.delete(`http://localhost:3000/plans/${this.selectedPlan.id}`);
+        alert(`Tu suscripción al ${this.selectedPlan.name} ha sido cancelada.`);
+
+        // Ocultamos el modal y regresamos al estado inicial
+        this.showCancelModal = false;
+        this.planSelected = false;
+      } catch (error) {
+        console.error('Error al cancelar la suscripción:', error);
+        alert('Hubo un error al cancelar tu suscripción. Intenta nuevamente.');
+      }
+    },
+    changePlan() {
+      alert('Funcionalidad para cambiar la suscripción');
+    },
+  },
+};
+</script>
+
+<style>
+
 </style>
