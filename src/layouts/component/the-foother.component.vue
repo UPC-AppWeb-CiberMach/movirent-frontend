@@ -1,19 +1,19 @@
 <template>
   <footer class="p-grid footer">
     <div class="p-col pv-col">
-      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">Quiénes somos</h3>
+      <h3 style="font-weight: bold; color: #473180; font-size: 1.2rem;">{{ $t('movirent.somos') }}</h3>
       <br />
       <nav>
         <RouterLink to="/main">
-          <pv-button label="Quienes Somos" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+          <pv-button label="{{ $t('movirent.somos') }}" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
         <RouterLink to="/question">
-          <pv-button label="Preguntas frecuentes" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+          <pv-button label="{{ $t('movirent.description') }}" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
         <br />
         <RouterLink to="/privacy">
-          <pv-button label="Políticas y privacidad" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
+          <pv-button label="{{ $t('movirent.description') }}" style="font-weight: bold; color: #513c86; font-size: 1rem; text-decoration: underline; background-color: transparent; border: none;" />
         </RouterLink>
       </nav>
     </div>

@@ -16,6 +16,10 @@ const messages = {
             titleCard: 'Mis Scooter',
             redesSociales: 'Nuestras redes sociales',
             soporte: 'Soporte',
+            names: 'Quienes Somos',
+            question: 'Preguntas Frecuentes',
+            policy: 'Políticas de Privacidad',
+            description: '© 2024 -Todos los derechos reservados - MoviRent'
         },
         buttons: {
             profile: 'Perfil',

@@ -1,5 +1,5 @@
 <template>
-  <pv-card style="width: 25rem; overflow: hidden">
+  <pv-card style="width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;"> <!-- Fondo blanco y texto negro -->
     <template #header>
       <img :src="reservation.scooter.image" :alt="reservation.scooter.model" />
     </template>
@@ -54,5 +54,8 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Add your styles here */
+.m-0 {
+  margin: 0;
+}
+
 </style>
