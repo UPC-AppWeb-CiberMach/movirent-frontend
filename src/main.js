@@ -1,10 +1,15 @@
-import './assets/main.css'
+import './assets/style.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
-import 'primeicons/primeicons.css'
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
+
+import i18n from '@/traslate/i18n.js'
+import router from "@/routes/router.js";
+
 
 import Toolbar from 'primevue/toolbar';
 import Button from "primevue/button";
@@ -22,7 +27,12 @@ import InputText from 'primevue/inputtext';
 import Divider from 'primevue/divider';
 import FloatLabel from 'primevue/floatlabel';
 import Password from 'primevue/password';
-
+import Dropdown from "primevue/dropdown";
+import Dialog from "primevue/dialog";
+import Select from "primevue/select";
+import InputNumber from "primevue/inputnumber";
+import Accordion from "primevue/accordion";
+import Accordiontab from "primevue/accordiontab";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -31,6 +41,7 @@ app.use(PrimeVue, {
     }
 });
 
+app.use(router)
 app.component('pv-toolbar', Toolbar);
 app.component('pv-button', Button);
 app.component('pv-avatar', Avatar);
@@ -47,4 +58,13 @@ app.component('pv-inputtext', InputText);
 app.component('pv-divider', Divider);
 app.component('pv-floatlabel', FloatLabel);
 app.component('pv-password', Password);
+app.component('pv-dropdown', Dropdown);
+app.component('pv-dialog', Dialog);
+app.component('pv-select', Select);
+app.component('pv-inputnumber', InputNumber);
+app.component('pv-accordion', Accordion);
+app.component('pv-accordiontab', Accordiontab);
+
+app.use(router)
+app.use(i18n)
 app.mount('#app')
