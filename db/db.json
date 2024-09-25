@@ -1,0 +1,48 @@
+{
+  "payments": [
+    {
+      "id": "09a5",
+      "cardNumber": "312321",
+      "expirationDate": "4341412",
+      "securityCode": "2321312",
+      "accountNumber": "4124124",
+      "totalAmount": 39
+    },
+    {
+      "id": "6497",
+      "cardNumber": "24211232132",
+      "expirationDate": "26/04/28",
+      "securityCode": "234",
+      "accountNumber": "421-41241-212-5-232",
+      "totalAmount": 39
+    },
+    {
+      "id": "0222",
+      "cardNumber": "414313243",
+      "expirationDate": "26/04/28",
+      "securityCode": "567",
+      "accountNumber": "1-22343432-12322-423",
+      "totalAmount": 39
+    }
+  ],
+  "plans": [
+    {
+      "id": "1",
+      "name": "Plan Mensual",
+      "description": "Plan con acceso a 7 días de la semana 100% garantizado los scooters.",
+      "price": 39
+    },
+    {
+      "id": "2",
+      "name": "Plan Trimestral",
+      "description": "Plan con acceso a 30 días cuenta con beneficio de rentar scooter deportivos.",
+      "price": 99
+    },
+    {
+      "id": "3",
+      "name": "Plan Anual",
+      "description": "Plan con acceso con todos los beneficios durante 1 año.",
+      "price": 199
+    }
+  ]
+}
