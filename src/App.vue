@@ -49,5 +49,58 @@
         </div>
       </div>
 
+      <div v-if="planSelected" class="subscription-card">
+        <h2>Mi Suscripción</h2>
+        <p>Esta es tu suscripción actual, puedes cambiarla cuando gustes.</p>
+        <h3>{{ selectedPlan.name }}</h3>
+        <p>{{ selectedPlan.description }}</p>
+        <p><strong>Precio:</strong> S/. {{ selectedPlan.price }}</p>
+
+        <div class="actions">
+          <button class="btn btn-green" @click="changePlan">Cambiar</button>
+          <button class="btn btn-red" @click="showCancelModal = true">Cancelar</button>
+        </div>
+
+        <div v-if="showCancelModal" class="modal-overlay">
+          <div class="modal-content">
+            <p>¿Estás segur@ de cancelar tu membresía?</p>
+            <p>No habrá reembolso del dinero</p>
+            <button class="btn btn-green" @click="closeModal">Regresar</button>
+            <button class="btn btn-red" @click="cancelSubscription">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-content">
+        <div class="info-section">
+          <h4>Explora e informa</h4>
+          <ul>
+            <li>Danos tu opinión</li>
+            <li>Preguntas frecuentes</li>
+            <li>Política de privacidad</li>
+          </ul>
+        </div>
+        <div class="social-section">
+          <h4>Redes Sociales</h4>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>Twiter</li>
+          </ul>
+          <h5></h5>
+          <h5>© MoviRent 2024 Todos los derechos reservados</h5>
+        </div>
+        <div class="support-section">
+          <h4>Soporte</h4>
+          <img src="@/assets/whatsapp.png" alt="WhatsApp Soporte" class="support-icon">
+        </div>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script>
 
 </style>
