@@ -12,16 +12,13 @@
       </template>
       <template #end>
         <div class="flex gap-3 align-right">
-          <pv-button label="Logout" @click="logout" style="background-color: #ffffff; color: #222222; border: none" aria-label="Cerrar sesión"/>
           <router-link to="/profile" class="pv-btn" aria-label="Perfil">
             <pv-button :label="$t('buttons.profile')" icon="pi pi-user" style="background-color: white; color: black; border: none"/>
-          </router-link>
-          <router-link to="/question" class="pv-btn" aria-label="Suscripción">
-            <pv-button :label="$t('buttons.subscription')" icon="pi pi-credit-card" style="background-color: white; color: black; border: none"/>
           </router-link>
           <router-link to="/newCard" class="pv-btn" aria-label="Scooter">
             <pv-button :label="$t('buttons.scooter')" icon="pi pi-shop" style="background-color: white; color: black; border: none"/>
           </router-link>
+          <pv-button label="Logout" @click="logout" style="background-color: #82cc79; color: #222222; border: none" aria-label="Cerrar sesión"/>
         </div>
       </template>
     </pv-toolbar>

@@ -3,12 +3,12 @@
     <h1 id="user-edit-heading" class="font-bold center-title pv-txt" aria-label="Título de edición de usuario">{{ $t('titles.title') }}</h1>
 
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
-      <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">
+      <div style="text-align: center;" class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">
         <img :src="photo" class="w-20 lg:w-20rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
         <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
-
+        <br> <br>
         <div class="historial-button" aria-label="Botón de historial">
-          <pv-button @click="verHistorial" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
+          <pv-button @click="verHistorial" class="p-4 w-10rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
         </div>
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de usuario">
@@ -148,10 +148,7 @@ function verHistorial(){
 }
 .edit-btn{
   background-color: #72D063;
-  margin-top: 20px;
-  margin-bottom: 20px;
   border: none;
-  width: 7rem;
   height: 2rem;
 }
 
@@ -186,6 +183,7 @@ function verHistorial(){
   display: flex;
   justify-content: space-between;
   width: 100%;
+  text-align: center;
 }
 
 .left {
@@ -242,6 +240,9 @@ function verHistorial(){
   margin-top: 30px;
   width: 100%;
 }
+.historial-button{
+  margin-left: 50%;
+}
 @media (max-width: 568px) {
   .content {
     flex-direction: column;
@@ -257,10 +258,11 @@ function verHistorial(){
   .profile-img {
     margin-left: 0;
   }
+  .historial-button{
+    margin-left: 15%;
+  }
 }
 @media (width>1024px){
-  .historial-button{
-    margin-left: 420px;
-  }
+
 }
 </style>

@@ -11,7 +11,6 @@ import CreateScooter from "@/movirent/vehicule-management/pages/the-movirent-vie
 import NotFound from "@/movirent/shared/pages/the-response-error.component.vue";
 import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.component.vue";
 import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue";
-import ViewCard from "@/movirent/vehicule-management/pages/the-card-scooter.component.vue";
 
 import ScooterList from '@/movirent/resenas/components/Scooter-List.component.vue';
 import ScooterDetail from '@/movirent/resenas/components/Scooter-Detail.component.vue';
@@ -21,7 +20,7 @@ import ScooterAddReview from '@/movirent/resenas/components/Scooter-Add-Review.c
 import Main from "@/layouts/component/movirent-main.component.vue";
 
 const routes = [
-    { path: "/", component: RegisterForm },
+    { path: "/", component: LoginForm },
     { path: '/register', component: RegisterForm },
     { path: '/login', component: LoginForm },
     {
@@ -34,7 +33,6 @@ const routes = [
             { path: '/newCard', component: CreateScooter },
             { path: '/question', component: QuestionFrecuently },
             { path: '/privacy', component: PrivacyPolicy },
-            { path: '/viewCard', component: ViewCard },
 
             { path: '/list', component: ScooterList },
             { path: '/scooter/:id', component: ScooterDetail },

@@ -1,24 +1,14 @@
 {
-  "operations": [
+  "scooters": [
     {
-      "name": "Scooter 223",
-      "type": "Kingsong",
-      "model": "Xiaome FA",
-      "price": 123,
-      "address": "Los Olivos sn1",
-      "phone": "926335924",
-      "imageUrl": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
-      "id": "236e"
-    },
-    {
-      "id": "98b8",
-      "name": "xiaomi",
-      "type": "Xiaomi",
-      "model": "Xiaome FA",
-      "price": 3,
-      "address": "calle 1",
-      "phone": "999999999",
-      "imageUrl": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549"
+      "id": "c24d",
+      "name": "Scooter 2334",
+      "type": "Xiome 3334",
+      "model": "N2w23",
+      "price": "12133",
+      "address": "Los olivos ",
+      "phone": "934525653",
+      "imageUrl": "https://i.ibb.co/1v5Pf8M/44.jpg "
     }
   ],
   "users": [
@@ -26,23 +16,10 @@
       "id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427",
       "email": "velarde@gmail.com",
       "password": "velarde123",
-      "completeName": "Nestor Velarde",
-      "phone": "926335924",
+      "completeName": "Nestor Velarde Gonzáles",
+      "phone": "926335933333",
       "dni": "76456342",
-      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
-      "user_roles_id": 1,
-      "address": "Av. Lima 123"
-    },
-    {
-      "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
-      "email": "mari@yahoo.com",
-      "password": "12345678",
-      "completeName": "Mariana Iza",
-      "phone": "990990604",
-      "dni": "000000000",
-      "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg",
-      "user_roles_id": 2,
-      "address": "Calle Sol 456"
+      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png"
     }
   ],
   "user_roles": [
@@ -55,31 +32,9 @@
       "role": "User"
     }
   ],
-  "scooters": [
-    {
-      "id": 1,
-      "brand": "Xiaomi",
-      "model": "M365",
-      "price": 500,
-      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
-      "price_per_hour": "number",
-      "status": "string",
-      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
-    },
-    {
-      "id": 2,
-      "brand": "Segway",
-      "model": "Ninebot",
-      "price": 600,
-      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
-      "price_per_hour": "number",
-      "status": "string",
-      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
-    }
-  ],
   "reservations": [
     {
-      "id": 1,
+      "id": "1",
       "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 2,
       "start_date": "2024-09-15",
@@ -89,7 +44,7 @@
       "rating": 5
     },
     {
-      "id": 2,
+      "id": "2",
       "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
       "scooter_id": 1,
       "start_date": "2024-09-17",

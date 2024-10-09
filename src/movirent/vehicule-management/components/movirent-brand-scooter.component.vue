@@ -1,41 +1,30 @@
 <template>
-  <div class="p-field" aria-label="Campo de Marca">
-    <label for="marca" class="form-label">{{ $t('movirent.marca') }}</label>
-    <pv-select
-        id="marca"
-        :model-value="modelValue"
-        :options="scooterBrands"
-        optionLabel="label"
-        optionValue="value"
-        class="form-input pv-text"
-        placeholder="Selecciona una Marca"
-        :inputStyle="{ backgroundColor: '#ffffff', color: '#262626' }"
-        @update:model-value="updateValue"
-        aria-label="Selecciona una Marca"
-    />
+  <div class="card flex justify-center">
+    <pv-floatlabel>
+      <i class="pi pi-user input-icon"></i>
+      <pv-inputtext
+          id="direccion"
+          :model-value="modelValue"
+          @update:model-value="updateValue"
+          class="default-input"
+          aria-label="Ingrese marca del Scooter"
+      />
+      <label for="username" style="margin-left: 22px; text-align: left">Ingrese marca del Scooter</label>
+    </pv-floatlabel>
   </div>
 </template>
 
 <script setup>
+import '@/assets/styles/form.css';
 import { defineProps, defineEmits } from 'vue';
-
 const props = defineProps({
   modelValue: {
-    type: [String, null],
+    type: String,
     required: true
   }
 });
 
 const emit = defineEmits(['update:model-value']);
-
-// Define las marcas de scooters
-const scooterBrands = [
-  { label: 'Dualtron', value: 'Dualtron' },
-  { label: 'Kingsong', value: 'Kingsong' },
-  { label: 'Ninebot', value: 'Ninebot' },
-  { label: 'Xiaomi', value: 'Xiaomi' },
-  { label: 'Vsett', value: 'Vsett' }
-];
 
 const updateValue = (value) => {
   emit('update:model-value', value);
@@ -43,14 +32,20 @@ const updateValue = (value) => {
 </script>
 
 <style scoped>
-.p-field {
+.default-input {
+  color: #282828;
+  background-color: inherit;
+  border: 0.5px solid #e4e1e1;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  width: calc(130% - 40px);
+  padding-left: 40px;
 }
-
-.form-label {
-  margin-bottom: 4px;
-  font-weight: bold;
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #424141;
 }
-
 </style>
