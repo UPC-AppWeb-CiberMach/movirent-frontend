@@ -208,17 +208,6 @@
       "description": "Plan con acceso con todos los beneficios durante 1 año.",
       "stars": 3,
       "price": 199
-    },
-    {
-      "id": "c62d",
-      "userId": 1,
-      "planId": "1",
-      "planName": "Plan Mensual",
-      "planPrice": "39",
-      "cardNumber": "9999999999999999",
-      "expiryDate": "11/11",
-      "cvv": "111",
-      "status": "active"
     }
   ]
 }

@@ -4,8 +4,12 @@ export class Db {
     getAllSuscriptions() {
         return BaseService.http.get("/suscriptions");
     }
-    createSuscription(subscription) {
-        return BaseService.http.post("/suscriptions", subscription);
+    getSuscriptionById(id) {
+        return BaseService.http.get(`/suscriptions/${id}`);
     }
+    getActiveSuscription() {
+        return BaseService.http.get("/suscriptions");
+    }
+
 }
 

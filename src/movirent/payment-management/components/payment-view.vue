@@ -44,12 +44,6 @@ import { required, minLength, maxLength } from '@vuelidate/validators';
 import { Db } from '@/movirent/suscription-management/services/suscription.services.js';
 import router from "@/routes/router.js";
 
-// Obtenemos los datos del plan seleccionado desde la URL
-const route = router.currentRoute;
-const planId = ref(route.value.query.planId);
-const planName = ref(route.value.query.planName);
-const planPrice = ref(route.value.query.planPrice);
-
 const cardNumber = ref('');
 const expiryDate = ref('');
 const cvv = ref('');
@@ -71,24 +65,12 @@ async function confirmPayment() {
 }
 
 async function processPayment() {
-  // Lógica para guardar la suscripción
-  const subscription = {
-    userId: 1, // Debes obtener el ID del usuario logueado dinámicamente
-    planId: planId.value, // El planId que recibimos de la URL
-    planName: planName.value,
-    planPrice: planPrice.value,
-    cardNumber: cardNumber.value,
-    expiryDate: expiryDate.value,
-    cvv: cvv.value,
-    status: "active", // Marca la suscripción como activa
-  };
-
   try {
     const db = new Db();
-    await db.createSuscription(subscription); // Guardamos la suscripción en el db.json
-    alert('Pago realizado con éxito y suscripción creada');
+    await db.getAllSuscriptions();
+    alert('Pago realizado con éxito');
     showPaymentDialog.value = false;
-    await router.push("/profile"); // Redirige al perfil del usuario
+    await router.push("/suscriptions");
   } catch (error) {
     console.error("Error al realizar el pago:", error);
     alert("Hubo un error al procesar el pago");
