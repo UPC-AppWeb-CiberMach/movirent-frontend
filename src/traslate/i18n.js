@@ -29,7 +29,8 @@ const messages = {
             reviews: 'Reseñas',
             reservations: 'Reservas',
             scooter: 'Scooter',
-            history: 'Historial'
+            history: 'Historial',
+            logout: 'Cerrar Sesión'
         },
         titles: {
             title: '¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!'
@@ -57,7 +58,8 @@ const messages = {
             reviews: 'Reviews',
             reservations: 'Reservations',
             scooter: 'Scooter',
-            history: 'History'
+            history: 'History',
+            logout: 'Logout'
         },
         titles: {
             title: 'Is your information incorrect or do you want to update it? Edit them!'
@@ -66,9 +68,9 @@ const messages = {
 };
 
 const i18n = createI18n({
-    locale: 'es', // Idioma por defecto
-    fallbackLocale: 'es', // Idioma de respaldo
-    messages // Sintaxis corta para los mensajes
+    locale: 'es',
+    fallbackLocale: 'es',
+    messages
 });
 
 export default i18n;

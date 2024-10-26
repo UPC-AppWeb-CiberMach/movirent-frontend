@@ -1,51 +1,45 @@
 <template>
-  <div class="card flex justify-center">
-    <pv-floatlabel>
-      <i class="pi pi-user input-icon"></i>
-      <pv-inputtext
-          id="direccion"
-          :model-value="modelValue"
-          @update:model-value="updateValue"
-          class="default-input"
-          aria-label="Ingrese su Scooter"
-      />
-      <label for="username" style="margin-left: 22px; text-align: left">Scooter</label>
-    </pv-floatlabel>
+  <div class="p-field" aria-label="Campo de Nombre">
+    <label for="title" class="form-label">{{ $t('movirent.name') }} </label>
+    <pv-inputtext
+        id="title"
+        :value="modelValue"
+        @input="updateValue"
+        class="form-input pv-text"
+        placeholder="Nombre del equipo"
+        aria-label="Nombre del equipo"
+    />
   </div>
 </template>
 
 <script setup>
-import '@/assets/styles/form.css';
-import { defineProps, defineEmits } from 'vue';
 const props = defineProps({
   modelValue: {
     type: String,
     required: true
   }
-});
+})
 
-const emit = defineEmits(['update:model-value']);
+const emit = defineEmits(['update:modelValue'])
 
-const updateValue = (value) => {
-  emit('update:model-value', value);
-};
+const updateValue = (event) => {
+  emit('update:modelValue', event.target.value)
+}
 </script>
 
 <style scoped>
-.default-input {
-  color: #282828;
-  background-color: inherit;
-  border: 0.5px solid #e4e1e1;
+.p-field {
   display: flex;
-  align-items: center;
-  width: calc(130% - 40px);
-  padding-left: 40px;
+  flex-direction: column;
 }
-.input-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #424141;
+
+.form-label {
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.pv-text{
+  background-color: white;
+  color: black;
 }
 </style>

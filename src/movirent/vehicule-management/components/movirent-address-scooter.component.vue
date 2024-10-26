@@ -1,22 +1,20 @@
 <template>
-  <div class="card flex justify-center">
-    <pv-floatlabel>
-      <i class="pi pi-user input-icon"></i>
-      <pv-inputtext
-          id="direccion"
-          :model-value="modelValue"
-          @update:model-value="updateValue"
-          class="default-input"
-          aria-label="Ingrese su dirección"
-      />
-      <label for="username" style="margin-left: 22px; text-align: left">Ingrese su dirección</label>
-    </pv-floatlabel>
+  <div class="p-field" aria-label="Campo de Dirección">
+    <label for="direccion" class="form-label">{{ $t('movirent.address') }} </label>
+    <pv-inputtext
+        id="direccion"
+        :model-value="modelValue"
+        @update:model-value="updateValue"
+        placeholder="Ingrese su dirección"
+        class="form-input pv-text"
+        aria-label="Ingrese su dirección"
+    />
   </div>
 </template>
 
 <script setup>
-import '@/assets/styles/form.css';
 import { defineProps, defineEmits } from 'vue';
+
 const props = defineProps({
   modelValue: {
     type: String,
@@ -32,20 +30,18 @@ const updateValue = (value) => {
 </script>
 
 <style scoped>
-.default-input {
-  color: #282828;
-  background-color: inherit;
-  border: 0.5px solid #e4e1e1;
+.p-field {
   display: flex;
-  align-items: center;
-  width: calc(130% - 40px);
-  padding-left: 40px;
+  flex-direction: column;
 }
-.input-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #424141;
+
+.form-label {
+  margin-bottom: 4px;
+  font-weight: bold;
+  color: black;
+}
+.pv-text {
+  background-color: white;
+  color: black;
 }
 </style>
