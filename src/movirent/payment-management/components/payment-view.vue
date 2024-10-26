@@ -208,7 +208,7 @@ async function cancelPayment() {
   background-color: #FD6C6C;
   border: none;
 }
-@media (max-width: 968px) {
+@media (max-width: 1400px) {
   .centered-image {
     width: 15rem;
   }

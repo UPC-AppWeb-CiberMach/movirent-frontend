@@ -46,23 +46,34 @@ export default {
     });
   },
   methods: {
-    submitReview() {
+    async submitReview() {
       if (this.rating > 0 && this.comment.trim()) {
         const newReview = {
           user: "Usuario actual",
           rating: this.rating,
           comment: this.comment,
         };
-        ScooterService.addReview(this.scooter.id, newReview).then(() => {
-          alert("Reseña agregada con éxito");
-          this.goBack();
-        });
+
+        if (!this.scooter.id) {
+          alert("No se encontró el ID del scooter.");
+          console.error("Error: El scooter no tiene un ID definido.");
+          return;
+        }
+
+        try {
+          await ScooterService.addReview(this.scooter.id, newReview);
+          alert("Reseña agregada con éxito.");
+          this.$router.push(`/scooter/${this.scooter.id}/reviews`);
+        } catch (error) {
+          console.error('Error al agregar reseña:', error);
+          alert('Error al agregar reseña. Por favor, inténtalo de nuevo más tarde.');
+        }
       } else {
-        alert("Por favor ingresa una puntuación y comentario válido.");
+        alert("Por favor, completa todos los campos.");
       }
     },
     goBack() {
-      this.$router.push(`/scooter/${this.$route.params.id}/reviews`);
+      this.$router.push(`/Detail/${this.$route.params.id}`);
     },
   },
 };

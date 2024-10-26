@@ -68,7 +68,7 @@ export default {
 
         const activeSubscription = await db.getActiveSuscription();
         if (activeSubscription) {
-          activePlanId.value = activeSubscription.id;
+          activePlanId.value = activeSubscription.planId;
         }
       } catch (error) {
         console.error('Error al cargar los datos:', error);
@@ -77,6 +77,10 @@ export default {
 
     async function subscribeButton(plan) {
       try {
+        // Establece el ID del plan activo directamente para reflejar el estado "Suscrito" inmediatamente
+        activePlanId.value = plan.id;
+
+        // Luego, realiza la redirección para el pago
         await router.push({
           path: '/payment',
           query: {
@@ -90,10 +94,14 @@ export default {
       }
     }
 
+// Al regresar a la vista de suscripción, actualiza el plan activo solo si el pago fue exitoso
     router.afterEach(async (to) => {
       if (to.path === '/subscription' && to.query.paymentSuccess) {
         try {
-          activePlanId.value = to.query.planId;
+          const activeSubscription = await db.getActiveSuscription();
+          if (activeSubscription) {
+            activePlanId.value = activeSubscription.planId;
+          }
         } catch (error) {
           console.error('Error al actualizar el plan activo:', error);
         }

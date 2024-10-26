@@ -5,11 +5,14 @@
 
       <div class="scooter-info" aria-label="Información del scooter">
         <img :src="scooter.image" alt="Imagen del Scooter" aria-label="Imagen del scooter" />
-        <p class="reminder" aria-label="Mensaje de recordatorio para los comentarios">Recuerda siempre ser respetuoso con los comentarios y opiniones</p>
+        <p class="reminder" aria-label="Mensaje de recordatorio para los comentarios">
+          Recuerda siempre ser respetuoso con los comentarios y opiniones
+        </p>
       </div>
 
       <div class="reviews" aria-label="Lista de reseñas de usuarios">
         <div
+            v-if="Array.isArray(reviews) && reviews.length > 0"
             class="review"
             v-for="(review, index) in reviews"
             :key="index"
@@ -19,6 +22,7 @@
           <div class="field" aria-label="Puntuación del usuario"><strong>Puntuación:</strong> {{ review.rating }}</div>
           <p aria-label="Comentario del usuario">{{ review.comment }}</p>
         </div>
+        <p v-else aria-label="Mensaje de sin reseñas">No hay reseñas para este scooter.</p>
       </div>
 
       <div class="actions" aria-label="Acciones disponibles">
@@ -36,16 +40,20 @@ export default {
   data() {
     return {
       scooter: {},
-      reviews: [
-        { user: "Random1", rating: 4, comment: "Muy buen servicio, el dueño fue muy amable y puntual. El precio fue un poco elevado." },
-        { user: "Random2", rating: 3, comment: "Scooter un poco antiguo para el precio que tiene." },
-      ],
+      reviews: []
     };
   },
   mounted() {
     const scooterId = this.$route.params.id;
+
+    // Fetch scooter details
     ScooterService.fetchScooterDetails(scooterId).then((data) => {
       this.scooter = data;
+    });
+
+    // Fetch reviews for the specific scooter
+    ScooterService.fetchScooterReviews(scooterId).then((data) => {
+      this.reviews = data.filter(review => review.scooterId === scooterId); // Filtrar por el ID del scooter
     });
   },
   methods: {
@@ -53,7 +61,7 @@ export default {
       this.$router.push(`/scooter/${this.$route.params.id}/add-review`);
     },
     goBack() {
-      this.$router.push(`/scooter/${this.$route.params.id}`);
+      this.$router.push(`/Detail/${this.$route.params.id}`);
     },
   },
 };
