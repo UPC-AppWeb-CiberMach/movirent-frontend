@@ -130,7 +130,17 @@
       "phone": "999999999"
     }
   ],
-  "reservations": [],
+  "reservations": [
+    {
+      "id": "1729924314786",
+      "client_id": 1,
+      "scooter_id": "d5022a22-c391-4048-8abb-0db1f0a17998",
+      "start_date": "2024-10-26T06:31:54.786Z",
+      "end_date": "2024-10-27T06:31:54.793Z",
+      "price": 13,
+      "time": 1
+    }
+  ],
   "rates": [
     {
       "id": "1",

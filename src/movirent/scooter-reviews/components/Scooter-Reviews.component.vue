@@ -124,4 +124,20 @@ img {
 .actions pv-button {
   font-size: 1rem;
 }
+
+.p-button-danger{
+  background-color: #fd6c6c;
+  border: none;
+  margin-bottom: 20px;
+  width: 8rem;
+  height: 3rem;
+}
+
+.p-button-success{
+  background-color: #72D063;
+  border: none;
+  margin-bottom: 20px;
+  width: 8rem;
+  height: 3rem;
+}
 </style>
