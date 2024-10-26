@@ -13,7 +13,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import TheHeader from './the-header.component.vue';
-import TheFooter from './the-foother.component.vue';
+import TheFooter from './the-footer.component.vue';
 import Welcome from './welcome-movirent.vue';
 
 const route = useRoute();

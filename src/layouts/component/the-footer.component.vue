@@ -96,3 +96,5 @@
   color: black;
 }
 </style>
+<script setup>
+</script>

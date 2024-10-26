@@ -74,7 +74,7 @@ h2 {
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
-  color: #513c86;
+  color: black;
 }
 h3 {
   font-size: 1.1rem;

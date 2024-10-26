@@ -33,6 +33,7 @@ import Select from "primevue/select";
 import InputNumber from "primevue/inputnumber";
 import Accordion from "primevue/accordion";
 import Accordiontab from "primevue/accordiontab";
+import Rating from "primevue/rating";
 
 const app = createApp(App);
 app.use(PrimeVue, {
@@ -64,7 +65,6 @@ app.component('pv-select', Select);
 app.component('pv-inputnumber', InputNumber);
 app.component('pv-accordion', Accordion);
 app.component('pv-accordiontab', Accordiontab);
-
-app.use(router)
+app.component('pv-rating', Rating);
 app.use(i18n)
 app.mount('#app')

@@ -1,4 +1,4 @@
-import ApiClient from '@/movirent/resenas/services/Api-Client.js';
+import ApiClient from '@/movirent/scooter-reviews/services/Api-Client.js';
 
 export default {
     fetchScooters() {
@@ -13,4 +13,5 @@ export default {
 
         return ApiClient.postReview(scooterId, review);
     }
+
 };

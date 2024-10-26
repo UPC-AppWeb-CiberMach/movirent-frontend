@@ -15,6 +15,9 @@
     <span v-if="$v.user_role_id.$error" class="error-message" aria-label="Mensaje de error para el rol de usuario">Rol de Usuario es requerido</span>
     <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Campo de URL de la foto"/>
     <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
+    <pv-inputtext v-model="address" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Dirección" aria-label="Campo de Dirección"/>
+    <span v-if="$v.address.$error" class="error-message" aria-label="Mensaje de error para la direccion">Dirección</span>
+
     <pv-button @click="signUp" class="mt-5 p-4 w-10rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
 
     <div class="d-flex align-items-center justify-content-center" aria-label="Sección de redirección">
@@ -43,6 +46,7 @@ let email = ref('')
 let dni = ref('')
 let user_role_id = ref('')
 let photo = ref('')
+let address = ref('')
 let roles = [
   {name: 'Owner', id: 1},
   {name: 'Client', id: 2}
@@ -55,10 +59,11 @@ const rules = reactive({
   phone: { required, minLength: minLength(9), type: Number },
   dni: { required, minLength: minLength(8) },
   user_role_id: { required },
-  photo: { required }
+  photo: { required },
+  address: { required }
 })
 
-const $v = useVuelidate(rules, { completeName, password, email, phone, dni, user_role_id, photo })
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni, user_role_id, photo, address })
 
 async function signUp() {
   $v.value.$touch()
@@ -73,11 +78,12 @@ async function signUp() {
       phone: phone.value,
       dni: dni.value,
       user_roles_id: user_role_id.value,
-      photo: photo.value
+      photo: photo.value,
+      address: address.value
     }
     await Db.prototype.signUp(user).then((response) => {
       if (response.status === 201) {
-        alert("Sign Up Success");
+        alert("Register Success");
         router.push("/login")
       }
     }).catch(() => {

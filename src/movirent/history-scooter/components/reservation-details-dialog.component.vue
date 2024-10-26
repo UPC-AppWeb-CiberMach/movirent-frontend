@@ -62,5 +62,6 @@ onMounted(async () => {
   background-color: #FD6C6C;
   color: #ffffff;
   border: none;
+
 }
 </style>
