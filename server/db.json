@@ -118,16 +118,6 @@
       "price_per_hour": 13,
       "district": "La Molina",
       "phone": "333333333"
-    },
-    {
-      "id": "4765450f-9088-4591-a4ae-0c94079245bd",
-      "name": "Scooter 5",
-      "brand": "Xiaomi",
-      "model": "Xiaomi",
-      "image": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "price_per_hour": 1,
-      "district": "Miraflores",
-      "phone": "999999999"
     }
   ],
   "reservations": [
