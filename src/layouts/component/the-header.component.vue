@@ -11,25 +11,17 @@
         </select>
       </template>
       <template #end>
-        <div class="menu-container">
-          <button @click="toggleMenu" class="hamburger-button" aria-label="Abrir menú">
-            <i class="pi pi-bars pi-2x"></i>
-          </button>
-          <div :class="['menu', { 'menu-open': isMenuOpen }]">
-
-            <router-link to="/profile" class="pv-btn" aria-label="Perfil">
-              <pv-button :label="$t('buttons.profile')" icon="pi pi-user" style="background-color: white; color: black; border: none"/>
-            </router-link>
-            <router-link to="/suscriptions" class="pv-btn" aria-label="Suscripción">
-              <pv-button :label="$t('buttons.subscription')" icon="pi pi-credit-card" style="background-color: white; color: black; border: none"/>
-            </router-link>
-            <router-link to="/ScooterList" class="pv-btn" aria-label="Scooter">
-              <pv-button :label="$t('buttons.scooter')" icon="pi pi-shop" style="background-color: white; color: black; border: none"/>
-            </router-link>
-            <router-link to="/login" @click="logout" class="pv-btn" aria-label="Logout">
-              <pv-button :label="$t('buttons.logout')" style="background-color: white; color: black; border: none"/>
-            </router-link>
-          </div>
+        <div class="flex gap-3 align-right">
+          <pv-button label="Logout" @click="logout" style="background-color: #ffffff; color: #222222; border: none" aria-label="Cerrar sesión"/>
+          <router-link to="/profile" class="pv-btn" aria-label="Perfil">
+            <pv-button :label="$t('buttons.profile')" icon="pi pi-user" style="background-color: white; color: black; border: none"/>
+          </router-link>
+          <router-link to="/question" class="pv-btn" aria-label="Suscripción">
+            <pv-button :label="$t('buttons.subscription')" icon="pi pi-credit-card" style="background-color: white; color: black; border: none"/>
+          </router-link>
+          <router-link to="/newCard" class="pv-btn" aria-label="Scooter">
+            <pv-button :label="$t('buttons.scooter')" icon="pi pi-shop" style="background-color: white; color: black; border: none"/>
+          </router-link>
         </div>
       </template>
     </pv-toolbar>
@@ -44,78 +36,18 @@
   background-color: transparent;
   border: none;
 }
-.hamburger-button {
-  display: none;
-}
-.menu {
-  display: flex;
-}
-.menu-container {
-  position: relative;
-}
 
-@media (max-width: 990px) {
-  .hamburger-button {
-    display: block;
-    background-color: white;
-    border: none;
-    color: #72D063;
-    padding: 1.5rem;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 1000;
-    min-width: 200px;
-  }
-
-  .menu-open {
-    display: flex;
-  }
-
-  .pv-btn {
-    margin: 0.5rem 0;
-  }
-}
-
-@media (min-width: 991px) {
-  .menu {
-    display: flex;
-  }
-
-  .hamburger-button {
-    display: none;
-    background-color: white;
-    border: none;
-    color: #72D063;
-  }
-}
 </style>
-
 <script setup>
 import { useI18n } from "vue-i18n";
+
 import router from "@/routes/router.js";
-import { ref } from "vue";
 
 const { locale } = useI18n();
-const isMenuOpen = ref(false);
-
 function changeLanguage(event) {
   locale.value = event.target.value;
 }
-
-function toggleMenu() {
-  isMenuOpen.value = !isMenuOpen.value;
-}
-
-const logout = () => {
+const logout =()=>{
   sessionStorage.removeItem('user');
   router.push('/login');
 }

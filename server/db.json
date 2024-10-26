@@ -31,8 +31,7 @@
       "dni": "76456342",
       "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
       "user_roles_id": 1,
-      "address": "Av. Lima 123",
-      "suscriptionId": null
+      "address": "Av. Lima 123"
     },
     {
       "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
@@ -43,39 +42,7 @@
       "dni": "000000000",
       "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg",
       "user_roles_id": 2,
-      "address": "Calle Sol 456",
-      "suscriptionId": null
-    },
-    {
-      "id": "a36e10e1-c5ff-44b8-a7a8-7f7e9553878a",
-      "email": "inumaki@gmail.com",
-      "password": "12345678",
-      "completeName": "toge",
-      "phone": "999999999",
-      "dni": "00000000",
-      "photo": "https://i.pinimg.com/736x/df/81/c9/df81c91f15e8280e24af32e316404b2e.jpg",
-      "address": "Calle 13",
-      "suscriptionId": null
-    },
-    {
-      "id": "ec7640ba-b39f-4f9a-901b-d99b5551e667",
-      "email": "messo@gmail.com",
-      "password": "Sobble08",
-      "completeName": "Messo",
-      "phone": "9999999999",
-      "dni": "76929357",
-      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "address": "Calle 12"
-    },
-    {
-      "id": "fd02ae60-0deb-4de5-9508-b18768b9c1e2",
-      "email": "a@gmail.com",
-      "password": "12345678",
-      "completeName": "A",
-      "phone": "9999999999",
-      "dni": "76929357",
-      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "address": "Calle 12"
+      "address": "Calle Sol 456"
     }
   ],
   "user_roles": [
@@ -90,48 +57,49 @@
   ],
   "scooters": [
     {
-      "id": "604aa948-c9d6-4301-9989-a809947f1752",
-      "name": "scooter 4",
-      "brand": "BMX",
-      "model": "BMX",
-      "image": "data:image/jpeg;base64,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",
-      "price_per_hour": 45,
-      "district": "Los Olivos",
-      "phone": "777777777"
+      "id": 1,
+      "brand": "Xiaomi",
+      "model": "M365",
+      "price": 500,
+      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
+      "price_per_hour": "number",
+      "status": "string",
+      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
     },
     {
-      "id": "b166c162-d63e-443f-8def-beead52f5c1c",
-      "name": "scooter promax",
-      "brand": "Rider",
-      "model": "Rider",
-      "image": "data:image/jpeg;base64,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",
-      "price_per_hour": 100,
-      "district": "Barranco",
-      "phone": "888888888"
-    },
-    {
-      "id": "d5022a22-c391-4048-8abb-0db1f0a17998",
-      "name": "scooter8",
-      "brand": "HDTP",
-      "model": "RUBET",
-      "image": "data:image/png;base64,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",
-      "price_per_hour": 13,
-      "district": "La Molina",
-      "phone": "333333333"
+      "id": 2,
+      "brand": "Segway",
+      "model": "Ninebot",
+      "price": 600,
+      "image": "https://xiaomioficial.pe/media/catalog/product/M/M/MM000XIA60_1.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=549&width=549&canvas=549:549",
+      "price_per_hour": "number",
+      "status": "string",
+      "owner_id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427"
     }
   ],
   "reservations": [
     {
-      "id": "1729924314786",
-      "client_id": 1,
-      "scooter_id": "d5022a22-c391-4048-8abb-0db1f0a17998",
-      "start_date": "2024-10-26T06:31:54.786Z",
-      "end_date": "2024-10-27T06:31:54.793Z",
-      "price": 13,
-      "time": 1
+      "id": 1,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
+      "scooter_id": 2,
+      "start_date": "2024-09-15",
+      "end_date": "2024-09-20",
+      "price": 300,
+      "time": 5,
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "client_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
+      "scooter_id": 1,
+      "start_date": "2024-09-17",
+      "end_date": "2024-09-19",
+      "price": 200,
+      "time": 2,
+      "rating": 5
     }
   ],
-  "reviews": [
+  "rates": [
     {
       "id": "1",
       "comment": "Excelente scooter, muy cómodo.",
@@ -175,29 +143,6 @@
       "date": "2024-09-16",
       "three_back_num": 456,
       "user_id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8"
-    }
-  ],
-  "suscriptions": [
-    {
-      "id": "1",
-      "name": "Plan Mensual",
-      "description": "Plan con acceso a 7 días de la semana 100% garantizado durante 1 mes",
-      "stars": 1,
-      "price": 39
-    },
-    {
-      "id": "2",
-      "name": "Plan Trimestral",
-      "description": "Plan con acceso a 90 días. Cuenta con beneficio de rentar scooter deportivos.",
-      "stars": 2,
-      "price": 99
-    },
-    {
-      "id": "3",
-      "name": "Plan Anual",
-      "description": "Plan con acceso con todos los beneficios durante 1 año.",
-      "stars": 3,
-      "price": 199
     }
   ]
 }
