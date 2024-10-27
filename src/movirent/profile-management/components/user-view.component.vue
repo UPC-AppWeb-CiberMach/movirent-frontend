@@ -4,7 +4,7 @@
 
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">
-        <img :src="photo" class="w-20 lg:w-20rem p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
+        <img :src="photo" class="w-20 p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
         <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
 
         <div class="historial-button" aria-label="Botón de historial">
@@ -25,6 +25,8 @@
           <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
           <pv-inputtext v-model="photo" :class="{ 'is-invalid': $v.photo.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Entrada de URL de la foto del usuario"/>
           <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
+          <pv-inputtext v-model="address" :class="{ 'is-invalid': $v.address.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Dirección" aria-label="Entrada de dirección del usuario"/>
+          <span v-if="$v.address.$error" class="error-message" aria-label="Mensaje de error para la dirección">Dirección es requerida</span>
         </div>
 
         <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu cuenta?" :modal="true" :closable="false">
@@ -67,6 +69,7 @@ let phone = ref(JSON.parse(sessionStorage.getItem("user"))?.phone);
 let email = ref(JSON.parse(sessionStorage.getItem("user"))?.email);
 let dni = ref(JSON.parse(sessionStorage.getItem("user"))?.dni);
 let photo = ref(JSON.parse(sessionStorage.getItem("user"))?.photo);
+let address = ref(JSON.parse(sessionStorage.getItem("user"))?.address);
 let showEditDialog = ref(false)
 let showDeleteDialog = ref(false)
 
@@ -76,10 +79,11 @@ const rules = reactive({
   email: { required, emailValidator },
   phone: { required, minLength: minLength(9), type: Number },
   dni: { required, minLength: minLength(8) },
-  photo: { required }
+  photo: { required },
+  address: { required }
 })
 
-const $v = useVuelidate(rules, { completeName, password, email, phone, dni, photo})
+const $v = useVuelidate(rules, { completeName, password, email, phone, dni, photo, address})
 
 async function confirmEditUser() {
   showEditDialog.value = false
@@ -94,7 +98,8 @@ async function confirmEditUser() {
       completeName: completeName.value,
       phone: phone.value,
       dni: dni.value,
-      photo: photo.value
+      photo: photo.value,
+      address: address.value
     }
     await Db.prototype.editUser(id, user).then((response) => {
       if (response.status === 200) {
@@ -220,6 +225,8 @@ function verHistorial(){
 .profile-img {
   border-radius: 100%;
   margin-left: 50%;
+  width: 20rem;
+  height: 20rem;
 }
 
 .right pv-inputtext {
@@ -242,6 +249,9 @@ function verHistorial(){
   margin-top: 30px;
   width: 100%;
 }
+.historial-button{
+  margin-left: 50%;
+}
 @media (max-width: 568px) {
   .content {
     flex-direction: column;
@@ -253,14 +263,17 @@ function verHistorial(){
   .left h3 {
     margin-left: 0;
   }
+  .left{
+    padding-right: 0;
+  }
 
   .profile-img {
     margin-left: 0;
+    width: 10rem;
+    height: 10rem;
   }
-}
-@media (width>1024px){
   .historial-button{
-    margin-left: 420px;
+    margin-left: 0;
   }
 }
 </style>
