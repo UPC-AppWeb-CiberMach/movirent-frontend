@@ -23,14 +23,60 @@
   ],
   "users": [
     {
-      "id": "203aa123-11a9-4c46-a3d1-4aaf192f2814",
-      "email": "perez@gmail.com",
+      "id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427",
+      "email": "velarde@gmail.com",
+      "password": "velarde123",
+      "completeName": "Nestor Velarde",
+      "phone": "926335924",
+      "dni": "76456342",
+      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
+      "user_roles_id": 1,
+      "address": "Av. Lima 123",
+      "suscriptionId": null
+    },
+    {
+      "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
+      "email": "mari@yahoo.com",
       "password": "12345678",
-      "completeName": "Teresita ",
-      "phone": "987654321",
-      "dni": "70123456",
+      "completeName": "Mariana Iza",
+      "phone": "990990604",
+      "dni": "000000000",
       "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg",
-      "address": "San Martín de porrez. "
+      "user_roles_id": 2,
+      "address": "Calle Sol 456",
+      "suscriptionId": null
+    },
+    {
+      "id": "a36e10e1-c5ff-44b8-a7a8-7f7e9553878a",
+      "email": "inumaki@gmail.com",
+      "password": "12345678",
+      "completeName": "toge",
+      "phone": "999999999",
+      "dni": "00000000",
+      "photo": "https://i.pinimg.com/736x/df/81/c9/df81c91f15e8280e24af32e316404b2e.jpg",
+      "address": "Calle 13",
+      "suscriptionId": null
+    },
+    {
+      "id": "fd02ae60-0deb-4de5-9508-b18768b9c1e2",
+      "email": "a@gmail.com",
+      "password": "12345678",
+      "completeName": "A",
+      "phone": "9999999999",
+      "dni": "76929357",
+      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
+      "address": "Calle 12"
+    },
+    {
+      "id": "a200cbb5-f61d-4223-bd29-f23fed76dcb8",
+      "email": "messo@gmail.com",
+      "password": "Sobble08",
+      "completeName": "Messo",
+      "phone": "9999999999",
+      "dni": "76929357",
+      "user_roles_id": 1,
+      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
+      "address": "Calle 123"
     }
   ],
   "user_roles": [
@@ -75,28 +121,28 @@
       "phone": "333333333"
     },
     {
-      "id": "4765450f-9088-4591-a4ae-0c94079245bd",
+      "id": "0a524d5c-d5fc-449f-965b-71ccc6700271",
       "name": "Scooter 5",
       "brand": "Xiaomi",
       "model": "Xiaomi",
-      "image": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "price_per_hour": 1,
-      "district": "Miraflores",
-      "phone": "999999999"
+      "image": "data:image/png;base64,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 ",
+      "price_per_hour": 2,
+      "district": "Pueblo Libre",
+      "phone": "99999999"
     }
   ],
   "reservations": [
     {
-      "id": "1729924314786",
+      "id": "1730009924893",
       "client_id": 1,
       "scooter_id": "d5022a22-c391-4048-8abb-0db1f0a17998",
-      "start_date": "2024-10-26T06:31:54.786Z",
-      "end_date": "2024-10-27T06:31:54.793Z",
+      "start_date": "2024-10-27T06:18:44.893Z",
+      "end_date": "2024-10-28T06:18:44.893Z",
       "price": 13,
       "time": 1
     }
   ],
-  "rates": [
+  "reviews": [
     {
       "id": "1",
       "comment": "Excelente scooter, muy cómodo.",
@@ -163,17 +209,6 @@
       "description": "Plan con acceso con todos los beneficios durante 1 año.",
       "stars": 3,
       "price": 199
-    },
-    {
-      "id": "c62d",
-      "userId": 1,
-      "planId": "1",
-      "planName": "Plan Mensual",
-      "planPrice": "39",
-      "cardNumber": "9999999999999999",
-      "expiryDate": "11/11",
-      "cvv": "111",
-      "status": "active"
     }
   ]
 }

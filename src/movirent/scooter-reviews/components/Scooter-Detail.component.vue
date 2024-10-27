@@ -158,6 +158,11 @@ function goToReviews() {
   width: 50%;
   margin-left: 5%;
 }
+.profile-img {
+  margin-left: 0;
+  width: 20rem;
+  height: 25rem;
+}
 
 .inputs {
   width: 50%;
