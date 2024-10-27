@@ -23,59 +23,14 @@
   ],
   "users": [
     {
-      "id": "26bd90cf-3d0b-4e21-874c-d2d6aa25d427",
-      "email": "velarde@gmail.com",
-      "password": "velarde123",
-      "completeName": "Nestor Velarde",
-      "phone": "926335924",
-      "dni": "76456342",
-      "photo": "https://i.ibb.co/8rdm6xC/Logo-Movi-Tech.png",
-      "user_roles_id": 1,
-      "address": "Av. Lima 123",
-      "suscriptionId": null
-    },
-    {
-      "id": "cc0b24e6-d0cc-4d62-bcc5-cc9e7172cef8",
-      "email": "mari@yahoo.com",
+      "id": "203aa123-11a9-4c46-a3d1-4aaf192f2814",
+      "email": "perez@gmail.com",
       "password": "12345678",
-      "completeName": "Mariana Iza",
-      "phone": "990990604",
-      "dni": "000000000",
+      "completeName": "Teresita ",
+      "phone": "987654321",
+      "dni": "70123456",
       "photo": "https://www.famousbirthdays.com/headshots/mariana---vila-2.jpg",
-      "user_roles_id": 2,
-      "address": "Calle Sol 456",
-      "suscriptionId": null
-    },
-    {
-      "id": "a36e10e1-c5ff-44b8-a7a8-7f7e9553878a",
-      "email": "inumaki@gmail.com",
-      "password": "12345678",
-      "completeName": "toge",
-      "phone": "999999999",
-      "dni": "00000000",
-      "photo": "https://i.pinimg.com/736x/df/81/c9/df81c91f15e8280e24af32e316404b2e.jpg",
-      "address": "Calle 13",
-      "suscriptionId": null
-    },
-    {
-      "id": "ec7640ba-b39f-4f9a-901b-d99b5551e667",
-      "email": "messo@gmail.com",
-      "password": "Sobble08",
-      "completeName": "Messo",
-      "phone": "9999999999",
-      "dni": "76929357",
-      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "address": "Calle 12"
-    },
-    {
-      "id": "fd02ae60-0deb-4de5-9508-b18768b9c1e2",
-      "email": "a@gmail.com",
-      "password": "12345678",
-      "completeName": "A",
-      "phone": "9999999999",
-      "dni": "76929357",
-      "photo": "https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/08/sobble-evolution-feature-header.jpg",
-      "address": "Calle 12"
+      "address": "San Martín de porrez. "
     }
   ],
   "user_roles": [
