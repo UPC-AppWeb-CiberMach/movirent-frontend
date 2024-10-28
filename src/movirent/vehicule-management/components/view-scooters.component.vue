@@ -37,8 +37,8 @@ onMounted(async () => {
 
 const viewDetails = (scooterId) => {
   const selectedScooter = scooters.value.find(s => s.id === scooterId);
-  sessionStorage.setItem("scooter", JSON.stringify(selectedScooter)); // Guarda el scooter en sessionStorage
-  router.push(`/scooter/${scooterId}`); // Redirigir al componente Scooter-Detail
+  sessionStorage.setItem("scooter", JSON.stringify(selectedScooter));
+  router.push(`/scooter/${scooterId}`);
 };
 
 const createNewScooter = () => {

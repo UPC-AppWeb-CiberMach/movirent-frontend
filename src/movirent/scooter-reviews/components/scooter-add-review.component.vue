@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import ScooterService from "@/movirent/scooter-reviews/services/Scooter-Service.js";
+import ScooterService from "@/movirent/scooter-reviews/services/review.service.js";
 
 export default {
   data() {

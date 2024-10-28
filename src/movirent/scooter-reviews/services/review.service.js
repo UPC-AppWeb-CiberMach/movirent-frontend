@@ -1,4 +1,4 @@
-// src/movirent/scooter-reviews/services/Scooter-Service.js
+
 export default {
     async fetchScooterDetails(scooterId) {
         try {

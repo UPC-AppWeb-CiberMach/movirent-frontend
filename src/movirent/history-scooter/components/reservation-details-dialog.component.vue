@@ -24,7 +24,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import { HistoryServices } from "@/movirent/history-scooter/services/history-services.js";
+import { HistoryServices } from "@/movirent/history-scooter/services/history.services.js";
 
 const route = useRoute();
 const reservationId = route.params.id;

@@ -11,18 +11,17 @@ import NotFound from "@/movirent/shared/pages/the-response-error.component.vue";
 import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.component.vue";
 import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue";
 
-import Detail from "@//movirent/scooter-reviews/components/Scooter-Detail.component.vue";
+import Detail from "@/movirent/scooter-reviews/components/scooter-detail.component.vue";
 
 import ScooterDetails from '@/movirent/vehicule-management/components/Scooter-Details.component.vue';
-import ScooterReviews from '@/movirent/scooter-reviews/components/Scooter-Reviews.component.vue';
-import ScooterAddReview from '@/movirent/scooter-reviews/components/Scooter-Add-Review.component.vue';
-import ScooterList from '@/movirent/scooter-reviews/components/Scooter-List.component.vue';
+import ScooterReviews from '@/movirent/scooter-reviews/components/scooter-reviews.component.vue';
+import ScooterAddReview from '@/movirent/scooter-reviews/components/scooter-add-review.component.vue';
+import ScooterList from '@/movirent/scooter-reviews/components/scooter-list.component.vue';
 
 import Main from "@/layouts/component/movirent-main.component.vue";
 import CreateScooters from "@/movirent/vehicule-management/components/create-scooters.component.vue";
 import ViewScooters from "@/movirent/vehicule-management/components/view-scooters.component.vue";
 import SuscriptionOptions from "@/movirent/suscription-management/components/suscription-options.vue";
-import MySuscription from "@/movirent/suscription-management/components/my-suscription.vue";
 import PaymentView from "@/movirent/payment-management/components/payment-view.vue";
 import ScooterPayment from "@/movirent/payment-management/components/payment-scooter.vue"
 
@@ -50,7 +49,6 @@ const routes = [
             { path: '/scooter/:id/add-review', component: ScooterAddReview },
 
             { path: '/suscriptions', component: SuscriptionOptions },
-            { path: '/MySuscription', component: MySuscription},
 
             { path: '/payment', component: PaymentView},
             { path: '/ScooterPayment', component: ScooterPayment}

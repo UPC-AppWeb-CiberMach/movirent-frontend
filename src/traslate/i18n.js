@@ -36,7 +36,7 @@ const messages = {
             title: '¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!'
         }
     },
-    en: { // Agregar traducciones en inglés
+    en: {
         movirent: {
             name: 'Team Name',
             address: 'Address',

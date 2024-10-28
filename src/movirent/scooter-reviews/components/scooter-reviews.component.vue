@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import ScooterService from "@/movirent/scooter-reviews/services/Scooter-Service.js";
+import ScooterService from "@/movirent/scooter-reviews/services/review.service.js";
 
 export default {
   data() {
@@ -46,14 +46,13 @@ export default {
   mounted() {
     const scooterId = this.$route.params.id;
 
-    // Fetch scooter details
     ScooterService.fetchScooterDetails(scooterId).then((data) => {
       this.scooter = data;
     });
 
-    // Fetch reviews for the specific scooter
+
     ScooterService.fetchScooterReviews(scooterId).then((data) => {
-      this.reviews = data.filter(review => review.scooterId === scooterId); // Filtrar por el ID del scooter
+      this.reviews = data.filter(review => review.scooterId === scooterId);
     });
   },
   methods: {

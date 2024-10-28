@@ -22,14 +22,14 @@ export class Db {
     }
 
     getAllReservations() {
-        return BaseService.http.get("/reservations"); // Add this to fetch reservations
+        return BaseService.http.get("/reservations");
     }
 
     createReservation(reservation) {
-        return BaseService.http.post("/reservations", reservation); // For saving new reservations
+        return BaseService.http.post("/reservations", reservation);
     }
 
     deleteAllReservations() {
-        return BaseService.http.delete("/reservations"); // To delete all reservations
+        return BaseService.http.delete("/reservations");
     }
 }
