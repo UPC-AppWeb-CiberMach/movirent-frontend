@@ -118,7 +118,7 @@ async function confirmDeleteUser() {
     if (response.status === 200) {
       alert("Delete User Success");
       sessionStorage.removeItem("user")
-      router.push("/register")
+      router.push("/login")
     }
   }).catch(() => {
     alert("Error");

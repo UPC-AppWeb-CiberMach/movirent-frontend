@@ -114,7 +114,7 @@ async function createScooter() {
       phone: phone.value
     }
     await Db.prototype.createScooter(scooter).then((response) => {
-      if (response.status === 201) {
+      if (response.status === 200) {
         alert("Scooter Create Success");
         router.push("/ScooterList")
       }

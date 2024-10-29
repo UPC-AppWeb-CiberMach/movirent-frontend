@@ -26,7 +26,7 @@ import PaymentView from "@/movirent/payment-management/components/payment-view.v
 import ScooterPayment from "@/movirent/payment-management/components/payment-scooter.vue"
 
 const routes = [
-    { path: "/", component: RegisterForm },
+    { path: "/", component: LoginForm },
     { path: '/register', component: RegisterForm },
     { path: '/login', component: LoginForm },
     {
