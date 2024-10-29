@@ -6,7 +6,7 @@
     <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
     <span v-if="$v.password.$error" class="error-message" aria-label="Mensaje de error para la contraseña">Contraseña de 8 caracteres como minimo es requerida</span>
     <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Campo de número de celular"/>
-    <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono de 8 digitos es requerido</span>
+    <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono de 9 digitos es requerido</span>
     <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Correo" aria-label="Campo de correo electrónico"/>
     <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
     <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="DNI" aria-label="Campo de DNI"/>
