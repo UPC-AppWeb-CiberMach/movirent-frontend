@@ -94,7 +94,6 @@ export default {
       }
     }
 
-
     router.afterEach(async (to) => {
       if (to.path === '/subscription' && to.query.paymentSuccess) {
         try {
