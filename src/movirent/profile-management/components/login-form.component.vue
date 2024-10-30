@@ -1,15 +1,37 @@
 <template>
-  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container" style="margin-top: 10%; width: 100%; max-width: 25rem; margin-left: auto; margin-right: auto;" aria-label="Contenedor de inicio de sesión">
-    <h1 id="sign-in-heading" class="font-bold pv-txt" aria-label="Título de inicio de sesión">Iniciar Sesión</h1>
-    <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3 component-margin pv-text" type="text" placeholder="Email" aria-label="Campo de correo electrónico"/>
-    <span v-if="$v.email.$error" class="error-message" aria-label="Error en correo electrónico">Correo electrónico válido es requerido</span>
-    <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3 component-margin pv-text" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
-    <span v-if="$v.password.$error" class="error-message" aria-label="Error en contraseña">Contraseña es requerida</span>
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container div-clas" aria-label="Contenedor de inicio de sesión">
+    <div id="sign-in-heading" class="font-bold pv-title" aria-label="Título de inicio de sesión">Iniciar Sesión</div> <br>
+    <pv-inputtext
+        v-model="email"
+        :class="{ 'is-invalid': $v.email.$error }"
+        class="w-15rem lg:w-25rem p-3 pv-text"
+        type="text"
+        placeholder="Usuario"
+        aria-label="Campo de correo electrónico"/>
+    <span
+        v-if="$v.email.$error"
+        class="error-message"
+        aria-label="Error en correo electrónico">Correo electrónico válido es requerido
+    </span> <br/>
+
+    <pv-inputtext
+        v-model="password"
+        :class="{ 'is-invalid': $v.password.$error }"
+        class="w-15rem lg:w-25rem p-3 pv-text"
+        type="password"
+        placeholder="Contraseña"
+        aria-label="Campo de contraseña"/>
+    <span
+        v-if="$v.password.$error"
+        class="error-message"
+        aria-label="Error en contraseña">Contraseña es requerida
+    </span>
+
     <div class="button-container">
-      <pv-button @click="signIn" class="mt-5 p-2 sign-in-btn component-margin" type="submit" label="Iniciar Sesión" aria-label="Botón para iniciar sesión"/>
+      <pv-button @click="signIn" class="mt-5 p-2 sign-in-btn" type="submit" label="Iniciar Sesión" aria-label="Botón para iniciar sesión"/>
     </div>
-    <div class="grid-container component-margin" aria-label="Sección de registro">
-      <h3 aria-label="Pregunta de registro" class="pv-txt">¿Aún no tienes una cuenta?</h3>
+    <div class="grid-container" style="margin-top: 12px" aria-label="Sección de registro">
+      <h3 aria-label="Pregunta de registro" class="pv-texts">¿Aún no tienes una cuenta?</h3>
       <div class="register-redirect" aria-label="Redirección de registro">
         <router-link to="/register" class="sign-up-section" aria-label="Enlace para registrarse">Regístrate</router-link>
       </div>
@@ -55,12 +77,18 @@ async function signIn() {
 
 <style scoped>
 .pv-text {
-  background-color: #ffffff;
+  background-color: inherit;
+  border: 1px solid #808081;
   color: black;
 }
 
-.pv-txt {
+.pv-texts{
   color: black;
+}
+
+.pv-title {  /*Titulo del Login "LOGIN"*/
+  color: #555657;
+  font-size: 24px;
 }
 
 .sign-in-container {
@@ -77,11 +105,6 @@ async function signIn() {
 
 .font-bold {
   text-align: center;
-}
-
-.component-margin {
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 .grid-container {
@@ -125,7 +148,10 @@ async function signIn() {
 }
 
 .error-message {
-  color: red;
-  font-size: small;
+  color: red; font-size: small;
+}
+
+.div-clas{
+  margin-top: 10%; width: 100%; max-width: 25rem; margin-left: auto; margin-right: auto;
 }
 </style>

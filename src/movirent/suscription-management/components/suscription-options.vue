@@ -4,13 +4,13 @@
       Nuestros Planes de Suscripción
     </h1>
 
-    <p class="text-center text-xl mb-8" aria-label="Descripción: MoviRent cuenta con tres planes de suscripción con beneficios únicos.">
+    <p class="text-center text-xl mb-1" aria-label="Descripción: MoviRent cuenta con tres planes de suscripción con beneficios únicos.">
       En MoviRent contamos con tres planes de suscripción que te brindarán beneficios únicos.
     </p>
 
     <div class="grid" aria-label="Lista de planes de suscripción">
       <div class="col-12 md:col-4" v-for="plan in subscriptionPlans" :key="plan.id">
-        <pv-card class="m-3 h-full flex flex-column" aria-label="Tarjeta de plan de suscripción">
+        <pv-card class="m-3 h-full flex flex-column colours-card" aria-label="Tarjeta de plan de suscripción">
           <template #title>
             <h2 class="text-2xl font-semibold text-center" aria-label="Nombre del plan: {{ plan.name }}">
               {{ plan.name }}
@@ -150,6 +150,9 @@ h1, h2, h3, p {
   width: auto;
   min-width: 9rem;
   cursor: default;
+}
+.colours-card{
+  background-color: #4CAF50;
 }
 
 @media (max-width: 768px) {

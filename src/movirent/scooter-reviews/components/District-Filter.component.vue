@@ -1,5 +1,10 @@
 <template>
-  <pv-dropdown :options="districts" v-model="selectedDistrict" placeholder="Distrito" @change="$emit('filter')" aria-label="Selector de distrito" />
+  <pv-dropdown
+      :options="districts"
+      v-model="selectedDistrict"
+      placeholder="Distrito"
+      @change="$emit('filter')"
+      aria-label="Selector de distrito" />
 </template>
 
 <script>

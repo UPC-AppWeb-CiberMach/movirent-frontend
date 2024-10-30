@@ -7,9 +7,9 @@ import UserView from "../movirent/profile-management/components/user-view.compon
 import ReservationHistory from "../movirent/history-scooter/components/reservation-history.component.vue";
 import ReservationDetailsDialog from "../movirent/history-scooter/components/reservation-details-dialog.component.vue";
 
-import NotFound from "@/movirent/shared/pages/the-response-error.component.vue";
-import QuestionFrecuently from "@/movirent/shared/pages/frequently-questions.component.vue";
-import PrivacyPolicy from "@/movirent/shared/pages/privacy-policy.component.vue";
+import NotFound from "@/shared/pages/the-response-error.component.vue";
+import QuestionFrecuently from "@/shared/pages/frequently-questions.component.vue";
+import PrivacyPolicy from "@/shared/pages/privacy-policy.component.vue";
 
 import Detail from "@/movirent/scooter-reviews/components/scooter-detail.component.vue";
 
