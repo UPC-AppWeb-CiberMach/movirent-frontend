@@ -22,10 +22,10 @@
           <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Entrada de número de celular del usuario"/>
           <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono es requerido</span>
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
-          <pv-button class="p-button-create green-button p-mr-2" label="Crear" @click="createScooter" />
-          <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="cancelCreation"/>
+            <pv-button class="p-button-create green-button p-mr-2" label="Crear" @click="createScooter" />
+            <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="cancelCreation"/>
           </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -1,26 +1,35 @@
 <template>
-  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container div-clas" aria-label="Contenedor de inicio de sesión">
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container" aria-label="Contenedor de inicio de sesión">
     <div id="sign-in-heading" class="font-bold pv-title" aria-label="Título de inicio de sesión">Iniciar Sesión</div> <br>
-    <pv-inputtext
-        v-model="email"
-        :class="{ 'is-invalid': $v.email.$error }"
-        class="w-15rem lg:w-25rem p-3 pv-text"
-        type="text"
-        placeholder="Usuario"
-        aria-label="Campo de correo electrónico"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="email"
+          :class="{ 'is-invalid': $v.email.$error }"
+          class="w-15rem lg:w-20rem p-3 pv-text"
+          type="text"
+          aria-label="Campo de correo electrónico"
+      />
+      <label for="on_label">Usuario</label>
+    </pv-floatlabel>
     <span
         v-if="$v.email.$error"
         class="error-message"
         aria-label="Error en correo electrónico">Correo electrónico válido es requerido
     </span> <br/>
 
-    <pv-inputtext
-        v-model="password"
-        :class="{ 'is-invalid': $v.password.$error }"
-        class="w-15rem lg:w-25rem p-3 pv-text"
-        type="password"
-        placeholder="Contraseña"
-        aria-label="Campo de contraseña"/>
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="password"
+          :class="{ 'is-invalid': $v.email.$error }"
+          class="w-15rem lg:w-20rem p-3 pv-text"
+          type="password"
+          aria-label="Campo de contraseña"
+      />
+      <label for="on_label">Contraseña</label>
+    </pv-floatlabel>
     <span
         v-if="$v.password.$error"
         class="error-message"
@@ -76,6 +85,10 @@ async function signIn() {
 </script>
 
 <style scoped>
+html, body {
+  height: 100%;
+  margin: 0;
+}
 .pv-text {
   background-color: inherit;
   border: 1px solid #808081;
@@ -95,12 +108,10 @@ async function signIn() {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
-  margin-top: 300px;
-  width: 100%;
-  max-width: 25rem;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100vh;
+  margin: 0;
 }
 
 .font-bold {
@@ -151,7 +162,4 @@ async function signIn() {
   color: red; font-size: small;
 }
 
-.div-clas{
-  margin-top: 10%; width: 100%; max-width: 25rem; margin-left: auto; margin-right: auto;
-}
 </style>

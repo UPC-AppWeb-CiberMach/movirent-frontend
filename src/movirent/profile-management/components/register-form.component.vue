@@ -1,21 +1,100 @@
 <template>
   <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-up-container pv-formulario" aria-label="sign-up-heading">
     <h1 id="sign-up-heading" class="font-bold pv-txt" aria-label="Título de registro">Regístrate y sé parte de esta gran comunidad</h1>
-    <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Nombre Completo" aria-label="Campo de nombre completo"/>
-    <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
-    <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="password" placeholder="Contraseña" aria-label="Campo de contraseña"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="completeName"
+          :class="{ 'is-invalid': $v.password.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          aria-label="Campo de nombre completo"
+          type="text"
+      />
+      <label for="on_label">Nombre Completo</label>
+    </pv-floatlabel>
+    <span v-if="$v.completeName.$error" class="error-message"
+          aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="password"
+          :class="{ 'is-invalid': $v.password.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="password"
+          aria-label="Campo de contraseña"
+      />
+      <label for="on_label">Contraseña</label>
+    </pv-floatlabel>
     <span v-if="$v.password.$error" class="error-message" aria-label="Mensaje de error para la contraseña">Contraseña de 8 caracteres como minimo es requerida</span>
-    <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Campo de número de celular"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="phone"
+          :class="{ 'is-invalid': $v.phone.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="text"
+          aria-label="Campo de número de celular"
+      />
+      <label for="on_label">Celular</label>
+    </pv-floatlabel>
     <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono de 9 digitos es requerido</span>
-    <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Correo" aria-label="Campo de correo electrónico"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="email"
+          :class="{ 'is-invalid': $v.phone.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="text"
+          aria-label="Campo de correo electrónico"
+      />
+      <label for="on_label">Correo</label>
+    </pv-floatlabel>
     <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
-    <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="DNI" aria-label="Campo de DNI"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="dni"
+          :class="{ 'is-invalid': $v.dni.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="text"
+          aria-label="Campo de DNI"
+      />
+      <label for="on_label">DNI</label>
+    </pv-floatlabel>
     <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
-    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" :inputStyle="{ backgroundColor: '#ffffff', color: 'black' }" class="w-15rem lg:w-25rem p-3 pv-text" aria-label="Campo de rol de usuario"/>
+
+    <Dropdown v-model="user_role_id" :options="roles" optionLabel="name" optionValue="id" placeholder="Rol de Usuario" :inputStyle="{ backgroundColor: '#ffffff', color: 'black' }" class="w-15rem lg:w-25rem p-1 pv-text" aria-label="Campo de rol de usuario"/>
     <span v-if="$v.user_role_id.$error" class="error-message" aria-label="Mensaje de error para el rol de usuario">Rol de Usuario es requerido</span>
-    <pv-inputtext v-model="photo" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Campo de URL de la foto"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="photo"
+          :class="{ 'is-invalid': $v.dni.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="text"
+          aria-label="Campo de URL de la foto"
+      />
+      <label for="on_label">URL de tu foto</label>
+    </pv-floatlabel>
     <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
-    <pv-inputtext v-model="address" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Dirección" aria-label="Campo de Dirección"/>
+
+    <pv-floatlabel variant="on">
+      <pv-inputtext
+          id="on_label"
+          v-model="address"
+          :class="{ 'is-invalid': $v.dni.$error }"
+          class="w-15rem lg:w-25rem p-2 pv-text"
+          type="text"
+          aria-label="Campo de Dirección"
+      />
+      <label for="on_label">Dirección</label>
+    </pv-floatlabel>
     <span v-if="$v.address.$error" class="error-message" aria-label="Mensaje de error para la direccion">Dirección</span>
 
     <pv-button @click="signUp" class="mt-5 p-4 w-10rem sign-up-btn" type="submit" label="Regístrate" aria-label="Botón para registrarse"/>
