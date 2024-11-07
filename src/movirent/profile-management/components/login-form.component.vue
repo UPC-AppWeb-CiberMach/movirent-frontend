@@ -1,48 +1,49 @@
 <template>
   <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-in-container" aria-label="Contenedor de inicio de sesión">
-    <div id="sign-in-heading" class="font-bold pv-title" aria-label="Título de inicio de sesión">Iniciar Sesión</div> <br>
-
-    <pv-floatlabel variant="on">
-      <pv-inputtext
-          id="on_label"
-          v-model="email"
-          :class="{ 'is-invalid': $v.email.$error }"
-          class="w-15rem lg:w-20rem p-3 pv-text"
-          type="text"
-          aria-label="Campo de correo electrónico"
-      />
-      <label for="on_label">Usuario</label>
-    </pv-floatlabel>
-    <span
-        v-if="$v.email.$error"
-        class="error-message"
-        aria-label="Error en correo electrónico">Correo electrónico válido es requerido
+    <div class="card-component">
+      <div id="sign-in-heading" class="font-bold pv-title" aria-label="Título de inicio de sesión">Iniciar Sesión</div> <br>
+      <pv-floatlabel variant="on">
+        <pv-inputtext
+            id="on_label"
+            v-model="email"
+            :class="{ 'is-invalid': $v.email.$error }"
+            class="w-15rem lg:w-20rem p-3 pv-text"
+            type="text"
+            aria-label="Campo de correo electrónico"
+        />
+        <label for="on_label">Usuario</label>
+      </pv-floatlabel>
+      <span
+          v-if="$v.email.$error"
+          class="error-message"
+          aria-label="Error en correo electrónico">Correo electrónico válido es requerido
     </span> <br/>
 
-    <pv-floatlabel variant="on">
-      <pv-inputtext
-          id="on_label"
-          v-model="password"
-          :class="{ 'is-invalid': $v.email.$error }"
-          class="w-15rem lg:w-20rem p-3 pv-text"
-          type="password"
-          aria-label="Campo de contraseña"
-      />
-      <label for="on_label">Contraseña</label>
-    </pv-floatlabel>
-    <span
-        v-if="$v.password.$error"
-        class="error-message"
-        aria-label="Error en contraseña">Contraseña es requerida
-    </span>
+      <pv-floatlabel variant="on">
+        <pv-inputtext
+            id="on_label"
+            v-model="password"
+            :class="{ 'is-invalid': $v.email.$error }"
+            class="w-15rem lg:w-20rem p-3 pv-text"
+            type="password"
+            aria-label="Campo de contraseña"
+        />
+        <label for="on_label">Contraseña</label>
+      </pv-floatlabel>
+      <span
+          v-if="$v.password.$error"
+          class="error-message"
+          aria-label="Error en contraseña">Contraseña es requerida
+      </span>
 
-    <div class="button-container">
-      <pv-button @click="signIn" class="mt-5 p-2 sign-in-btn" type="submit" label="Iniciar Sesión" aria-label="Botón para iniciar sesión"/>
-    </div>
-    <div class="grid-container" style="margin-top: 12px" aria-label="Sección de registro">
-      <h3 aria-label="Pregunta de registro" class="pv-texts">¿Aún no tienes una cuenta?</h3>
-      <div class="register-redirect" aria-label="Redirección de registro">
-        <router-link to="/register" class="sign-up-section" aria-label="Enlace para registrarse">Regístrate</router-link>
+      <div class="button-container">
+        <pv-button @click="signIn" class="mt-5 p-2 sign-in-btn" type="submit" label="Iniciar Sesión" aria-label="Botón para iniciar sesión"/>
+      </div>
+      <div class="grid-container" style="margin-top: 12px" aria-label="Sección de registro">
+        <h3 aria-label="Pregunta de registro" class="pv-texts">¿Aún no tienes una cuenta?</h3>
+        <div class="register-redirect" aria-label="Redirección de registro">
+          <router-link to="/register" class="sign-up-section" aria-label="Enlace para registrarse">Regístrate</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -128,7 +129,7 @@ html, body {
 .button-container {
   display: flex;
   justify-content: center;
-  width: 50%;
+  text-align: center;
 }
 
 .sign-in-btn {
@@ -160,6 +161,12 @@ html, body {
 
 .error-message {
   color: red; font-size: small;
+}
+.card-component{
+  border: 1px solid #ecebeb; /* Borde suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 10px;
+  padding: 5%;
 }
 
 </style>

@@ -1,7 +1,6 @@
 <template>
-  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-up-container pv-formulario" aria-label="sign-up-heading">
-    <h1 id="sign-up-heading" class="font-bold pv-txt" aria-label="Título de registro">Regístrate y sé parte de esta gran comunidad</h1>
-
+  <div class="p-d-flex p-flex-column p-ai-center p-jc-center sign-up-container" aria-label="sign-up-heading">
+    <h2 id="sign-up-heading" class="font-bold pv-txt" aria-label="Título de registro">Regístrate y sé parte de esta gran comunidad</h2>
     <pv-floatlabel variant="on">
       <pv-inputtext
           id="on_label"
@@ -173,10 +172,6 @@ async function signUp() {
 </script>
 
 <style scoped>
-.pv-text{
-  background-color: #ffffff;
-  color: black;
-}
 .is-invalid {
   border-color: red;
 }
@@ -209,7 +204,6 @@ async function signUp() {
 
 .sign-up-container .font-bold{
   text-align: center;
-
 }
 
 .sign-in-section {

@@ -2,6 +2,27 @@ import { createI18n } from 'vue-i18n';
 
 const messages = {
     es: {
+        userview: {
+            title: '¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!',
+            info: 'Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios,',
+            name: 'Nombres Completos',
+            contrasena: 'Contraseña',
+            celular: 'Celular',
+            email: 'Correo Electrónico',
+            dni: 'DNI',
+            URL: 'URL de la imagen',
+            dirrecion: 'Dirección',
+
+            confMessage: 'Puedes cambiarla cuantas veces quieras',
+            confDelete: 'Tus datos no podrán ser recuperados',
+
+            btnHistorial: 'Ver Historial',
+            btnGuardar: 'Guardar',
+            btnBorrar: 'Borrar',
+            btnEliminar: 'Eliminar',
+            btnCancelar: 'Cancelar',
+            btnEditar: 'Editar',
+        },
         movirent: {
             name: 'Nombre del equipo',
             address: 'Dirección',
@@ -37,6 +58,27 @@ const messages = {
         }
     },
     en: {
+        userview: {
+            "title": "Are your details incorrect or do you want to update them? Edit them!",
+            "info": "Always remember to keep your information correct and updated to generate more trust among users.",
+            "name": "Full Name",
+            "contrasena": "Password",
+            "celular": "Mobile",
+            "email": "Email Address",
+            "dni": "ID Number",
+            "URL": "Image URL",
+            "direccion": "Address",
+
+            "confMessage": "You can change it as many times as you want.",
+            "confDelete": "Your data cannot be recovered.",
+
+            "btnHistorial": "View History",
+            "btnGuardar": "Save",
+            "btnBorrar": "Delete",
+            "btnEliminar": "Remove",
+            "btnCancelar": "Cancel",
+            "btnEditar": "Edit"
+        },
         movirent: {
             name: 'Team Name',
             address: 'Address',

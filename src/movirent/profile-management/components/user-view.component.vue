@@ -1,54 +1,136 @@
 <template>
   <div class="p-d-flex p-flex-column p-ai-center p-jc-center user-view-container" aria-label="Contenedor de vista de usuario">
-    <h1 id="user-edit-heading" class="font-bold center-title pv-txt" aria-label="Título de edición de usuario">{{ $t('titles.title') }}</h1>
-
+    <h1 id="user-edit-heading" class="font-bold center-title pv-txt" aria-label="Título de edición de usuario">{{ $t('userview.title') }}</h1>
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de usuario">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de usuario">
         <img :src="photo" class="w-20 p-3 profile-img" alt="Imagen de perfil" aria-label="Imagen de perfil del usuario"/>
-        <h3 class="font-bold" aria-label="Recordatorio para el usuario">Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios</h3>
+
+        <h3 class="font-bold" style="color: #575656;" aria-label="Recordatorio para el usuario">{{ $t('userview.info') }}</h3>
 
         <div class="historial-button" aria-label="Botón de historial">
-          <pv-button @click="verHistorial" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Ver Historial" aria-label="Botón para ver el historial del usuario"/>
+          <pv-button @click="verHistorial" class="mt-5 p-4 w-10rem edit-btn" type="submit" :label="$t('userview.btnHistorial')" aria-label="Botón para ver el historial del usuario"/>
         </div>
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de usuario">
+
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del usuario">
-          <pv-inputtext v-model="completeName" :class="{ 'is-invalid': $v.completeName.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Nombre Completo" aria-label="Entrada de nombre completo del usuario"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                id="complete_name"
+                v-model="completeName"
+                :class="{ 'is-invalid': $v.completeName.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=" "
+                aria-label="Entrada de nombre completo del usuario"
+            />
+            <label for="complete_name">{{ $t('userview.name') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.completeName.$error" class="error-message" aria-label="Mensaje de error para el nombre completo">Nombre completo es requerido</span>
-          <pv-inputtext v-model="password" :class="{ 'is-invalid': $v.password.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="password" placeholder="Contraseña" aria-label="Entrada de contraseña del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="password"
+                v-model="password"
+                :class="{ 'is-invalid': $v.password.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="password"
+                placeholder=" "
+                aria-label="Entrada de contraseña del usuario"
+            />
+            <label for="password">{{ $t('userview.contrasena') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.password.$error" class="error-message" aria-label="Mensaje de error para la contraseña">Contraseña es requerida</span>
-          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Entrada de número de celular del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="phone"
+                v-model="phone"
+                :class="{ 'is-invalid': $v.phone.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=" "
+                aria-label="Entrada de número de celular del usuario"
+            />
+            <label for="phone">{{ $t('userview.celular') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono es requerido</span>
-          <pv-inputtext v-model="email" :class="{ 'is-invalid': $v.email.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Correo" aria-label="Entrada de correo electrónico del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="email"
+                v-model="email"
+                :class="{ 'is-invalid': $v.email.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=" "
+                aria-label="Entrada de correo electrónico del usuario"
+            />
+            <label for="email">{{ $t('userview.email') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.email.$error" class="error-message" aria-label="Mensaje de error para el correo electrónico">Email en formato 'email@gmail.com' es requerido</span>
-          <pv-inputtext v-model="dni" :class="{ 'is-invalid': $v.dni.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="DNI" aria-label="Entrada de DNI del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="dni"
+                v-model="dni"
+                :class="{ 'is-invalid': $v.dni.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=" "
+                aria-label="Entrada de DNI del usuario"
+            />
+            <label for="dni">{{ $t('userview.dni') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.dni.$error" class="error-message" aria-label="Mensaje de error para el DNI">DNI es requerido</span>
-          <pv-inputtext v-model="photo" :class="{ 'is-invalid': $v.photo.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Entrada de URL de la foto del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="photo"
+                v-model="photo"
+                :class="{ 'is-invalid': $v.photo.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=" "
+                aria-label="Entrada de URL de la foto del usuario"
+            />
+            <label for="photo">{{ $t('userview.URL') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.photo.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
-          <pv-inputtext v-model="address" :class="{ 'is-invalid': $v.address.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Dirección" aria-label="Entrada de dirección del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-top: 5%">
+            <pv-inputtext
+                id="address"
+                v-model="address"
+                :class="{ 'is-invalid': $v.address.$error }"
+                class="w-15rem lg:w-25rem p-1.5 pv-text"
+                type="text"
+                placeholder=""
+                aria-label="Entrada de dirección del usuario"
+            />
+            <label for="address">{{ $t('userview.dirrecion') }}</label>
+          </pv-floatlabel>
           <span v-if="$v.address.$error" class="error-message" aria-label="Mensaje de error para la dirección">Dirección es requerida</span>
         </div>
 
         <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu cuenta?" :modal="true" :closable="false">
-          <p class="center-title">Puedes cambiarla cuantas veces quieras</p>
-
+          <p class="center-title">{{ $t('userview.confMessage') }}</p>
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
-            <pv-button class="p-button-edit green-button p-mr-2" label="Editar" @click="confirmEditUser" />
-            <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="showEditDialog = false" />
+            <pv-button class="p-button-edit green-button p-mr-2" :label="$t('userview.btnEditar')" @click="confirmEditUser" />
+            <pv-button class="p-button-cancel-edit pink-button" :label="$t('userview.btnCancelar')" @click="showEditDialog = false" />
           </div>
         </pv-dialog>
 
         <pv-dialog v-model:visible="showDeleteDialog" header="¿Estas segur@ de eliminar tu cuenta? " :modal="true" :closable="false">
-          <p class="center-title">Tus datos no podrán se recuperados</p>
-
+          <p class="center-title">{{ $t('userview.confDelete') }}</p>
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
-            <pv-button class="p-button-delete green-button p-mr-2" label="Eliminar" @click="confirmDeleteUser" />
-            <pv-button class="p-button-cancel-delete pink-button" label="Cancelar" @click="showDeleteDialog = false" />
+            <pv-button class="p-button-delete green-button p-mr-2" :label="$t('userview.btnEliminar')" @click="confirmDeleteUser" />
+            <pv-button class="p-button-cancel-delete pink-button" :label="$t('userview.btnCancelar')" @click="showDeleteDialog = false" />
           </div>
         </pv-dialog>
 
-        <pv-button @click="showEditDialog = true" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del usuario"/>
-        <pv-button @click="showDeleteDialog = true" class="mt-5 p-4 w-10rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del usuario"/>
+        <pv-button @click="showEditDialog = true" class="mt-5 p-4 w-10rem edit-btn" type="submit" :label="$t('userview.btnGuardar')" aria-label="Botón para editar los datos del usuario"/>
+        <pv-button @click="showDeleteDialog = true" class="mt-5 p-4 w-10rem delete-btn" type="submit" :label="$t('userview.btnBorrar')" aria-label="Botón para borrar los datos del usuario"/>
       </div>
     </div>
   </div>
@@ -139,10 +221,10 @@ function verHistorial(){
 }
 .pv-text{
   background-color: #ffffff;
-  color: black;
+  color: #333333;
 }
 .pv-txt{
-  color: black;
+  color: #717171;
 }
 .is-invalid {
   border-color: red;
@@ -180,6 +262,8 @@ function verHistorial(){
   align-items: center;
   text-align: center;
   padding: 20px;
+  padding-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 .center-title {
