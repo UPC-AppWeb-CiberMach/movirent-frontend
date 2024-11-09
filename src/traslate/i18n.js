@@ -2,6 +2,37 @@ import { createI18n } from 'vue-i18n';
 
 const messages = {
     es: {
+        scooterCard: {
+            btnDetalle: 'Ver Detalle'
+        },
+        scooterAdd: {
+            title: 'Agregar Reseña',
+            recuerda: 'Recuerda siempre ser respetuoso con los comentarios y opiniones',
+            puntuacion: 'Puntuación:',
+            comentario: 'Comentario:',
+            btnEnviar: 'Enviar',
+            btnCancelar: 'Cancelar'
+        },
+        paymentView: {
+            title: 'Medio de pago',
+            recuerda: 'Recuerda poner los datos reales o el pago será denegado',
+            numTarjeta: 'Número de tarjeta válido es requerido',
+            fechaExp: 'Fecha de vencimiento válida es requerida',
+            cvv: 'CVV válido es requerido',
+            advertencia: 'No habrá devolución una vez realizado',
+            btnPagar: 'Pagar',
+            btnCancelar: 'Cancelar'
+        },
+        paymentScooter: {
+            title: 'Pago de Alquiler de Scooter',
+            subtitle: 'Recuerda poner los datos reales o el pago será denegado',
+            numTarjeta: 'Número de tarjeta válido es requerido',
+            fechaExp: 'Fecha de vencimiento válida es requerida',
+            cvv: 'CVV válido es requerido',
+            advertencia: 'No habrá devolución una vez realizado',
+            btnPagar: 'Pagar',
+            btnCancelar: 'Cancelar'
+        },
         userview: {
             title: '¿Tus datos son incorrectos o deseas actualizarlos? ¡Edítalos!',
             info: 'Recuerda siempre tener tus datos correctos y actualizados para así generar más confianza entre los usuarios,',

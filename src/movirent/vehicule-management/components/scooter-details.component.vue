@@ -7,20 +7,79 @@
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de scooter">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del scooter">
-          <pv-inputtext v-model="name" :class="{ 'is-invalid': $v.name.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Nombre Scooter" aria-label="Entrada de nombre del scooter"/>
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="name"
+                :class="{ 'is-invalid': $v.name.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Entrada de nombre del scooter"
+                type="text"
+            />
+            <label for="name">Nombre Scooter</label>
+          </pv-floatlabel>
           <span v-if="$v.name.$error" class="error-message" aria-label="Mensaje de error para el nombre">Nombre es requerido</span>
-          <pv-inputtext v-model="brand" :class="{ 'is-invalid': $v.brand.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Marca" aria-label="Entrada de marca del scooter"/>
+
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="brand"
+                :class="{ 'is-invalid': $v.brand.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Entrada de marca del scooter"
+                type="text"
+            />
+            <label for="brand">Marca</label>
+          </pv-floatlabel>
           <span v-if="$v.brand.$error" class="error-message" aria-label="Mensaje de error para la marca">Marca es requerida</span>
-          <pv-inputtext v-model="model" :class="{ 'is-invalid': $v.model.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Modelo" aria-label="Entrada de modelo del scooter"/>
+
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="model"
+                :class="{ 'is-invalid': $v.model.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Entrada de modelo del scooter"
+                type="text"
+            />
+            <label for="model">Modelo</label>
+          </pv-floatlabel>
           <span v-if="$v.model.$error" class="error-message" aria-label="Mensaje de error para el modelo">Modelo es requerido</span>
-          <pv-inputtext v-model="image" :class="{ 'is-invalid': $v.image.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Entrada de URL de la foto del usuario"/>
+
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="image"
+                :class="{ 'is-invalid': $v.image.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Entrada de URL de la foto del usuario"
+                type="text"
+            />
+            <label for="image">URL de tu foto</label>
+          </pv-floatlabel>
           <span v-if="$v.image.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
-          <pv-inputnumber v-model="price_per_hour" :class="{ 'is-invalid': $v.price_per_hour.$error }" class="p-3 pv-text input-number" type="number" placeholder="Precio por hora" aria-label="Entrada de precio por hora del scooter"/>
+          <pv-inputnumber v-model="price_per_hour" :class="{ 'is-invalid': $v.price_per_hour.$error }" class="p-3 w-15rem lg:w-25rem pv-text input-number" type="number" placeholder="Precio por hora" aria-label="Entrada de precio por hora del scooter"/>
           <span v-if="$v.price_per_hour.$error" class="error-message" aria-label="Mensaje de error para el precio por hora">Precio por hora es requerido</span>
-          <pv-inputtext v-model="district" style="{ background-color: #ffffff; color: black }" class="w-15rem lg:w-25rem p-3 pv-text" aria-label="Campo de distrito"/>
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="district"
+                style="background-color: #ffffff; color: black;"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Campo de distrito"
+                type="text"
+            />
+            <label for="district">Distrito</label>
+          </pv-floatlabel>
           <span v-if="$v.district.$error" class="error-message" aria-label="Mensaje de error para el distrito">Distrito es requerido</span>
-          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Entrada de número de celular del usuario"/>
-          <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono es requerido</span>
+
+          <pv-floatlabel variant="on" style="margin-bottom: 6%">
+            <pv-inputtext
+                v-model="phone"
+                :class="{ 'is-invalid': $v.phone.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                type="text"
+                placeholder="Celular"
+                aria-label="Entrada de número de celular del usuario"
+            />
+            <label for="phone">Número de celular</label>
+          </pv-floatlabel>
+          <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Teléfono es requerido</span>
         </div>
         <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu scooter?" :modal="true" :closable="false">
           <p class="center-title">Puedes cambiarlo cuantas veces quieras</p>

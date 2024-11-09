@@ -8,25 +8,80 @@
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección de formulario de datos">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Formulario de entrada de datos del scooter">
-          <pv-inputtext v-model="name" :class="{ 'is-invalid': $v.name.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Nombre Scooter" aria-label="Nombre del scooter"/>
+
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="name"
+                :class="{ 'is-invalid': $v.name.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Nombre del scooter"
+                type="text"
+            />
+            <label for="name">Nombre Scooter</label>
+          </pv-floatlabel>
           <span v-if="$v.name.$error" class="error-message" aria-label="Error: Nombre es requerido">Nombre es requerido</span>
 
-          <pv-inputtext v-model="brand" :class="{ 'is-invalid': $v.brand.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Marca" aria-label="Marca del scooter"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="brand"
+                :class="{ 'is-invalid': $v.brand.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Marca del scooter"
+                type="text"
+            />
+            <label for="brand">Marca</label>
+          </pv-floatlabel>
           <span v-if="$v.brand.$error" class="error-message" aria-label="Error: Marca es requerida">Marca es requerida</span>
 
-          <pv-inputtext v-model="model" :class="{ 'is-invalid': $v.model.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Modelo" aria-label="Modelo del scooter"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="model"
+                :class="{ 'is-invalid': $v.model.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="Modelo del scooter"
+                type="text"
+            />
+            <label for="model">Modelo</label>
+          </pv-floatlabel>
           <span v-if="$v.model.$error" class="error-message" aria-label="Error: Modelo es requerido">Modelo es requerido</span>
 
-          <pv-inputtext v-model="image" :class="{ 'is-invalid': $v.image.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de la imagen" aria-label="URL de la imagen del scooter"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="image"
+                :class="{ 'is-invalid': $v.image.$error }"
+                class="w-15rem lg:w-25rem p-2 pv-text"
+                aria-label="URL de la imagen del scooter"
+                type="text"
+            />
+            <label for="image">URL de la imagen</label>
+          </pv-floatlabel>
           <span v-if="$v.image.$error" class="error-message" aria-label="Error: URL de la imagen es requerida">URL de la imagen es requerida</span>
 
           <pv-inputnumber v-model="price_per_hour" :class="{ 'is-invalid': $v.price_per_hour.$error }" class="p-3 pv-text input-number" type="number" placeholder="Precio por hora" aria-label="Precio por hora del scooter"/>
           <span v-if="$v.price_per_hour.$error" class="error-message" aria-label="Error: Precio por hora es requerido">Precio por hora es requerido</span>
 
-          <pv-inputtext v-model="district" :class="{ 'is-invalid': $v.district.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Distrito" aria-label="Seleccionar distrito"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="district"
+                :class="{ 'is-invalid': $v.district.$error }"
+                class="w-15rem lg:w-25rem p-3 pv-text"
+                aria-label="Seleccionar distrito"
+                type="text"
+            />
+            <label for="district">Distrito</label>
+          </pv-floatlabel>
           <span v-if="$v.district.$error" class="error-message" aria-label="Error: Distrito es requerido">Distrito es requerido</span>
 
-          <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Número de celular" aria-label="Número de celular del propietario"/>
+          <pv-floatlabel variant="on">
+            <pv-inputtext
+                v-model="phone"
+                :class="{ 'is-invalid': $v.phone.$error }"
+                class="w-15rem lg:w-25rem p-3 pv-text"
+                aria-label="Número de celular del propietario"
+                type="text"
+            />
+            <label for="phone">Número de celular</label>
+          </pv-floatlabel>
           <span v-if="$v.phone.$error" class="error-message" aria-label="Error: Número de celular es requerido">Número de celular es requerido</span>
         </div>
 

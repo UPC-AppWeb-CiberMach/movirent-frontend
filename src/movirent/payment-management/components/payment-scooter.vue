@@ -1,40 +1,40 @@
 <template>
   <div class="payment-form-container" aria-label="Formulario de pago de alquiler de scooter">
-    <h1 id="payment-form-heading" class="font-bold pv-txt title-text" aria-label="Título Pago de Alquiler de Scooter">Pago de Alquiler de Scooter</h1>
+    <h1 id="payment-form-heading" class="font-bold pv-txt title-text" aria-label="Título Pago de Alquiler de Scooter">{{ $t('paymentScooter.title') }}</h1>
 
     <div class="content" aria-label="Sección de contenido de pago">
       <div class="left-section" aria-label="Sección izquierda de pago">
         <img src="https://infonegocios.info/content/images/2022/07/22/324342/premios_LA_tarjetasdecredito.jpg" alt="Logotipo de Visa" class="centered-image" />
-        <h3 class="pv-txt reminder-text" aria-label="Recordatorio de datos de pago">Recuerda poner los datos reales o el pago será denegado</h3>
+        <h3 class="pv-txt reminder-text" aria-label="Recordatorio de datos de pago">{{ $t('paymentScooter.subtitle') }}</h3>
       </div>
 
       <div class="right-section" aria-label="Formulario de datos de pago">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos de tarjeta">
           <pv-inputtext v-model="cardNumber" :class="{ 'is-invalid': $v.cardNumber.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Número de tarjeta" aria-label="Campo para ingresar el número de tarjeta"/>
-          <span v-if="$v.cardNumber.$error" class="error-message" aria-label="Error en número de tarjeta">Número de tarjeta válido es requerido</span>
+          <span v-if="$v.cardNumber.$error" class="error-message" aria-label="Error en número de tarjeta">{{ $t('paymentScooter.numTarjeta') }}</span>
 
           <pv-inputtext v-model="expiryDate" :class="{ 'is-invalid': $v.expiryDate.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Fecha de vencimiento" aria-label="Campo para ingresar la fecha de vencimiento"/>
-          <span v-if="$v.expiryDate.$error" class="error-message" aria-label="Error en fecha de vencimiento">Fecha de vencimiento válida es requerida</span>
+          <span v-if="$v.expiryDate.$error" class="error-message" aria-label="Error en fecha de vencimiento">{{ $t('paymentScooter.fechaExp') }}</span>
 
           <pv-inputtext v-model="cvv" :class="{ 'is-invalid': $v.cvv.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="CVV" aria-label="Campo para ingresar el CVV"/>
-          <span v-if="$v.cvv.$error" class="error-message" aria-label="Error en CVV">CVV válido es requerido</span>
+          <span v-if="$v.cvv.$error" class="error-message" aria-label="Error en CVV">{{ $t('paymentScooter.cvv') }}</span>
         </div>
 
         <pv-dialog v-model:visible="showPaymentDialog" header="¿Estás segur@ de hacer el pago?" :modal="true"
                    :closable="false" aria-label="Diálogo de confirmación de pago">
-          <p class="center-title" style="margin-left: 1rem">No habrá devolución una vez realizado</p>
+          <p class="center-title" style="margin-left: 1rem">{{ $t('paymentScooter.advertencia') }}</p>
 
           <div class="p-d-flex p-jc-center p-ai-center p-mt-2 button-container">
-            <pv-button class="p-button-pay w-5rem green-button" label="Pagar" @click="processPayment"/>
-            <pv-button class="p-button-cancel-edit w-5rem pink-button" label="Cancelar"
+            <pv-button class="p-button-pay w-5rem green-button" :label="$t('paymentScooter.btnPagar')" @click="processPayment"/>
+            <pv-button class="p-button-cancel-edit w-5rem pink-button" :label="$t('paymentScooter.btnCancelar')"
                        @click="showPaymentDialog = false"/>
           </div>
         </pv-dialog>
 
         <div class="button-container2">
-          <pv-button @click="confirmPayment" class="mt-5 p-4 w-10rem payment-btn" type="submit" label="Pagar"
+          <pv-button @click="confirmPayment" class="mt-5 p-4 w-10rem payment-btn" type="submit" :label="$t('paymentScooter.btnPagar')"
                      aria-label="Botón para confirmar pago"/>
-          <pv-button @click="cancelPayment" class="mt-5 p-4 w-10rem cancel-btn" type="submit" label="Cancelar"
+          <pv-button @click="cancelPayment" class="mt-5 p-4 w-10rem cancel-btn" type="submit" :label="$t('paymentScooter.btnCancelar')"
                      aria-label="Botón para cancelar y regresar"/>
         </div>
       </div>

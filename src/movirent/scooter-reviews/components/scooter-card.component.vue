@@ -3,7 +3,7 @@
     <img :src="scooter.image" alt="Scooter" aria-label="Imagen del Scooter" />
     <h3 aria-label="Nombre del Scooter">{{ scooter.name }}</h3>
     <p aria-label="Distrito del Scooter">{{ scooter.district }}</p>
-    <pv-button label="Ver detalle" class="p-button-success" @click="viewDetail" aria-label="Ver detalle del Scooter" />
+    <pv-button :label="$t('scooterCard.btnDetalle')" class="p-button-success" @click="viewDetail" aria-label="Ver detalle del Scooter" />
   </div>
 </template>
 

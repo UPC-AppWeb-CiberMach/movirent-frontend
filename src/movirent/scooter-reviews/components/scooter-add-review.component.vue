@@ -1,28 +1,28 @@
 <template>
   <div class="scooter-add-review" aria-label="Agregar reseña al Scooter">
     <div class="main-content" aria-label="Contenido principal para agregar reseña">
-      <h2 class="title" aria-label="Título Agregar Reseña">Agregar Reseña</h2>
+      <h2 class="title" aria-label="Título Agregar Reseña">{{ $t('scooterAdd.title') }}</h2>
 
       <div class="scooter-info" aria-label="Información del scooter">
         <img :src="scooter.image" alt="Imagen del Scooter" aria-label="Imagen del scooter" />
-        <p class="reminder" aria-label="Recordatorio para los usuarios">Recuerda siempre ser respetuoso con los comentarios y opiniones</p>
+        <p class="reminder" aria-label="Recordatorio para los usuarios">{{ $t('scooterAdd.recuerda') }}</p>
       </div>
 
       <div class="form" aria-label="Formulario para agregar reseña">
         <div class="field" aria-label="Campo de puntuación">
-          <label for="rating">Puntuación:</label>
+          <label for="rating">{{ $t('scooterAdd.puntuacion') }}</label>
           <input v-model="rating" type="number" min="1" max="5" id="rating" aria-label="Ingresar puntuación" />
         </div>
 
         <div class="field" aria-label="Campo de comentario">
-          <label for="comment">Comentario:</label>
+          <label for="comment">{{ $t('scooterAdd.comentario') }}</label>
           <textarea v-model="comment" id="comment" aria-label="Ingresar comentario"></textarea>
         </div>
       </div>
 
       <div class="actions" aria-label="Botones de acción">
-        <pv-button label="Enviar" class="p-button-success" @click="submitReview" aria-label="Botón para enviar reseña" />
-        <pv-button label="Cancelar" class="p-button-danger" @click="goBack" aria-label="Botón para cancelar y regresar" />
+        <pv-button :label="$t('scooterAdd.btnEnviar')" class="p-button-success" @click="submitReview" aria-label="Botón para enviar reseña" />
+        <pv-button :label="$t('scooterAdd.btnCancelar')" class="p-button-danger" @click="goBack" aria-label="Botón para cancelar y regresar" />
       </div>
     </div>
   </div>

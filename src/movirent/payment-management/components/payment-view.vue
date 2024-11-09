@@ -1,36 +1,36 @@
 <template>
   <div class="payment-form-container" aria-label="payment-form-heading">
-    <h1 id="payment-form-heading" class="font-bold pv-txt" aria-label="Título de pago">Medio de pago</h1>
+    <h1 id="payment-form-heading" class="font-bold pv-txt" aria-label="Título de pago">{{ $t('paymentView.title') }}</h1>
 
     <div class="content">
       <div class="left-section">
         <img src="https://infonegocios.info/content/images/2022/07/22/324342/premios_LA_tarjetasdecredito.jpg" alt="Visa logo" class="centered-image" />
-        <h3 class="pv-txt">Recuerda poner los datos reales o el pago será denegado</h3>
+        <h3 class="pv-txt">{{ $t('paymentView.recuerda') }}</h3>
       </div>
 
       <div class="right-section" aria-label="Sección derecha de contenido de pago">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del pago">
           <pv-inputtext v-model="cardNumber" :class="{ 'is-invalid': $v.cardNumber.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Número de tarjeta" aria-label="Campo de número de tarjeta"/>
-          <span v-if="$v.cardNumber.$error" class="error-message" aria-label="Mensaje de error para el número de tarjeta">Número de tarjeta válido es requerido</span>
+          <span v-if="$v.cardNumber.$error" class="error-message" aria-label="Mensaje de error para el número de tarjeta">{{ $t('paymentView.numTarjeta') }}</span>
 
           <pv-inputtext v-model="expiryDate" :class="{ 'is-invalid': $v.expiryDate.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Fecha de vencimiento" aria-label="Campo de fecha de vencimiento"/>
-          <span v-if="$v.expiryDate.$error" class="error-message" aria-label="Mensaje de error para la fecha de vencimiento">Fecha de vencimiento válida es requerida</span>
+          <span v-if="$v.expiryDate.$error" class="error-message" aria-label="Mensaje de error para la fecha de vencimiento">{{ $t('paymentView.fechaExp') }}</span>
 
           <pv-inputtext v-model="cvv" :class="{ 'is-invalid': $v.cvv.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="CVV" aria-label="Campo de CVV"/>
-          <span v-if="$v.cvv.$error" class="error-message" aria-label="Mensaje de error para el CVV">CVV válido es requerido</span>
+          <span v-if="$v.cvv.$error" class="error-message" aria-label="Mensaje de error para el CVV">{{ $t('paymentView.cvv') }}</span>
         </div>
 
         <pv-dialog v-model:visible="showPaymentDialog" header="¿Estas segur@ de hacer el pago?" :modal="true" :closable="false">
-          <p class="center-title" style="margin-left: 1rem">No habrá devolución una vez realizado</p>
+          <p class="center-title" style="margin-left: 1rem">{{ $t('paymentView.advertencia') }}</p>
 
           <div class="p-d-flex p-jc-center p-ai-center p-mt-2 button-container">
-            <pv-button class="p-button-pay w-5rem green-button" label="Pagar" @click="processPayment" />
-            <pv-button class="p-button-cancel-edit w-5rem pink-button" label="Cancelar" @click="showPaymentDialog = false" />
+            <pv-button class="p-button-pay w-5rem green-button" :label="$t('paymentView.btnPagar')" @click="processPayment" />
+            <pv-button class="p-button-cancel-edit w-5rem pink-button" :label="$t('paymentView.btnCancelar')" @click="showPaymentDialog = false" />
           </div>
         </pv-dialog>
         <div class="button-container2">
-          <pv-button @click="confirmPayment" class="mt-5 p-4 w-10rem payment-btn" type="submit" label="Pagar" aria-label="Botón para pagar"/>
-          <pv-button @click="cancelPayment" class="mt-5 p-4 w-10rem cancel-btn" type="submit" label="Cancelar" aria-label="Botón para cancelar pago"/>
+          <pv-button @click="confirmPayment" class="mt-5 p-4 w-10rem payment-btn" type="submit" :label="$t('paymentView.btnPagar')" aria-label="Botón para pagar"/>
+          <pv-button @click="cancelPayment" class="mt-5 p-4 w-10rem cancel-btn" type="submit" :label="$t('paymentView.btnCancelar')" aria-label="Botón para cancelar pago"/>
         </div>
       </div>
     </div>
