@@ -6,14 +6,14 @@
       <div v-for="scooter in scooters" :key="scooter.id" class="scooter-card" aria-label="Tarjeta de scooter">
         <img :src="scooter.image" :alt="`Imagen de ${scooter.name}`" class="scooter-image" aria-label="Imagen del scooter {{ scooter.name }}">
         <h3 class="scooter-name" aria-label="Nombre del scooter">{{ scooter.name }}</h3>
-        <pv-button @click="viewDetails(scooter.id)" class="details-button" aria-label="Ver detalles del scooter {{ scooter.name }}">Ver Detalles</pv-button>
+        <pv-button @click="viewDetails(scooter.id)" class="details-button" aria-label="Ver detalles del scooter {{ scooter.name }}">{{ $t('viewScooter.detalle') }}</pv-button>
       </div>
       <pv-button @click="createNewScooter" class="create-button" aria-label="Crear nuevo scooter">
         <i class="pi pi-plus" aria-hidden="true"></i>
       </pv-button>
     </div>
 
-    <pv-button @click="searchScooter" class="search-scooter" aria-label="Buscar scooter">Buscar Scooter</pv-button>
+    <pv-button @click="searchScooter" class="search-scooter" aria-label="Buscar scooter">{{ $t('viewScooter.buscar') }}</pv-button>
   </div>
 </template>
 

@@ -2,6 +2,58 @@ import { createI18n } from 'vue-i18n';
 
 const messages = {
     es: {
+        reservationHistory: {
+            title: 'Historial de scooters alquilados',
+            verDetalles: 'Ver Detalles',
+            eliminarHistorial: 'Eliminar Historial',
+            btnCancelar: 'Cancelar',
+            btnBorrarHistorial: 'Borrar Historial'
+        },
+        reservationDetails: {
+            title: 'Reservation Details',
+            fechaInicio: 'Fecha de inicio:',
+            fechaFin: 'Fecha de fin:',
+            tiempo: 'Tiempo:',
+            calificacion: 'Calificación:',
+            nombrePropietario: 'Nombre del propietario:',
+            telefono: 'Teléfono:',
+            btnCerrar: 'Cerrar'
+        },
+        suscription: {
+            title: 'Nuestros Planes de Suscripción',
+            subtitle: 'En MoviRent contamos con tres planes de suscripción que te brindarán beneficios únicos',
+
+        },
+        viewScooter: {
+            detalle: 'Ver Detalles',
+            buscar: 'Buscar Scooter'
+        },
+        scooterDetails: {
+            recordatorio: 'Recuerda siempre tener los datos del scooter correctos y actualizados para así generar más confianza entre los usuarios',
+            nombre: 'Nombre del Scooter',
+            marca: 'Marca',
+            modelo: 'Modelo',
+            url: 'URL de la imagen',
+            distrito: 'Distrito',
+            celular: 'Numero de teléfono',
+            mesage: 'Puedes cambiarlo cuantas veces quieras',
+            noRecuperable: 'Tus datos no podrán se recuperados',
+            btnEditar: 'Editar',
+            btnEliminar: 'Eliminar',
+            btnCancelar: 'Cancelar'
+        },
+        createScooter: {
+            title: 'Crear Scooter',
+            nombre: 'Nombre es requerido',
+            marca: 'Marca es requerida',
+            modelo: 'Modelo es requerido',
+            url: 'URL de la imagen es requerida',
+            precio: 'Precio por hora es requerido',
+            distrito: 'Distrito es requerido',
+            telefono: 'Teléfono es requerido',
+            btnGuardar: 'Guardar',
+            btnCancelar: 'Cancelar'
+        },
         scooterCard: {
             btnDetalle: 'Ver Detalle'
         },
@@ -89,53 +141,142 @@ const messages = {
         }
     },
     en: {
+        reservationHistory: {
+            title: 'Rental Scooter History',
+            verDetalles: 'View Details',
+            eliminarHistorial: 'Delete History',
+            btnCancelar: 'Cancel',
+            btnBorrarHistorial: 'Delete History'
+        },
+        reservationDetails: {
+            title: 'Reservation Details',
+            fechaInicio: 'Start Date:',
+            fechaFin: 'End Date:',
+            tiempo: 'Time:',
+            calificacion: 'Rating:',
+            nombrePropietario: 'Owner Name:',
+            telefono: 'Phone:',
+            btnCerrar: 'Close'
+        },
+        suscription: {
+            title: 'Our Subscription Plans',
+            subtitle: 'At MoviRent, we offer three subscription plans that provide unique benefits',
+        },
+        viewScooter: {
+            detalle: 'View Details',
+            buscar: 'Search Scooter'
+        },
+        scooterDetails: {
+            recordatorio: 'Always remember to keep the scooter information correct and updated to build more trust among users.',
+            nombre: 'Scooter Name',
+            marca: 'Brand',
+            modelo: 'Model',
+            url: 'Image URL',
+            distrito: 'District',
+            celular: 'Phone Number',
+            mesage: 'You can change it as many times as you want.',
+            noRecuperable: 'Your data cannot be recovered.',
+            btnEditar: 'Edit',
+            btnEliminar: 'Delete',
+            btnCancelar: 'Cancel'
+        },
+        createScooter: {
+            title: 'Create Scooter',
+            nombre: 'Name is required.',
+            marca: 'Brand is required.',
+            modelo: 'Model is required.',
+            url: 'Image URL is required.',
+            precio: 'Price per hour is required.',
+            distrito: 'District is required.',
+            telefono: 'Phone is required.',
+            btnGuardar: 'Save',
+            btnCancelar: 'Cancel'
+        },
+        scooterCard: {
+            btnDetalle: 'View Detail'
+        },
+        scooterAdd: {
+            title: 'Add Review',
+            recuerda: 'Always remember to be respectful in comments and opinions.',
+            puntuacion: 'Rating:',
+            comentario: 'Comment:',
+            btnEnviar: 'Submit',
+            btnCancelar: 'Cancel'
+        },
+        paymentView: {
+            title: 'Payment Method',
+            recuerda: 'Remember to enter real data or the payment will be denied.',
+            numTarjeta: 'Valid card number is required.',
+            fechaExp: 'Valid expiration date is required.',
+            cvv: 'Valid CVV is required.',
+            advertencia: 'There will be no refund once completed.',
+            btnPagar: 'Pay',
+            btnCancelar: 'Cancel'
+        },
+        paymentScooter: {
+            title: 'Scooter Rental Payment',
+            subtitle: 'Remember to enter real data or the payment will be denied.',
+            numTarjeta: 'Valid card number is required.',
+            fechaExp: 'Valid expiration date is required.',
+            cvv: 'Valid CVV is required.',
+            advertencia: 'There will be no refund once completed.',
+            btnPagar: 'Pay',
+            btnCancelar: 'Cancel'
+        },
         userview: {
-            "title": "Are your details incorrect or do you want to update them? Edit them!",
-            "info": "Always remember to keep your information correct and updated to generate more trust among users.",
-            "name": "Full Name",
-            "contrasena": "Password",
-            "celular": "Mobile",
-            "email": "Email Address",
-            "dni": "ID Number",
-            "URL": "Image URL",
-            "direccion": "Address",
+            title: "Is your data incorrect or do you want to update it? Edit it!",
+            info:"Always remember to keep your data correct and updated to build more trust among users.",
 
-            "confMessage": "You can change it as many times as you want.",
-            "confDelete": "Your data cannot be recovered.",
+            name:'Full Name',
+            contrasena:'Password',
+            celular:'Mobile Number',
+            email:'Email Address',
+            dni:'DNI',
+            URL:'Image URL',
+            dirrecion:'Address',
 
-            "btnHistorial": "View History",
-            "btnGuardar": "Save",
-            "btnBorrar": "Delete",
-            "btnEliminar": "Remove",
-            "btnCancelar": "Cancel",
-            "btnEditar": "Edit"
+            confMessage:'You can change it as many times as you want.',
+            confDelete:'Your data cannot be recovered.',
+
+            btnHistorial:'View History',
+            btnGuardar:'Save',
+            btnBorrar:'Delete',
+            btnEliminar:'Delete',
+            btnCancelar:'Cancel',
+            btnEditar:'Edit'
         },
-        movirent: {
-            name: 'Team Name',
-            address: 'Address',
-            marca: 'Scooter Brand',
-            phone: 'Phone',
-            model: 'Scooter Model',
-            imgUrl: 'Image URL',
-            price: 'Rental Cost',
-            tituloResultado: 'Your Registered Scooters',
-            titleGeneral: 'Scooter Registration',
-            nuevoScooter: 'Register New Scooter',
-            titleCard: 'My Scooters',
-            redesSociales: 'Our Social Networks',
-            soporte: 'Support'
+        movirent:{
+            name:'Team Name',
+            address:'Address',
+            marca:'Scooter Brand',
+            phone:'Phone Number',
+            model:'Scooter Model',
+            imgUrl:'Image URL',
+            price:'Rental Cost',
+            tituloResultado:'Your Registered Scooters',
+            titleGeneral:'Scooter Registration',
+            nuevoScooter:'Register New Scooter',
+            titleCard:'My Scooters',
+            redesSociales:'Our Social Media',
+            soporte:'Support',
+            names:'Who We Are',
+            question:'Frequently Asked Questions',
+            policy:'Privacy Policies',
+            description:'© 2024 - All rights reserved - MoviRent',
+            titleQuienesSomos:'Who are we?',
+            welcome:'Welcome to MoviRent!'
         },
-        buttons: {
-            profile: 'Profile',
-            subscription: 'My Subscription',
-            reviews: 'Reviews',
-            reservations: 'Reservations',
-            scooter: 'Scooter',
-            history: 'History',
-            logout: 'Logout'
+        buttons:{
+            profile:'Profile',
+            subscription:'My Subscription',
+            reviews:'Reviews',
+            reservations:'Reservations',
+            scooter:'Scooter',
+            history:'History',
+            logout:'Log Out'
         },
-        titles: {
-            title: 'Is your information incorrect or do you want to update it? Edit them!'
+        titles:{
+            title:"Is your data incorrect or do you want to update it? Edit it!"
         }
     }
 };

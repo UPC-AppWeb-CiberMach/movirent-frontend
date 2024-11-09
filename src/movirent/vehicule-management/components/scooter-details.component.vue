@@ -3,7 +3,7 @@
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de scooter">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de scooter">
         <img :src="image" class="w-20 p-3 profile-img" alt="Imagen de scooter" aria-label="Imagen de perfil del scooter"/>
-        <h3 class="font-bold reminder" aria-label="Recordatorio para el usuario">Recuerda siempre tener los datos del scooter correctos y actualizados para así generar más confianza entre los usuarios</h3>
+        <h3 class="font-bold reminder" aria-label="Recordatorio para el usuario">{{ $t('scooterDetails.recordatorio') }}</h3>
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de scooter">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del scooter">
@@ -15,7 +15,7 @@
                 aria-label="Entrada de nombre del scooter"
                 type="text"
             />
-            <label for="name">Nombre Scooter</label>
+            <label for="name">{{ $t('scooterDetails.nombre') }}</label>
           </pv-floatlabel>
           <span v-if="$v.name.$error" class="error-message" aria-label="Mensaje de error para el nombre">Nombre es requerido</span>
 
@@ -27,7 +27,7 @@
                 aria-label="Entrada de marca del scooter"
                 type="text"
             />
-            <label for="brand">Marca</label>
+            <label for="brand">{{ $t('scooterDetails.marca') }}</label>
           </pv-floatlabel>
           <span v-if="$v.brand.$error" class="error-message" aria-label="Mensaje de error para la marca">Marca es requerida</span>
 
@@ -39,7 +39,7 @@
                 aria-label="Entrada de modelo del scooter"
                 type="text"
             />
-            <label for="model">Modelo</label>
+            <label for="model">{{ $t('scooterDetails.modelo') }}</label>
           </pv-floatlabel>
           <span v-if="$v.model.$error" class="error-message" aria-label="Mensaje de error para el modelo">Modelo es requerido</span>
 
@@ -51,7 +51,7 @@
                 aria-label="Entrada de URL de la foto del usuario"
                 type="text"
             />
-            <label for="image">URL de tu foto</label>
+            <label for="image">{{ $t('scooterDetails.url') }}</label>
           </pv-floatlabel>
           <span v-if="$v.image.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
           <pv-inputnumber v-model="price_per_hour" :class="{ 'is-invalid': $v.price_per_hour.$error }" class="p-3 w-15rem lg:w-25rem pv-text input-number" type="number" placeholder="Precio por hora" aria-label="Entrada de precio por hora del scooter"/>
@@ -64,7 +64,7 @@
                 aria-label="Campo de distrito"
                 type="text"
             />
-            <label for="district">Distrito</label>
+            <label for="district">{{ $t('scooterDetails.distrito') }}</label>
           </pv-floatlabel>
           <span v-if="$v.district.$error" class="error-message" aria-label="Mensaje de error para el distrito">Distrito es requerido</span>
 
@@ -77,30 +77,30 @@
                 placeholder="Celular"
                 aria-label="Entrada de número de celular del usuario"
             />
-            <label for="phone">Número de celular</label>
+            <label for="phone">{{ $t('scooterDetails.celular') }}</label>
           </pv-floatlabel>
           <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Teléfono es requerido</span>
         </div>
         <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu scooter?" :modal="true" :closable="false">
-          <p class="center-title">Puedes cambiarlo cuantas veces quieras</p>
+          <p class="center-title">{{ $t('scooterDetails.mesage') }}</p>
 
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
-            <pv-button class="p-button-edit green-button p-mr-2" label="Editar" @click="confirmEditScooter" />
-            <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="showEditDialog = false" />
+            <pv-button class="p-button-edit green-button p-mr-2" :label="$t('scooterDetails.btnEditar')" @click="confirmEditScooter" />
+            <pv-button class="p-button-cancel-edit pink-button" :label="$t('scooterDetails.btnCancelar')" @click="showEditDialog = false" />
           </div>
         </pv-dialog>
 
         <pv-dialog v-model:visible="showDeleteDialog" header="¿Estas segur@ de eliminar tu scooter? " :modal="true" :closable="false">
-          <p class="center-title">Tus datos no podrán se recuperados</p>
+          <p class="center-title">{{ $t('scooterDetails.noRecuperable') }}</p>
 
           <div class="p-d-flex p-mt-3 button-container">
-            <pv-button class="p-button-delete green-button p-mr-2" label="Eliminar" @click="confirmDeleteScooter" />
-            <pv-button class="p-button-cancel-delete pink-button" label="Cancelar" @click="showDeleteDialog = false" />
+            <pv-button class="p-button-delete green-button p-mr-2" :label="$t('scooterDetails.btnEliminar')" @click="confirmDeleteScooter" />
+            <pv-button class="p-button-cancel-delete pink-button" :label="$t('scooterDetails.btnCancelar')" @click="showDeleteDialog = false" />
           </div>
         </pv-dialog>
 
-        <pv-button @click="showEditDialog = true" class="mt-5 p-4 w-10rem edit-btn" type="submit" label="Editar" aria-label="Botón para editar los datos del scooter"/>
-        <pv-button @click="showDeleteDialog = true" class="mt-5 p-4 w-10rem delete-btn" type="submit" label="Borrar" aria-label="Botón para borrar los datos del scooter"/>
+        <pv-button @click="showEditDialog = true" class="mt-5 p-4 w-10rem edit-btn" type="submit" :label="$t('scooterDetails.btnEditar')" aria-label="Botón para editar los datos del scooter"/>
+        <pv-button @click="showDeleteDialog = true" class="mt-5 p-4 w-10rem delete-btn" type="submit" :label="$t('scooterDetails.btnEliminar')" aria-label="Botón para borrar los datos del scooter"/>
 
       </div>
     </div>

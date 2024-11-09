@@ -2,28 +2,28 @@
   <div class="p-d-flex p-flex-column p-ai-center p-jc-center scooter-create-container" aria-label="Contenedor de vista de creacion de scooter">
     <div class="p-d-flex p-jc-between content" aria-label="Contenido de scooter">
       <div class="p-d-flex p-flex-column p-ai-center p-jc-center left pv-card" aria-label="Sección izquierda de contenido de scooter">
-        <h1 id="scooter-create-heading" class="font-bold center-title pv-txt" aria-label="Título de creacion de scooter">Crear Scooter</h1>
+        <h1 id="scooter-create-heading" class="font-bold center-title pv-txt" aria-label="Título de creacion de scooter">{{ $t('createScooter.title') }}</h1>
         <img :src="image" class="w-20 p-3 profile-img" alt="Imagen de scooter" aria-label="Imagen de perfil del scooter"/>
       </div>
       <div class="p-d-flex p-flex-column p-ai-center right" aria-label="Sección derecha de contenido de scooter">
         <div class="p-d-flex p-flex-column p-ai-center inputs" aria-label="Entradas de datos del scooter">
           <pv-inputtext v-model="name" :class="{ 'is-invalid': $v.name.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Nombre Scooter" aria-label="Entrada de nombre del scooter"/>
-          <span v-if="$v.name.$error" class="error-message" aria-label="Mensaje de error para el nombre">Nombre es requerido</span>
+          <span v-if="$v.name.$error" class="error-message" aria-label="Mensaje de error para el nombre">{{ $t('createScooter.nombre') }}</span>
           <pv-inputtext v-model="brand" :class="{ 'is-invalid': $v.brand.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Marca" aria-label="Entrada de marca del scooter"/>
-          <span v-if="$v.brand.$error" class="error-message" aria-label="Mensaje de error para la marca">Marca es requerida</span>
+          <span v-if="$v.brand.$error" class="error-message" aria-label="Mensaje de error para la marca">{{ $t('createScooter.marca') }}</span>
           <pv-inputtext v-model="model" :class="{ 'is-invalid': $v.model.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Modelo" aria-label="Entrada de modelo del scooter"/>
-          <span v-if="$v.model.$error" class="error-message" aria-label="Mensaje de error para el modelo">Modelo es requerido</span>
+          <span v-if="$v.model.$error" class="error-message" aria-label="Mensaje de error para el modelo">{{ $t('createScooter.modelo') }}</span>
           <pv-inputtext v-model="image" :class="{ 'is-invalid': $v.image.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="URL de tu foto" aria-label="Entrada de URL de la foto del usuario"/>
-          <span v-if="$v.image.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">URL de la foto es requerido</span>
+          <span v-if="$v.image.$error" class="error-message" aria-label="Mensaje de error para la URL de la foto">{{ $t('createScooter.url') }}</span>
           <pv-inputnumber v-model="price_per_hour" :class="{ 'is-invalid': $v.price_per_hour.$error }" class="p-3 pv-text input-number" type="number" placeholder="Precio por hora" aria-label="Entrada de precio por hora del scooter"/>
-          <span v-if="$v.price_per_hour.$error" class="error-message" aria-label="Mensaje de error para el precio por hora">Precio por hora es requerido</span>
+          <span v-if="$v.price_per_hour.$error" class="error-message" aria-label="Mensaje de error para el precio por hora">{{ $t('createScooter.precio') }}</span>
           <Select v-model="district" :options="districts" optionLabel="name" optionValue="id" placeholder="Distrito" :inputStyle="{ backgroundColor: '#ffffff', color: 'black' }" class="w-15rem lg:w-25rem p-3 pv-text" aria-label="Campo de distrito"/>
-          <span v-if="$v.district.$error" class="error-message" aria-label="Mensaje de error para el distrito">Distrito es requerido</span>
+          <span v-if="$v.district.$error" class="error-message" aria-label="Mensaje de error para el distrito">{{ $t('createScooter.distrito') }}</span>
           <pv-inputtext v-model="phone" :class="{ 'is-invalid': $v.phone.$error }" class="w-15rem lg:w-25rem p-3 pv-text" type="text" placeholder="Celular" aria-label="Entrada de número de celular del usuario"/>
-          <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Telefono es requerido</span>
+          <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">{{ $t('createScooter.telefono') }}</span>
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
-            <pv-button class="p-button-create green-button p-mr-2" label="Crear" @click="createScooter" />
-            <pv-button class="p-button-cancel-edit pink-button" label="Cancelar" @click="cancelCreation"/>
+            <pv-button class="p-button-create green-button p-mr-2" :label="$t('createScooter.btnGuardar')" @click="createScooter" />
+            <pv-button class="p-button-cancel-edit pink-button" :label="$t('createScooter.btnCancelar')" @click="cancelCreation"/>
           </div>
         </div>
       </div>

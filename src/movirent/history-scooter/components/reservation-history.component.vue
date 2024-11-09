@@ -1,20 +1,20 @@
 <template>
   <div class="history-container" aria-label="Historial de scooters alquilados">
-    <h1>Historial de scooters alquilados</h1>
+    <h1>{{ $t('reservationHistory.title') }}</h1>
     <div class="scooter-list">
       <div v-for="reservation in reservations" :key="reservation.id" class="scooter-card">
         <img :src="getScooterImage(reservation.scooter_id)" alt="Imagen de scooter" class="scooter-image" aria-label="Imagen del scooter alquilado" />
-        <button class="detail-button" @click="viewDetails(reservation.scooter_id)" aria-label="Ver detalles del scooter">Ver detalle</button>
+        <button class="detail-button" @click="viewDetails(reservation.scooter_id)" aria-label="Ver detalles del scooter">{{ $t('reservationHistory.verDetalles') }}</button>
       </div>
     </div>
 
-    <button class="delete-button" @click="showDeleteDialog = true" aria-label="Eliminar historial de scooters alquilados">Eliminar historial</button>
+    <button class="delete-button" @click="showDeleteDialog = true" aria-label="Eliminar historial de scooters alquilados">{{ $t('reservationHistory.eliminarHistorial') }}</button>
 
     <pv-dialog v-model:visible="showDeleteDialog" header="¿Estás segur@ de eliminar tu historial?" :modal="true" :closable="false" aria-label="Diálogo de confirmación para eliminar historial">
       <p class="center-title">Tus datos no podrán ser recuperados</p>
       <div class="button-container">
-        <pv-button class="p-button-cancel green-button" label="Cancelar" @click="showDeleteDialog = false" aria-label="Cancelar eliminación del historial" />
-        <pv-button class="p-button-confirm red-button" label="Borrar historial" @click="deleteHistory" aria-label="Confirmar eliminación del historial" />
+        <pv-button class="p-button-cancel green-button" :label="$t('reservationHistory.btnCancelar')" @click="showDeleteDialog = false" aria-label="Cancelar eliminación del historial" />
+        <pv-button class="p-button-confirm red-button" :label="$t('reservationHistory.btnBorrarHistorial')" @click="deleteHistory" aria-label="Confirmar eliminación del historial" />
       </div>
     </pv-dialog>
   </div>

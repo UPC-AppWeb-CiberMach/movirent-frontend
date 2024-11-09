@@ -1,11 +1,11 @@
 <template>
   <div class="subscription-view" aria-label="Vista de planes de suscripción">
     <h1 class="text-center text-4xl font-bold mb-4" aria-label="Título: Nuestros Planes de Suscripción">
-      Nuestros Planes de Suscripción
+      {{ $t('suscription.title') }}
     </h1>
 
     <p class="text-center text-xl mb-1" aria-label="Descripción: MoviRent cuenta con tres planes de suscripción con beneficios únicos.">
-      En MoviRent contamos con tres planes de suscripción que te brindarán beneficios únicos.
+      {{ $t('suscription.subtitle') }}
     </p>
 
     <div class="grid" aria-label="Lista de planes de suscripción">
