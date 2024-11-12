@@ -1,67 +1,72 @@
 <template>
-  <pv-card style=" align-items: center; margin-left: 40%; width: 25rem; overflow: hidden; background-color: #ffffff; color: #262626;" aria-label="Detalles de la reserva">
+  <pv-card class="reservation-card" aria-label="Reservation Details">
     <template #header>
-      <img :src="reservation.scooter.image" :alt="reservation.scooter.model" aria-label="Imagen del scooter" />
+      <img :src="scooter.image" :alt="scooter.model" class="scooter-image" aria-label="Scooter Image" />
     </template>
-    <template #title><span aria-label="Título de la reserva">{{ $t('reservationDetails.title') }}</span></template>
-    <template #subtitle><span aria-label="Marca y modelo del scooter">{{ reservation.scooter.brand }} - {{ reservation.scooter.model }}</span></template>
+    <template #title>
+      <span aria-label="Reservation Title">{{ scooter.name }}</span>
+    </template>
+    <template #subtitle>
+      <span aria-label="Scooter Brand and Model">{{ scooter.brand }} - {{ scooter.model }}</span>
+    </template>
     <template #content>
-      <p class="m-0" aria-label="Fecha de inicio: {{ reservation.start_date }}"><strong>{{ $t('reservationDetails.fechaInicio') }}</strong> {{ reservation.start_date }}</p>
-      <p class="m-0" aria-label="Fecha de fin: {{ reservation.end_date }}"><strong>{{ $t('reservationDetails.fechaFin') }}</strong> {{ reservation.end_date }}</p>
-      <p class="m-0" aria-label="Tiempo: {{ reservation.time }} horas"><strong>{{ $t('reservationDetails.tiempo') }}</strong> {{ reservation.time }} hrs</p>
-      <p class="m-0" aria-label="Calificación: {{ reservation.rating }}"><strong>{{ $t('reservationDetails.calificacion') }}</strong> {{ reservation.rating }}</p>
-      <p class="m-0" aria-label="Nombre del propietario: {{ reservation.user.name }}"><strong>{{ $t('reservationDetails.nombrePropietario') }}</strong> {{ reservation.user.completeName }}</p>
-      <p class="m-0" aria-label="Teléfono del propietario: {{ reservation.user.phone }}"><strong>{{ $t('reservationDetails.telefono') }}</strong> {{ reservation.user.phone }}</p>
+      <div class="details-content">
+        <p aria-label="Start Date: {{ reservation.startDate }}"><strong>Start Date:</strong> {{ reservation.startDate }}</p>
+        <p aria-label="End Date: {{ reservation.endDate }}"><strong>End Date:</strong> {{ reservation.endDate }}</p>
+        <p aria-label="Time: {{ reservation.time }} hours"><strong>Time:</strong> {{ reservation.time }} hrs</p>
+        <p aria-label="Price: {{ reservation.price }}"><strong>Price:</strong> {{ reservation.price }}</p>
+        <p aria-label="District: {{ scooter.district }}"><strong>District:</strong> {{ scooter.district }}</p>
+        <p aria-label="Phone: {{ scooter.phone }}"><strong>Phone:</strong> {{ scooter.phone }}</p>
+      </div>
     </template>
     <template #footer>
-      <div class="flex gap-4 mt-1 ">
-        <pv-button :label="$t('reservationDetails.btnCerrar')" @click="$router.go(-1)" class="w-full pink-button" aria-label="Cerrar" />
+      <div class="footer-buttons">
+        <pv-button :label="'Close'" @click="$emit('close')" class="close-button" aria-label="Close" />
       </div>
     </template>
   </pv-card>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
-import { useRoute } from "vue-router";
-import { HistoryServices } from "@/movirent/history-scooter/services/history.services.js";
-
-const route = useRoute();
-const reservationId = route.params.id;
-const reservation = ref({
-  scooter: {},
-  user: {}
-});
-
-onMounted(async () => {
-  if (reservationId) {
-    try {
-      const reservationResponse = await new HistoryServices().getReserveById(reservationId);
-      const reservationData = reservationResponse.data;
-
-      const scooterResponse = await new HistoryServices().getScooterById(reservationData.scooter_id);
-      reservationData.scooter = scooterResponse.data;
-
-      const userResponse = await new HistoryServices().getOwnerById(reservationData.client_id);
-      reservationData.user = userResponse.data;
-
-      reservation.value = reservationData;
-    } catch (error) {
-      console.error("Error fetching reservation details:", error);
-    }
+defineProps({
+  reservation: {
+    type: Object,
+    required: true
+  },
+  scooter: {
+    type: Object,
+    required: true
   }
 });
 </script>
 
 <style scoped>
-.m-0 {
-  margin: 0;
+.reservation-card {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: none;
 }
 
-.pink-button{
-  background-color: #FD6C6C;
-  color: #ffffff;
-  border: none;
+.scooter-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
 
+.details-content {
+  padding: 16px;
+  text-align: left;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.close-button {
+  width: 100px;
 }
 </style>
