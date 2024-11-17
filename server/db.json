@@ -43,44 +43,7 @@
       "phone": "88888888833"
     }
   ],
-  "reservations": [
-    {
-      "id": "1730176300791",
-      "client_id": 1,
-      "scooter_id": "b166c162-d63e-443f-8def-beead52f5c1c",
-      "start_date": "2024-10-29T04:31:40.791Z",
-      "end_date": "2024-10-30T04:31:40.791Z",
-      "price": 100,
-      "time": 1
-    },
-    {
-      "id": "1730176350695",
-      "client_id": 1,
-      "scooter_id": "604aa948-c9d6-4301-9989-a809947f1752",
-      "start_date": "2024-10-29T04:32:30.695Z",
-      "end_date": "2024-10-30T04:32:30.695Z",
-      "price": 45,
-      "time": 1
-    },
-    {
-      "id": "1730177801176",
-      "client_id": 1,
-      "scooter_id": "2711bed9-c074-4c5d-a4d8-a9c849e15680",
-      "start_date": "2024-10-29T04:56:41.176Z",
-      "end_date": "2024-10-30T04:56:41.177Z",
-      "price": 123,
-      "time": 1
-    },
-    {
-      "id": "1730177894645",
-      "client_id": 1,
-      "scooter_id": "604aa948-c9d6-4301-9989-a809947f1752",
-      "start_date": "2024-10-29T04:58:14.645Z",
-      "end_date": "2024-10-30T04:58:14.646Z",
-      "price": 45,
-      "time": 1
-    }
-  ],
+  "reservations": [],
   "reviews": [
     {
       "id": "1",
