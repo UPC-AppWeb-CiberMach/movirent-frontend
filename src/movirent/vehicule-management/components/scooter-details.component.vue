@@ -82,7 +82,7 @@
           <span v-if="$v.phone.$error" class="error-message" aria-label="Mensaje de error para el número de celular">Teléfono es requerido</span>
         </div>
         <pv-dialog v-model:visible="showEditDialog" header="¿Estas segur@ de editar tu scooter?" :modal="true" :closable="false">
-          <p class="center-title">{{ $t('scooterDetails.mesage') }}</p>
+          <p class="center-title">{{ $t('scooterDetails.message') }}</p>
 
           <div class="p-d-flex p-jc-center p-ai-center p-mt-3 button-container">
             <pv-button class="p-button-edit green-button p-mr-2" :label="$t('scooterDetails.btnEditar')" @click="confirmEditScooter" />
