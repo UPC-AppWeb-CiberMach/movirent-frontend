@@ -35,7 +35,6 @@ const routes = [
         children: [
             { path: '/profile', component: UserView },
             { path: '/ReservationHistory', component: ReservationHistory },
-            { path: '/reservation/:id', component: ReservationDetailsDialog },
             { path: '/question', component: QuestionFrecuently },
             { path: '/privacy', component: PrivacyPolicy },
             { path: '/Detail/:id', component: Detail },

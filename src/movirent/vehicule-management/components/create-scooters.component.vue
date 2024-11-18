@@ -33,14 +33,13 @@
 </template>
 <script setup>
 import {Db} from "@/movirent/vehicule-management/services/scooter.services.js";
-import { v4 as uuidv4 } from 'uuid';
 import router from "@/routes/router.js";
 import { ref, reactive } from 'vue'
 import {required} from "@vuelidate/validators";
 import {useVuelidate} from "@vuelidate/core";
 import Select from "primevue/select";
 
-let id = uuidv4();
+let id = 0
 let name = ref('')
 let brand = ref('')
 let model = ref('')

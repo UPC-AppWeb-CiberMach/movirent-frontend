@@ -1,20 +1,25 @@
 <template>
-  <div class="history-container" aria-label="Historial de scooters alquilados">
+  <div class="history-container" aria-label="Scooter Rental History">
     <h1>{{ $t('reservationHistory.title') }}</h1>
     <div class="scooter-list">
       <div v-for="reservation in reservations" :key="reservation.id" class="scooter-card">
-        <img :src="getScooterImage(reservation.scooter_id)" alt="Imagen de scooter" class="scooter-image" aria-label="Imagen del scooter alquilado" />
-        <button class="detail-button" @click="viewDetails(reservation.scooter_id)" aria-label="Ver detalles del scooter">{{ $t('reservationHistory.verDetalles') }}</button>
+        <img :src="getScooterImage(reservation.scooterId)" alt="Scooter Image" class="scooter-image" aria-label="Rented Scooter Image" @click="showReservation(reservation)"/>
+        <button class="detail-button" @click="viewDetails(reservation.scooterId)" aria-label="View Scooter Details">{{ $t('reservationHistory.verDetalles') }}</button>
       </div>
     </div>
 
-    <button class="delete-button" @click="showDeleteDialog = true" aria-label="Eliminar historial de scooters alquilados">{{ $t('reservationHistory.eliminarHistorial') }}</button>
+    <button class="delete-button" @click="showDeleteDialog = true" aria-label="Delete Scooter Rental History">{{ $t('reservationHistory.eliminarHistorial') }}</button>
 
-    <pv-dialog v-model:visible="showDeleteDialog" header="¿Estás segur@ de eliminar tu historial?" :modal="true" :closable="false" aria-label="Diálogo de confirmación para eliminar historial">
-      <p class="center-title">Tus datos no podrán ser recuperados</p>
+    <pv-dialog v-model:visible="showDeleteDialog" header="Are you sure you want to delete your history?" :modal="true" :closable="false" aria-label="Delete History Confirmation Dialog">
+      <p class="center-title">Your data cannot be recovered</p>
       <div class="button-container">
-        <pv-button class="p-button-cancel green-button" :label="$t('reservationHistory.btnCancelar')" @click="showDeleteDialog = false" aria-label="Cancelar eliminación del historial" />
-        <pv-button class="p-button-confirm red-button" :label="$t('reservationHistory.btnBorrarHistorial')" @click="deleteHistory" aria-label="Confirmar eliminación del historial" />
+        <pv-button class="p-button-cancel green-button" :label="$t('reservationHistory.btnCancelar')" @click="showDeleteDialog = false" aria-label="Cancel History Deletion" />
+        <pv-button class="p-button-confirm red-button" :label="$t('reservationHistory.btnBorrarHistorial')" @click="deleteHistory" aria-label="Confirm History Deletion" />
+      </div>
+    </pv-dialog>
+    <pv-dialog v-model:visible="showReservationDialog" :modal="true" :closable="false" aria-label="Reservation Details" class="custom-dialog">
+      <div class="dialog-content">
+        <reservation-details-dialog v-if="showReservationDialog" :reservation="selectedReservation" :scooter="selectedScooter" @close="showReservationDialog = false" />
       </div>
     </pv-dialog>
   </div>
@@ -25,10 +30,14 @@ import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { ReservationService } from '@/movirent/history-scooter/services/reservations.services.js';
 import { BaseService } from "@/shared/base.service.js";
+import ReservationDetailsDialog from "@/movirent/history-scooter/components/reservation-details-dialog.component.vue";
 
 const reservations = ref([]);
 const scooters = ref([]);
 const showDeleteDialog = ref(false);
+const showReservationDialog = ref(false);
+const selectedReservation = ref(null);
+const selectedScooter = ref(null);
 const router = useRouter();
 
 onMounted(async () => {
@@ -47,15 +56,16 @@ const loadReservations = async () => {
 
 const loadScooters = async () => {
   try {
-    const response = await BaseService.http.get("/scooters");
+    const response = await BaseService.http.get("/scooter");
     scooters.value = response.data;
   } catch (error) {
     console.error("Error loading scooters:", error);
   }
 };
 
-const getScooterImage = (scooter_id) => {
-  const scooter = scooters.value.find(s => s.id === scooter_id);
+const getScooterImage = (scooterId) => {
+  const scooter = scooters.value.find(s => s.id === scooterId);
+
   return scooter ? scooter.image : 'default-image-path';
 };
 
@@ -63,6 +73,12 @@ const viewDetails = (scooterId) => {
   const selectedScooter = scooters.value.find(s => s.id === scooterId);
   sessionStorage.setItem("scooter", JSON.stringify(selectedScooter));
   router.push(`/Detail/${scooterId}`);
+};
+
+const showReservation = (reservation) => {
+  selectedReservation.value = reservation;
+  selectedScooter.value = scooters.value.find(s => s.id === reservation.scooterId);
+  showReservationDialog.value = true;
 };
 
 const deleteHistory = async () => {
@@ -161,5 +177,36 @@ h1 {
   justify-content: center;
   gap: 20px;
   margin-top: 10px;
+}
+
+.custom-dialog .p-dialog {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-dialog .p-dialog-content {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialog-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-dialog .scooter-image {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
 }
 </style>
